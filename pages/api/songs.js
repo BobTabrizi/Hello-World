@@ -36,18 +36,10 @@ const setAccessToken = () => {
   }
   return AccessToken;
 };
-
-let data = {
-  grant_type: "client_credentials",
-};
-var stringedData = querystring.stringify(data);
-
 var clientString =
   process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET;
 
 var encodedAuth = new Buffer(clientString).toString("base64");
-
-console.log(encodedAuth);
 const getAccessToken = () => {
   return axios({
     url: "https://accounts.spotify.com/api/token",

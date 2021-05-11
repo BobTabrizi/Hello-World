@@ -2,22 +2,27 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Authentication from "../components/Authentication";
 import styles from "../styles/Home.module.css";
-import { connectToDatabase } from "../util/mongodb";
+//import { connectToDatabase } from "../util/mongodb";
 import FlagCarousel from "../components/Carousel";
 import Link from "next/link";
+import Data from "../Data.json";
 
-export default function Home({ songs }) {
+export default function Home() {
   const getLists = async () => {
-    const data = await fetch(`http://localhost:3000/api/getlist`);
+    for (var key in Data) {
+      const id = Data[key].countryID;
+      const url = Data[key].playlists[0].url;
 
-    // console.log(data);
-    const res = await data.json();
+      const data = await fetch(`http://localhost:3000/api/${id}/${url}`);
+
+      const res = await data.json();
+    }
+
+    //  const res = await data.json();
     // console.log(res);
   };
-
   //console.log(songs);
   //console.log(songs[17].track.album.images[0]);
-
   return (
     <>
       <Header />
@@ -41,53 +46,21 @@ export default function Home({ songs }) {
           />
         </Head>
         <Authentication />
-        <button onClick={() => getLists()}>Click me!</button>
+        <button onClick={() => getLists()}>Get playlist Data</button>
 
+        <form>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Enter Country"
+          ></input>
+          <input type="submit" value="Submit"></input>
+        </form>
         <Link href="/playlist/NO">
           <a>Go to Playlist</a>
         </Link>
       </div>
-
-      <div className="flex flex-row flex-wrap">
-        {songs &&
-          songs.map((song) => (
-            <div className="flex-auto w-1/6 rounded overflow-hidden shadow-lg m-3">
-              <p style={{ fontSize: 30, color: "black" }}>
-                <a
-                  href={song.track.external_urls.spotify}
-                  style={{ fontSize: 10 }}
-                >
-                  {song.track.name}
-                </a>
-              </p>
-              <img
-                src={song.track.album.images[0].url}
-                width="300"
-                height="300"
-                alt="Song Image"
-              ></img>
-            </div>
-          ))}
-      </div>
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  const { db } = await connectToDatabase();
-
-  const data = await db.collection("Playlists").find().limit(3).toArray();
-
-  const songs = JSON.parse(JSON.stringify(data));
-
-  const cleanData = songs.map((song) => {
-    return {
-      countryID: song.countryID,
-      items: song.items,
-    };
-  });
-
-  return {
-    props: { songs: cleanData[2].items },
-  };
 }

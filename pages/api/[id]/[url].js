@@ -1,6 +1,4 @@
-import { connectToDatabase } from "../../util/mongodb";
-
-//import { connectToDatabase } from "../../util/mongodb";
+import { connectToDatabase } from "../../../util/mongodb";
 var querystring = require("querystring");
 let express = require("express");
 let bodyParser = require("body-parser");
@@ -68,10 +66,9 @@ const getAccessToken = () => {
       console.log(error);
     });
 };
-const getSongs = (token) => {
-  console.log(token);
+const getSongs = (token, url) => {
   return axios({
-    url: "https://api.spotify.com/v1/playlists/37i9dQZEVXbJiZcmkrIHGU",
+    url: `https://api.spotify.com/v1/playlists/${url}`,
     method: "GET",
     params: { limit: 1 },
     headers: {
@@ -89,9 +86,14 @@ const getSongs = (token) => {
 export default async function handler(req, res) {
   const { db } = await connectToDatabase();
 
-  let temp = await setAccessToken()
+  const countryID = req.query.id;
+  const url = req.query.url;
+  //Find the corresponding url and pass it
+  // const url = "";
+
+  let pulledList = await setAccessToken()
     .then((token) => {
-      return getSongs(token);
+      return getSongs(token, url);
     })
     .then((response) => {
       return response;
@@ -99,9 +101,15 @@ export default async function handler(req, res) {
     .catch((error) => {
       console.log(error);
     });
-  console.log(temp);
-  temp.countryID = "DE";
+  //console.log(temp);
+  pulledList.countryID = countryID;
+  pulledList.url = url;
 
-  const response = await db.collection("Playlists").insertOne(temp);
+  delete pulledList.limit,
+    delete pulledList.next,
+    delete pulledList.previous,
+    delete pulledList.offset;
+
+  const response = await db.collection("Playlists").insertOne(pulledList);
   res.json(response);
 }

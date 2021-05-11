@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Playlist({ songs }) {
   const router = useRouter();
-  console.log(router.query);
+  // console.log(router.query);
 
   return (
     <>
@@ -62,7 +62,7 @@ export default function Playlist({ songs }) {
 export async function getServerSideProps(context) {
   //console.log(context.query);
   const id = context.query;
-  console.log(id.id);
+  //  console.log(id.id);
   const { db } = await connectToDatabase();
   const data = await db
     .collection("Playlists")

@@ -1,0 +1,410 @@
+[
+    {
+        "countryID": "NO",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Norway",
+                "url":"37i9dQZEVXbJvfa0Yxg7E7"
+
+            }
+        ]
+    },
+    {
+        "countryID": "AU",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Australia",
+                "url":"37i9dQZEVXbJPcfkRz0wJ0"
+
+            }
+        ]
+    },
+    {
+        "countryID": "DE",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Germany",
+                "url":"37i9dQZEVXbJiZcmkrIHGU"
+
+            }
+        ]
+    },
+    {
+        "countryID": "FR",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - France",
+                "url":"37i9dQZEVXbIPWwFssbupI"
+
+            }
+        ]
+    },
+    {
+        "countryID": "MX",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Mexico",
+                "url":"37i9dQZEVXbO3qyFxbkOE1"
+
+            }
+        ]
+    },
+    {
+        "countryID": "IN",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - India",
+                "url":"37i9dQZEVXbLZ52XmnySJg"
+
+            }
+        ]
+    },
+    {
+        "countryID": "AT",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Austria",
+                "url":"37i9dQZEVXbKNHh6NIXu36"
+
+            }
+        ]
+    },
+    {
+        "countryID": "US",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - USA",
+                "url":"37i9dQZEVXbLRQDuF5jeBp"
+
+            }
+        ]
+    },
+    {
+        "countryID": "RU",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Russia",
+                "url":"37i9dQZEVXbL8l7ra5vVdB"
+
+            }
+        ]
+    },
+    {
+        "countryID": "ES",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Spain",
+                "url":"37i9dQZEVXbNFJfN1Vw8d9"
+
+            }
+        ]
+    },
+    {
+        "countryID": "CA",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Canada",
+                "url":"37i9dQZEVXbKj23U1GF4IR"
+
+            }
+        ]
+    },
+    {
+        "countryID": "GB",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - United Kingdom",
+                "url":"37i9dQZEVXbLnolsZ8PSNw"
+
+            }
+        ]
+    },
+    {
+        "countryID": "AR",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Argentina",
+                "url":"37i9dQZEVXbMMy2roB9myp"
+
+            }
+        ]
+    },
+    {
+        "countryID": "PT",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Portugal",
+                "url":"37i9dQZEVXbKyJS56d1pgi"
+
+            }
+        ]
+    },
+    {
+        "countryID": "KR",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - South Korea",
+                "url":"37i9dQZEVXbNxXF4SkHj9F"
+
+            }
+        ]
+    },
+    {
+        "countryID": "JP",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Japan",
+                "url":"37i9dQZEVXbKXQ4mDTEBXq"
+
+            }
+        ]
+    },
+    {
+        "countryID": "IL",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Israel",
+                "url":"37i9dQZEVXbJ6IpvItkve3"
+
+            }
+        ]
+    },
+    {
+        "countryID": "LV",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Latvia",
+                "url":"37i9dQZEVXbJWuzDrTxbKS"
+
+            }
+        ]
+    },
+    {
+        "countryID": "IS",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Iceland",
+                "url":"37i9dQZEVXbKMzVsSGQ49S"
+
+            }
+        ]
+    },
+    {
+        "countryID": "DK",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Denmark",
+                "url":"37i9dQZEVXbL3J0k32lWnN"
+
+            }
+        ]
+    },
+    {
+        "countryID": "SE",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Sweden",
+                "url":"37i9dQZEVXbLoATJ81JYXz"
+
+            }
+        ]
+    },
+    {
+        "countryID": "FI",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Finland",
+                "url":"37i9dQZEVXbMxcczTSoGwZ"
+
+            }
+        ]
+    },
+    {
+        "countryID": "MA",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Morocco",
+                "url":"37i9dQZEVXbJU9eQpX8gPT"
+
+            }
+        ]
+    },
+    {
+        "countryID": "NL",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Netherlands",
+                "url":"37i9dQZEVXbKCF6dqVpDkS"
+
+            }
+        ]
+    },
+    {
+        "countryID": "PH",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Philippines",
+                "url":"37i9dQZEVXbNBz9cRCSFkY"
+
+            }
+        ]
+    },
+    {
+        "countryID": "DO",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Dominican Republic",
+                "url":"37i9dQZEVXbKAbrMR8uuf7"
+
+            }
+        ]
+    },
+    {
+        "countryID": "HN",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Honduras",
+                "url":"37i9dQZEVXbJp9wcIM9Eo5"
+
+            }
+        ]
+    },
+    {
+        "countryID": "BR",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Brazil",
+                "url":"37i9dQZEVXbMXbN3EUUhlg"
+
+            }
+        ]
+    },
+    {
+        "countryID": "VN",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Vietnam",
+                "url":"37i9dQZEVXbLdGSmz6xilI"
+
+            }
+        ]
+    },
+    {
+        "countryID": "TR",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Turkey",
+                "url":"37i9dQZEVXbIVYVBNw9D5K"
+
+            }
+        ]
+    },
+    {
+        "countryID": "EC",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Ecuador",
+                "url":"37i9dQZEVXbJlM6nvL1nD1"
+
+            }
+        ]
+    },
+    {
+        "countryID": "EE",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Estonia",
+                "url":"37i9dQZEVXbLesry2Qw2xS"
+
+            }
+        ]
+    },
+    {
+        "countryID": "CO",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Colombia",
+                "url":"37i9dQZEVXbOa2lmxNORXQ"
+
+            }
+        ]
+    },
+    {
+        "countryID": "CR",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Costa Rica",
+                "url":"37i9dQZEVXbMZAjGMynsQX"
+
+            }
+        ]
+    }
+]
