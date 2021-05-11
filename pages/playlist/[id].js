@@ -1,10 +1,14 @@
 import Head from "next/head";
-import Header from "../components/Header";
-import styles from "../styles/Home.module.css";
+import Header from "../../components/Header";
+import styles from "../../styles/Home.module.css";
 import Link from "next/link";
-import { connectToDatabase } from "../util/mongodb";
+import { connectToDatabase } from "../../util/mongodb";
+import { useRouter } from "next/router";
 
 export default function Playlist({ songs }) {
+  const router = useRouter();
+  console.log(router.query);
+
   return (
     <>
       <Header />
@@ -56,19 +60,23 @@ export default function Playlist({ songs }) {
 }
 
 export async function getServerSideProps(context) {
+  //console.log(context.query);
+  const id = context.query;
+  console.log(id.id);
   const { db } = await connectToDatabase();
-
-  const data = await db.collection("Playlists").find().limit(1).toArray();
+  const data = await db
+    .collection("Playlists")
+    .find({ countryID: id.id })
+    .limit(1)
+    .toArray();
 
   const songs = JSON.parse(JSON.stringify(data));
-
   const cleanData = songs.map((song) => {
     return {
       countryID: song.countryID,
       items: song.items,
     };
   });
-
   return {
     props: { songs: cleanData[0].items },
   };

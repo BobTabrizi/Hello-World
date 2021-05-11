@@ -10,9 +10,9 @@ export default function Home({ songs }) {
   const getLists = async () => {
     const data = await fetch(`http://localhost:3000/api/getlist`);
 
-    console.log(data);
+    // console.log(data);
     const res = await data.json();
-    console.log(res);
+    // console.log(res);
   };
 
   //console.log(songs);
@@ -43,7 +43,7 @@ export default function Home({ songs }) {
         <Authentication />
         <button onClick={() => getLists()}>Click me!</button>
 
-        <Link href="/playlist">
+        <Link href="/playlist/NO">
           <a>Go to Playlist</a>
         </Link>
       </div>

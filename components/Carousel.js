@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import Link from "next/link";
 export default function Carousel() {
   var settings = {
     infinite: true,
@@ -7,14 +8,18 @@ export default function Carousel() {
     slidesToShow: 5,
     cssEase: "linear",
   };
+
   return (
     <Slider {...settings}>
       <div>
-        <img
-          src="/flags/NO.png"
-          style={{ borderRadius: 30, height: 100, width: 150 }}
-        ></img>
+        <Link href="/playlist/NO">
+          <img
+            src="/flags/NO.png"
+            style={{ borderRadius: 30, height: 100, width: 150 }}
+          ></img>
+        </Link>
       </div>
+
       <div>
         <img
           src="/flags/US.png"
@@ -22,11 +27,14 @@ export default function Carousel() {
           onClick={() => console.log("MURICA")}
         ></img>
       </div>
+
       <div>
-        <img
-          src="/flags/DE.png"
-          style={{ borderRadius: 30, height: 100, width: 150 }}
-        ></img>
+        <Link href="/playlist/DE">
+          <img
+            src="/flags/DE.png"
+            style={{ borderRadius: 30, height: 100, width: 150 }}
+          ></img>
+        </Link>
       </div>
       <div>
         <img
