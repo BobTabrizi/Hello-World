@@ -48,8 +48,6 @@ var clientString =
   process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET;
 
 var encodedAuth = new Buffer(clientString).toString("base64");
-
-console.log(encodedAuth);
 const getAccessToken = () => {
   return axios({
     url: "https://accounts.spotify.com/api/token",
@@ -73,7 +71,7 @@ const getAccessToken = () => {
 const getSongs = (token) => {
   console.log(token);
   return axios({
-    url: "https://api.spotify.com/v1/playlists/37i9dQZEVXbJvfa0Yxg7E7",
+    url: "https://api.spotify.com/v1/playlists/37i9dQZEVXbJiZcmkrIHGU",
     method: "GET",
     params: { limit: 1 },
     headers: {
@@ -102,10 +100,8 @@ export default async function handler(req, res) {
       console.log(error);
     });
   console.log(temp);
-  temp.countryID = "NO";
+  temp.countryID = "DE";
 
   const response = await db.collection("Playlists").insertOne(temp);
-
-  console.log("hei?");
   res.json(response);
 }

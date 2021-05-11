@@ -1,27 +1,13 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import Authentication from "../components/Authentication";
 import styles from "../styles/Home.module.css";
-import { connectToDatabase } from "../util/mongodb";
-import FlagCarousel from "../components/Carousel";
 import Link from "next/link";
+import { connectToDatabase } from "../util/mongodb";
 
-export default function Home({ songs }) {
-  const getLists = async () => {
-    const data = await fetch(`http://localhost:3000/api/getlist`);
-
-    console.log(data);
-    const res = await data.json();
-    console.log(res);
-  };
-
-  //console.log(songs);
-  //console.log(songs[17].track.album.images[0]);
-
+export default function Playlist({ songs }) {
   return (
     <>
       <Header />
-      <FlagCarousel />
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -40,14 +26,10 @@ export default function Home({ songs }) {
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
         </Head>
-        <Authentication />
-        <button onClick={() => getLists()}>Click me!</button>
-
-        <Link href="/playlist">
-          <a>Go to Playlist</a>
-        </Link>
       </div>
-
+      <Link href="/">
+        <a>Back to Home</a>
+      </Link>
       <div className="flex flex-row flex-wrap">
         {songs &&
           songs.map((song) => (
@@ -76,7 +58,7 @@ export default function Home({ songs }) {
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
 
-  const data = await db.collection("Playlists").find().limit(3).toArray();
+  const data = await db.collection("Playlists").find().limit(1).toArray();
 
   const songs = JSON.parse(JSON.stringify(data));
 
@@ -88,6 +70,6 @@ export async function getServerSideProps(context) {
   });
 
   return {
-    props: { songs: cleanData[2].items },
+    props: { songs: cleanData[0].items },
   };
 }
