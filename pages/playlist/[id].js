@@ -9,6 +9,19 @@ export default function Playlist({ songs }) {
   const router = useRouter();
   // console.log(router.query);
 
+  /*
+  const handleSongClick = async () => {
+    console.log(localStorage.getItem("SPOTIFY_TOKEN"));
+    const res = await fetch("https://api.spotify.com/v1/me/player/devices", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("SPOTIFY_TOKEN"),
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(res);
+  };
+*/
   return (
     <>
       <Header />
@@ -38,20 +51,21 @@ export default function Playlist({ songs }) {
         {songs &&
           songs.map((song) => (
             <div className="flex-auto w-1/6 rounded overflow-hidden shadow-lg m-3">
-              <p style={{ fontSize: 30, color: "black" }}>
+              <div style={{ fontSize: 30, color: "black" }}>
                 <a
                   href={song.track.external_urls.spotify}
                   style={{ fontSize: 10 }}
                 >
                   {song.track.name}
                 </a>
-              </p>
-              <img
-                src={song.track.album.images[0].url}
-                width="300"
-                height="300"
-                alt="Song Image"
-              ></img>
+
+                <img
+                  src={song.track.album.images[0].url}
+                  width="300"
+                  height="300"
+                  alt="Song Image"
+                ></img>
+              </div>
             </div>
           ))}
       </div>

@@ -2,12 +2,17 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Authentication from "../components/Authentication";
 import styles from "../styles/Home.module.css";
+import { S3 } from "@aws-sdk/client-s3";
 //import { connectToDatabase } from "../util/mongodb";
 import FlagCarousel from "../components/Carousel";
 import Link from "next/link";
 import Data from "../Data.json";
+import React, { useEffect, useState } from "react";
+import Countrycomplete from "../components/Countrycomplete";
 
 export default function Home() {
+  const [country, setCountry] = useState(["", ""]);
+
   const getLists = async () => {
     for (var key in Data) {
       const id = Data[key].countryID;
@@ -17,12 +22,8 @@ export default function Home() {
 
       const res = await data.json();
     }
-
-    //  const res = await data.json();
-    // console.log(res);
   };
-  //console.log(songs);
-  //console.log(songs[17].track.album.images[0]);
+
   return (
     <>
       <Header />
@@ -46,21 +47,18 @@ export default function Home() {
           />
         </Head>
         <Authentication />
-        <button onClick={() => getLists()}>Get playlist Data</button>
-
-        <form>
-          <input
-            type="text"
-            id="fname"
-            name="fname"
-            placeholder="Enter Country"
-          ></input>
-          <input type="submit" value="Submit"></input>
-        </form>
-        <Link href="/playlist/NO">
+        <button onClick={() => getLists}>Get playlist Data</button>
+        <Countrycomplete updateCountry={setCountry} />
+        <Link href={`/playlist/${country[1]}`}>
           <a>Go to Playlist</a>
         </Link>
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  return {
+    props: {},
+  };
 }
