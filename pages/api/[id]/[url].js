@@ -1,25 +1,9 @@
 import { connectToDatabase } from "../../../util/mongodb";
-var querystring = require("querystring");
-let express = require("express");
-let bodyParser = require("body-parser");
-const axios = require("axios");
-let app = express();
-
 var AccessTokenSet = false;
 var AccessToken = null;
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
-app.use(bodyParser.json());
-
-var port = process.env.PORT || 3000;
-
 const setAccessToken = () => {
   let tokenPromise = null;
-
   if (!AccessTokenSet) {
     tokenPromise = getAccessToken()
       .then((response) => {
@@ -37,46 +21,41 @@ const setAccessToken = () => {
   return AccessToken;
 };
 
-let data = {
-  grant_type: "client_credentials",
-};
-var stringedData = querystring.stringify(data);
-
 var clientString =
   process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET;
 
 var encodedAuth = new Buffer(clientString).toString("base64");
 const getAccessToken = () => {
-  return axios({
-    url: "https://accounts.spotify.com/api/token",
+  return fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
-    params: {
-      grant_type: "client_credentials",
-    },
+    body: `grant_type=client_credentials`,
     headers: {
       Authorization: "Basic " + encodedAuth,
       "Content-Type": "application/x-www-form-urlencoded",
     },
   })
-    .then((respond) => {
+    .then((resp) => resp.json())
+    .then((response) => {
       console.log("New Token Recieved");
-      return respond.data;
+      return response;
     })
     .catch((error) => {
       console.log(error);
     });
 };
+
 const getSongs = (token, url) => {
-  return axios({
-    url: `https://api.spotify.com/v1/playlists/${url}`,
+  return fetch(`https://api.spotify.com/v1/playlists/${url}`, {
     method: "GET",
     params: { limit: 1 },
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
+    .then((resp) => resp.json())
     .then((response) => {
-      return response.data.tracks;
+      console.log(response);
+      return response.tracks;
     })
     .catch((error) => {
       console.log(error);
@@ -90,7 +69,8 @@ export default async function handler(req, res) {
   const url = req.query.url;
   //Find the corresponding url and pass it
   // const url = "";
-
+  //Getting token again here is redundant,
+  //TODO: See if localstorage can be reached here.
   let pulledList = await setAccessToken()
     .then((token) => {
       return getSongs(token, url);
