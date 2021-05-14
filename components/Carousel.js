@@ -7,6 +7,9 @@ export default function Carousel() {
     autoplay: true,
     slidesToShow: 5,
     cssEase: "linear",
+    slidesToScroll: 3,
+    draggable: false,
+    focusOnSelect: true,
   };
 
   return (

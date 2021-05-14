@@ -69,8 +69,7 @@ export default async function handler(req, res) {
   const url = req.query.url;
   //Find the corresponding url and pass it
   // const url = "";
-  //Getting token again here is redundant,
-  //TODO: See if localstorage can be reached here.
+
   let pulledList = await setAccessToken()
     .then((token) => {
       return getSongs(token, url);
