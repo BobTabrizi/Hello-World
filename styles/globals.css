@@ -14,3 +14,31 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.header {
+  background-color: lightskyblue;
+}
+li:hover {
+  background-color: #d3d3d3;
+  cursor: pointer;
+  font-weight: 700;
+}
+.predictionList li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+}
+.predictionList {
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-left: 0;
+  width: calc(284px + 1rem);
+}
+
+.predictionList li {
+  padding: 0.5rem;
+}

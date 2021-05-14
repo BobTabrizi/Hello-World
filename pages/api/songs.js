@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+//import { connectToDatabase } from "../../util/mongodb";
 var querystring = require("querystring");
 let express = require("express");
 let bodyParser = require("body-parser");
@@ -36,44 +36,10 @@ const setAccessToken = () => {
   }
   return AccessToken;
 };
-
-const headers = {
-  headers: {
-    Authorization: `Basic ${new Buffer(
-      `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
-    ).toString("base64")}`,
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
-};
-
-/*
-
-method: "POST",
-    params: {
-      grant_type: "client_credentials",
-    },
-    headers: {
-      Authorization: `Basic ${new Buffer(
-        `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
-      ).toString("base64")}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-  })
-
-  */
-
-let data = {
-  grant_type: "client_credentials",
-};
-
-var stringedData = querystring.stringify(data);
-
 var clientString =
   process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET;
 
 var encodedAuth = new Buffer(clientString).toString("base64");
-
-console.log(encodedAuth);
 const getAccessToken = () => {
   return axios({
     url: "https://accounts.spotify.com/api/token",
@@ -105,14 +71,14 @@ const getSongs = (token) => {
     },
   })
     .then((response) => {
-      return response.data;
+      return response.data.tracks;
     })
     .catch((error) => {
       console.log(error);
     });
 };
-app.get("/", (req, res) => res.send("Hello Express"));
-app.get("/api/songs", (req, res) => {
+
+export default (req, res) => {
   setAccessToken()
     .then((token) => {
       return getSongs(token);
@@ -123,8 +89,4 @@ app.get("/api/songs", (req, res) => {
     .catch((error) => {
       console.log(error);
     });
-});
-
-app.listen(port, function () {
-  console.log("Running on port " + port);
-});
+};
