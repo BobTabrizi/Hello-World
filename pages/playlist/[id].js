@@ -8,19 +8,6 @@ import SongButton from "../../components/SongButton";
 import React, { useState } from "react";
 
 export default function Playlist({ songs }) {
-  /*
-  const [hover, setHover] = useState("nothovered");
-
-  const showPlayButton = (e) => {
-    e.preventDefault();
-    console.log("lol");
-    setHover("hovered");
-  };
-  const hidePlayButton = (e) => {
-    e.preventDefault();
-    setHover("nothovered");
-  };
-*/
   //Base case for unsigned in user, open new window with url.
   //Return to this when user integration is implemented.
   const handleSongClick = async (e, url) => {

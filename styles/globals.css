@@ -15,7 +15,7 @@ body:after {
   position: fixed;
   background-image: url("/Lights.jpg");
   background-size: cover;
-  opacity: 0.35;
+  opacity: 0.4;
   z-index: -1;
   top: 0;
   height: 100vh;
