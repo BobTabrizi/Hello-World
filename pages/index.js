@@ -12,7 +12,7 @@ import Countrycomplete from "../components/Countrycomplete";
 import tokenHelper from "../BackendFunctions/getToken";
 import listRetriever from "../BackendFunctions/getLists";
 export default function Home(props) {
-  const [country, setCountry] = useState(["", ""]);
+  // const [country, setCountry] = useState(["", ""]);
 
   console.log(props);
   useEffect(() => {
@@ -22,13 +22,16 @@ export default function Home(props) {
   return (
     <>
       <Header />
-      <FlagCarousel />
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <link
             href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
             rel="stylesheet"
+          ></link>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           ></link>
           <link
             rel="stylesheet"
@@ -43,11 +46,9 @@ export default function Home(props) {
         </Head>
         <Authentication />
         <button onClick={listRetriever}>Get playlist Data</button>
-        <Countrycomplete updateCountry={setCountry} />
-        <Link href={`/playlist/${country[1]}`}>
-          <a>Go to Playlist</a>
-        </Link>
-        {props.test}
+        <div className="searchBody">
+          <Countrycomplete />
+        </div>
       </div>
     </>
   );

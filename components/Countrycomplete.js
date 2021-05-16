@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import Countries from "../Countries";
 class Autocomplete extends React.Component {
@@ -35,12 +36,15 @@ class Autocomplete extends React.Component {
       filteredPredictions: [],
       userInput: e.currentTarget.innerText,
       finalPrediction: e.currentTarget.innerText,
+      selectedCountry: e.currentTarget.getAttribute("value"),
       predictionShown: false,
     });
+    /*
     this.props.updateCountry([
       e.currentTarget.innerText,
       e.currentTarget.getAttribute("value"),
     ]);
+    */
   };
 
   render() {
@@ -104,7 +108,17 @@ class Autocomplete extends React.Component {
     return (
       <div>
         <Fragment>
-          <input type="text" onChange={onTextChanged} value={userInput} />
+          <input
+            type="text"
+            placeholder="Find a Country"
+            onChange={onTextChanged}
+            value={userInput}
+          />
+          <Link href={`/playlist/${this.state.selectedCountry}`}>
+            <button style={{ height: 30, width: 30, borderRadius: 30 }}>
+              <i className="fa fa-search"></i>
+            </button>
+          </Link>
           {predictionComponent}
         </Fragment>
         <style jsx>
@@ -117,6 +131,7 @@ class Autocomplete extends React.Component {
               border: 1px solid #999;
               padding: 0.5rem;
               width: 300px;
+              color: black;
             }
 
             .null-predictions {

@@ -1,9 +1,26 @@
 html,
-body {
+body::before {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #ffffff;
+  max-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background: #15161e;
+}
+body:after {
+  content: "";
+  position: fixed;
+  background-image: url("/Lights.jpg");
+  background-size: cover;
+  opacity: 0.35;
+  z-index: -1;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
 }
 
 a {
@@ -15,11 +32,13 @@ a {
   box-sizing: border-box;
 }
 
-.header {
-  background-color: lightskyblue;
+.searchBody {
+  padding: 25vh 5% 50px;
+  text-align: center;
 }
+
 li:hover {
-  background-color: #d3d3d3;
+  background-color: #8d8d8d;
   cursor: pointer;
   font-weight: 700;
 }
@@ -36,6 +55,7 @@ li:hover {
   max-height: 300px;
   overflow-y: auto;
   padding-left: 0;
+  background-color: rgba(241, 247, 247, 0.39);
   width: calc(284px + 1rem);
 }
 

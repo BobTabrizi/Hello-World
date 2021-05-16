@@ -5,8 +5,8 @@ export default function Header() {
         className="headerTitle"
         style={{
           fontSize: 40,
-          alignContent: "center",
-          textAlign: "center",
+          alignContent: "flex-start",
+          marginLeft: "5%",
         }}
       >
         Around The World

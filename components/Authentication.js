@@ -20,7 +20,7 @@ export default function Authentication() {
       )}
       {!session && (
         <a href="#" onClick={handleSignin} className="btn-signin">
-          Sign in
+          Sign in with Spotify
         </a>
       )}
     </div>

@@ -1,11 +1,26 @@
 import Head from "next/head";
 import Header from "../../components/Header";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
 import { connectToDatabase } from "../../util/mongodb";
 import { useRouter } from "next/router";
+import SongButton from "../../components/SongButton";
+import React, { useState } from "react";
 
 export default function Playlist({ songs }) {
+  /*
+  const [hover, setHover] = useState("nothovered");
+
+  const showPlayButton = (e) => {
+    e.preventDefault();
+    console.log("lol");
+    setHover("hovered");
+  };
+  const hidePlayButton = (e) => {
+    e.preventDefault();
+    setHover("nothovered");
+  };
+*/
   //Base case for unsigned in user, open new window with url.
   //Return to this when user integration is implemented.
   const handleSongClick = async (e, url) => {
@@ -48,23 +63,23 @@ export default function Playlist({ songs }) {
       <Link href="/">
         <a>Back to Home</a>
       </Link>
-      <div className="flex flex-row flex-wrap">
+
+      <div className={styles.songContainer}>
         {songs &&
           songs.map((song) => (
-            <div className="flex-auto w-1/6 rounded overflow-hidden shadow-lg m-3">
+            <div className={styles.songItems}>
               <div
                 onClick={(e) =>
                   handleSongClick(e, song.track.external_urls.spotify)
                 }
-                style={{ fontSize: 30, color: "black" }}
               >
-                {song.track.name}
-                <img
-                  src={song.track.album.images[0].url}
-                  width="300"
-                  height="300"
-                  alt="Song Image"
-                ></img>
+                <SongButton song={song} />
+                <div className={styles.songDetails}>
+                  <div className={styles.trackName}>{song.track.name}</div>
+                  <div className={styles.artistName}>
+                    {song.track.artists[0].name}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
@@ -91,6 +106,7 @@ export async function getServerSideProps(context) {
       items: song.items,
     };
   });
+
   return {
     props: { songs: cleanData[0].items },
   };
