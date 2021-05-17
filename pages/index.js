@@ -66,7 +66,7 @@ export default function Home(props) {
           />
         </Head>
         <AuthHelper />
-        <button onClick={() => listRetriever}>Get playlist Data</button>
+        <button onClick={listRetriever}>Get playlist Data</button>
         <div className="searchBody">
           <Countrycomplete />
         </div>

@@ -83,6 +83,8 @@ export default async function handler(req, res) {
   //console.log(temp);
   pulledList.countryID = countryID;
   pulledList.url = url;
+  pulledList.spotifyOwned = true;
+  pulledList.genre = "Popular";
 
   delete pulledList.limit,
     delete pulledList.next,
@@ -91,4 +93,5 @@ export default async function handler(req, res) {
 
   const response = await db.collection("Playlists").insertOne(pulledList);
   res.json(response);
+  console.log(response);
 }
