@@ -12,6 +12,7 @@ import Countrycomplete from "../components/Countrycomplete";
 import tokenHelper from "../BackendFunctions/getToken";
 import listRetriever from "../BackendFunctions/getLists";
 import AuthHelper from "../BackendFunctions/AuthHelper";
+import DiscoverButton from "../components/DiscoverButton";
 
 export default function Home(props) {
   // const [country, setCountry] = useState(["", ""]);
@@ -70,6 +71,7 @@ export default function Home(props) {
         <div className="searchBody">
           <Countrycomplete />
         </div>
+        <DiscoverButton />
       </div>
     </>
   );

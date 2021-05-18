@@ -59,3 +59,8 @@
   position: absolute;
   z-index: 10;
 }
+
+.playlistHeader {
+  text-align: center;
+  color: aqua;
+}

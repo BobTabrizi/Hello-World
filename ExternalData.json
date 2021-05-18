@@ -575,18 +575,7 @@
             }
         ]
     },
-    {
-        "countryID": "ET",
-        "playlists":[
 
-            {
-                "type":"popular",
-                "name":"Ethipian Top Hits ET",
-                "url":"7dM4QqLCVFDWKNHlOtI1fB"
-
-            }
-        ]
-    },
     {
         "countryID": "FK",
         "playlists":[
@@ -2011,6 +2000,18 @@
                 "type":"popular",
                 "name":"Zimbabwean hits",
                 "url":"05IXeaADQlFlJEz6hkTCtj"
+
+            }
+        ]
+    },
+    {
+        "countryID": "ME",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Montenegro Musica",
+                "url":"7nbjydvg0rU1PgQXbcyom5"
 
             }
         ]

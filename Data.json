@@ -839,18 +839,6 @@
             }
         ]
     },
-    {
-        "countryID": "BD",
-        "playlists":[
-
-            {
-                "type":"popular",
-                "name":"Hot Hits Bangladesh",
-                "url":"37i9dQZF1DX794NyvTu6nv"
-
-            }
-        ]
-    },
 
     {
         "countryID": "CL",
@@ -911,17 +899,6 @@
 
             }
         ]
-    },
-    {
-        "countryID": "PS",
-        "playlists":[
-
-            {
-                "type":"popular",
-                "name":"Palestine Sounds",
-                "url":"37i9dQZF1DX6qjeIoR93rs"
-
-            }
-        ]
     }
+
 ]

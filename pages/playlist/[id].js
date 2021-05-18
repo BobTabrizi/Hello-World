@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import SongButton from "../../components/SongButton";
 import React, { useState } from "react";
 
-export default function Playlist({ songs }) {
+export default function Playlist({ songs, countryName }) {
   //Base case for unsigned in user, open new window with url.
   //Return to this when user integration is implemented.
   const handleSongClick = async (e, url) => {
@@ -27,7 +27,6 @@ export default function Playlist({ songs }) {
 
   return (
     <>
-      <Header />
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -50,6 +49,10 @@ export default function Playlist({ songs }) {
       <Link href="/">
         <a>Back to Home</a>
       </Link>
+
+      <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
+        {countryName}
+      </div>
 
       <div className={styles.songContainer}>
         {songs &&
@@ -81,20 +84,16 @@ export async function getServerSideProps(context) {
   //  console.log(id.id);
   const { db } = await connectToDatabase();
   const data = await db
-    .collection("Playlists")
+    .collection("Countries")
     .find({ countryID: id.id })
     .limit(1)
     .toArray();
 
-  const songs = JSON.parse(JSON.stringify(data));
-  const cleanData = songs.map((song) => {
-    return {
-      countryID: song.countryID,
-      items: song.items,
-    };
-  });
+  const resData = JSON.parse(JSON.stringify(data));
+  const songs = resData[0].Playlists[0].tracks;
+  const countryName = resData[0].countryName;
 
   return {
-    props: { songs: cleanData[0].items },
+    props: { songs: songs, countryName: countryName },
   };
 }
