@@ -10,8 +10,6 @@ import React, { useState, useEffect } from "react";
 export default function randomPlaylist({ songs }) {
   const [token, setToken] = useState("");
 
-  //Base case for unsigned in user, open new window with url.
-  //Return to this when user integration is implemented.
   const handleSongClick = async (e, uri) => {
     //window.open(url, "_blank");
 
@@ -51,13 +49,59 @@ export default function randomPlaylist({ songs }) {
   };
 
   useEffect(() => {
-    // console.log(window.location.hash.length);
-    //song.track.external_urls.spotify
-    // console.log(hashParams.access_token);
-    // let tempToken = localStorage.getItem("Token");
-    // setToken(tempToken);
-  });
+    //On first load, get details and create the playlist.
+    if (token === "") {
+      let uriArray = [];
 
+      for (let i = 0; i < songs.length; i++) {
+        uriArray.push(songs[i].track.uri);
+      }
+      let tempToken = localStorage.getItem("Token");
+      console.log(tempToken);
+      setToken(tempToken);
+      fetch("https://api.spotify.com/v1/me/", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${tempToken}`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then((resp) => resp.json())
+        .then((response) => {
+          let data = {
+            name: "Test API",
+            description: "This is a test",
+            public: true,
+          };
+
+          fetch(`https://api.spotify.com/v1/users/${response.id}/playlists`, {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${tempToken}`,
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((resp) => resp.json())
+            .then((response) => {
+              fetch(
+                `https://api.spotify.com/v1/playlists/${response.id}/tracks`,
+                {
+                  method: "POST",
+                  headers: {
+                    Authorization: `Bearer ${tempToken}`,
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                  },
+                  body: JSON.stringify(uriArray),
+                }
+              );
+            });
+        });
+    }
+  });
   return (
     <>
       <div className={styles.container}>
@@ -67,16 +111,6 @@ export default function randomPlaylist({ songs }) {
             href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
             rel="stylesheet"
           ></link>
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-          />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-          />
         </Head>
       </div>
       <Link href="/">
@@ -132,10 +166,6 @@ export async function getServerSideProps(context) {
     }
     randomSongs.push(resData[i].Playlists[0].tracks[rNum]);
   }
-
-  //const songs = resData[0].Playlists[0].tracks;
-  //const countryName = resData[0].countryName;
-
   return {
     props: { songs: randomSongs },
   };
