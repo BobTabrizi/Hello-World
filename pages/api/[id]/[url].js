@@ -54,7 +54,7 @@ const getSongs = (token, url) => {
   })
     .then((resp) => resp.json())
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       return response.tracks;
     })
     .catch((error) => {
@@ -81,14 +81,28 @@ export default async function handler(req, res) {
       console.log(error);
     });
   //console.log(temp);
-  pulledList.countryID = countryID;
-  pulledList.url = url;
 
+  pulledList.Playlists = [
+    {
+      genre: "Popular",
+      url: url,
+      href: pulledList.href,
+      totalTracks: pulledList.total,
+      spotifyOwned: false,
+      tracks: pulledList.items,
+    },
+  ];
+
+  console.log(pulledList.Playlists[0].tracks[0].track);
+  pulledList.countryID = countryID;
   delete pulledList.limit,
     delete pulledList.next,
     delete pulledList.previous,
     delete pulledList.offset;
+  delete pulledList.total;
+  delete pulledList.href;
+  delete pulledList.items;
 
-  const response = await db.collection("Playlists").insertOne(pulledList);
+  const response = await db.collection("Countries").insertOne(pulledList);
   res.json(response);
 }

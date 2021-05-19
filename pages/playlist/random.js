@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
 
-export default function Playlist({ songs, countryName }) {
+export default function randomPlaylist({ songs }) {
   const [token, setToken] = useState("");
 
   //Base case for unsigned in user, open new window with url.
@@ -54,8 +54,8 @@ export default function Playlist({ songs, countryName }) {
     // console.log(window.location.hash.length);
     //song.track.external_urls.spotify
     // console.log(hashParams.access_token);
-    let tempToken = localStorage.getItem("Token");
-    setToken(tempToken);
+    // let tempToken = localStorage.getItem("Token");
+    // setToken(tempToken);
   });
 
   return (
@@ -82,11 +82,6 @@ export default function Playlist({ songs, countryName }) {
       <Link href="/">
         <a>Back to Home</a>
       </Link>
-
-      <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
-        {countryName}
-      </div>
-
       <div className={styles.songContainer}>
         {songs &&
           songs.map((song) => (
@@ -114,14 +109,34 @@ export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
   const data = await db
     .collection("Countries")
-    .find({ countryID: id.id })
-    .limit(1)
+    .aggregate([{ $sample: { size: 50 } }])
     .toArray();
+
+  let randomSongs = [];
   const resData = JSON.parse(JSON.stringify(data));
-  const songs = resData[0].Playlists[0].tracks;
-  const countryName = resData[0].countryName;
+
+  for (let i = 0; i < 50; i++) {
+    let playListLength = resData[i].Playlists[0].tracks.length;
+    let rNum = Math.floor(Math.random() * (playListLength - 1));
+    let songName = resData[i].Playlists[0].tracks[rNum].track.name;
+
+    //Handling Potential duplicate tracks.
+    if (
+      randomSongs.filter((item) => item.track.name === songName).length !== 0
+    ) {
+      let shiftFactor = 0;
+      if (rNum < playListLength) shiftFactor = 1;
+      else if (rNum >= playListLength) shiftFactor = -1;
+      randomSongs.push(resData[i].Playlists[0].tracks[rNum + shiftFactor]);
+      continue;
+    }
+    randomSongs.push(resData[i].Playlists[0].tracks[rNum]);
+  }
+
+  //const songs = resData[0].Playlists[0].tracks;
+  //const countryName = resData[0].countryName;
 
   return {
-    props: { songs: songs, countryName: countryName },
+    props: { songs: randomSongs },
   };
 }

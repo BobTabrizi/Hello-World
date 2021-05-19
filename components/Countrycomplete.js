@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
-import PropTypes from "prop-types";
 import Countries from "../Countries";
 class Autocomplete extends React.Component {
   constructor(props) {

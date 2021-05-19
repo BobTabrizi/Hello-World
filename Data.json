@@ -814,5 +814,91 @@
 
             }
         ]
+    },
+    {
+        "countryID": "AD",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Viral 50 - Andorra",
+                "url":"37i9dQZEVXbMxjQJh4Um8T"
+
+            }
+        ]
+    },
+    {
+        "countryID": "BD",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Hot Hits Bangladesh",
+                "url":"37i9dQZF1DX794NyvTu6nv"
+
+            }
+        ]
+    },
+
+    {
+        "countryID": "CL",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Top 50 - Chile",
+                "url":"37i9dQZEVXbL0GavIqMTeb"
+
+            }
+        ]
+    },
+    {
+        "countryID": "CY",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Viral 50 - Cyprus",
+                "url":"37i9dQZEVXbNBxnXSWuAcX"
+
+            }
+        ]
+    },
+    {
+        "countryID": "IQ",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Iraqi Hits",
+                "url":"37i9dQZF1DX657Vh1lw2BF"
+
+            }
+        ]
+    },
+    {
+        "countryID": "JO",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Jordan Sounds",
+                "url":"37i9dQZF1DWUlTJaFU1ddx"
+
+            }
+        ]
+    },
+    {
+        "countryID": "LB",
+        "playlists":[
+
+            {
+                "type":"popular",
+                "name":"Lebanon Sounds",
+                "url":"37i9dQZF1DXaywRlmHaP59"
+
+            }
+        ]
     }
+
 ]
