@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import CountryData from "../Countries.json";
-export default function DiscoverButton() {
+export default function playlistGenerator() {
   const [randomCountry, setRandomCountry] = useState("");
 
   useEffect(() => {
@@ -13,8 +13,8 @@ export default function DiscoverButton() {
 
   return (
     <>
-      <Link href={`/playlist/${randomCountry}`}>
-        <button>Suprise Me</button>
+      <Link href={`/playlist/random`}>
+        <button>Make a Random Playlist</button>
       </Link>
     </>
   );

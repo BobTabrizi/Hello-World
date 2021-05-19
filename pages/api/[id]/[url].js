@@ -93,6 +93,7 @@ export default async function handler(req, res) {
     },
   ];
 
+  console.log(pulledList.Playlists[0].tracks[0].track);
   pulledList.countryID = countryID;
   delete pulledList.limit,
     delete pulledList.next,

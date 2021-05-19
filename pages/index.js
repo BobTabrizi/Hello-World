@@ -13,9 +13,10 @@ import tokenHelper from "../BackendFunctions/getToken";
 import listRetriever from "../BackendFunctions/getLists";
 import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/DiscoverButton";
+import PlaylistGenerator from "../components/PlaylistGenerator";
 
 export default function Home(props) {
-  // const [country, setCountry] = useState(["", ""]);
+  const [token, setToken] = useState("");
 
   console.log(props);
 
@@ -32,13 +33,17 @@ export default function Home(props) {
       // console.log(hashParams.access_token);
       localStorage.setItem("Token", hashParams.access_token);
       localStorage.setItem("TokenTime", Date.now);
+      setToken(hashParams.access_token);
+
+      //Avoids mandatory refresh. But double check if this is solid
+      window.history.replaceState(null, "", "/");
 
       //This causes a mandatory refresh due to SSR.
       //TODO See if there is a more efficient way.
-      window.location.replace("/");
+      // window.location.replace("/");
     }
 
-    console.log(localStorage.getItem("Token"));
+    console.log(token);
   });
 
   return (
@@ -66,12 +71,13 @@ export default function Home(props) {
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
         </Head>
-        <AuthHelper />
+        <AuthHelper token={token} />
         <button onClick={listRetriever}>Get playlist Data</button>
         <div className="searchBody">
           <Countrycomplete />
         </div>
         <DiscoverButton />
+        <PlaylistGenerator />
       </div>
     </>
   );
