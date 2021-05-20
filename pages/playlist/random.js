@@ -70,7 +70,7 @@ export default function randomPlaylist({ songs }) {
         .then((resp) => resp.json())
         .then((response) => {
           let data = {
-            name: "Test API",
+            name: "Test API V2",
             description: "This is a test",
             public: true,
           };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import CountryData from "../Countries.json";
+import styles from "../styles/Button.module.css";
 export default function DiscoverButton() {
   const [randomCountry, setRandomCountry] = useState("");
 
@@ -14,7 +15,7 @@ export default function DiscoverButton() {
   return (
     <>
       <Link href={`/playlist/${randomCountry}`}>
-        <button>Suprise Me</button>
+        <button className={styles.button}>I'm feeling adventurous</button>
       </Link>
     </>
   );

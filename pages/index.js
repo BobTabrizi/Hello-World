@@ -13,12 +13,13 @@ import tokenHelper from "../BackendFunctions/getToken";
 import listRetriever from "../BackendFunctions/getLists";
 import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/DiscoverButton";
-import PlaylistGenerator from "../components/PlaylistGenerator";
+import PlaylistGenerator from "../components/PlayListGenerator";
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
 
+//Line below to fix css issues with spotify button.
+config.autoAddCss = false;
 export default function Home(props) {
   const [token, setToken] = useState("");
-
-  console.log(props);
 
   useEffect(() => {
     // console.log(window.location.hash.length);
@@ -41,8 +42,12 @@ export default function Home(props) {
       //This causes a mandatory refresh due to SSR.
       //TODO See if there is a more efficient way.
       // window.location.replace("/");
+    } else {
+      if (localStorage.getItem("token")) {
+        let tempToken = localStorage.getItem("Token");
+        setToken(tempToken);
+      }
     }
-
     console.log(token);
   });
 
@@ -60,24 +65,14 @@ export default function Home(props) {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           ></link>
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-          />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-          />
+          <style>{dom.css()}</style>
         </Head>
         <AuthHelper token={token} />
-        <button onClick={listRetriever}>Get playlist Data</button>
         <div className="searchBody">
           <Countrycomplete />
+          <DiscoverButton />
+          <PlaylistGenerator />
         </div>
-        <DiscoverButton />
-        <PlaylistGenerator />
       </div>
     </>
   );
