@@ -6,6 +6,7 @@ export default function AuthHelper(props) {
   const [token, setToken] = useState("");
 
   useEffect(() => {
+    //console.log(localStorage.getItem("Token"));
     if (localStorage.getItem("Token")) {
       let tempToken = localStorage.getItem("Token");
       setToken(tempToken);

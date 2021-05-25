@@ -15,40 +15,60 @@ import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/DiscoverButton";
 import PlaylistGenerator from "../components/PlayListGenerator";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
-
 //Line below to fix css issues with spotify button.
 config.autoAddCss = false;
 export default function Home(props) {
   const [token, setToken] = useState("");
 
   useEffect(() => {
-    // console.log(window.location.hash.length);
-    if (window.location.hash.length > 10) {
+    //console.log(window.location.search.length);
+    if (window.location.search.length > 10) {
       let hashParams = {};
       let a,
         b = /([^&;=]+)=?([^&;]*)/g,
-        c = window.location.hash.substring(1);
+        c = window.location.search.substring(1);
       while ((a = b.exec(c))) {
         hashParams[a[1]] = decodeURIComponent(a[2]);
       }
-      // console.log(hashParams.access_token);
-      localStorage.setItem("Token", hashParams.access_token);
-      localStorage.setItem("TokenTime", Date.now);
-      setToken(hashParams.access_token);
 
-      //Avoids mandatory refresh. But double check if this is solid
+      const fetchToken = async () => {
+        let token = await fetch(
+          `http://localhost:3000/api/auth/getToken?codeValue=${hashParams.code}`
+        );
+        let tokenData = await token.json();
+        localStorage.setItem("Token", tokenData.access_token);
+        localStorage.setItem("RefreshToken", tokenData.refresh_token);
+        let currTime = Date.now();
+        localStorage.setItem("TokenTime", currTime);
+        setToken(tokenData.access_token);
+      };
+
+      fetchToken();
       window.history.replaceState(null, "", "/");
+    } else if (localStorage.getItem("TokenTime")) {
+      let tempTime = localStorage.getItem("TokenTime");
+      const Hour = 1000 * 60 * 60;
+      let HourAgo = Date.now() - Hour;
+      if (tempTime < HourAgo) {
+        console.log("expiration reached");
+        let refToken = localStorage.getItem("RefreshToken");
 
-      //This causes a mandatory refresh due to SSR.
-      //TODO See if there is a more efficient way.
-      // window.location.replace("/");
-    } else {
-      if (localStorage.getItem("token")) {
-        let tempToken = localStorage.getItem("Token");
-        setToken(tempToken);
+        localStorage.removeItem("Token");
+        localStorage.removeItem("TokenTime");
+
+        const fetchRefreshedToken = async () => {
+          let refreshToken = await fetch(
+            `http://localhost:3000/api/auth/refreshToken?tokenValue=${refToken}`
+          );
+          let tokenInfo = await refreshToken.json();
+          localStorage.setItem("Token", tokenInfo);
+          let currTime = Date.now();
+          localStorage.setItem("TokenTime", currTime);
+          setToken(tokenInfo.access_token);
+        };
+        fetchRefreshedToken();
       }
     }
-    console.log(token);
   });
 
   return (
@@ -73,16 +93,16 @@ export default function Home(props) {
           <DiscoverButton />
           <PlaylistGenerator />
         </div>
+        <button onClick={listRetriever}>Get Playlist</button>
       </div>
     </>
   );
 }
 
 export async function getServerSideProps(context) {
-  // let token = await tokenHelper();
+  //let token = await tokenHelper();
 
   let images = [];
-  let temp;
   // console.log(context);
   //for (var key in Data) {
   /*
@@ -100,8 +120,9 @@ export async function getServerSideProps(context) {
 
   // }
 */
-  let tempr = "placeholder";
+
+  let temp = "Temp";
   return {
-    props: { temp: tempr },
+    props: { temp: temp },
   };
 }

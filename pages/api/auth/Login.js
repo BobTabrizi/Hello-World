@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     "user-read-currently-playing user-modify-playback-state user-read-playback-state user-library-modify user-library-read playlist-modify-private playlist-modify-public"
   );
   let encodedRedirect = encodeURIComponent(`http://localhost:3000/`);
-  let url = `https://accounts.spotify.com/authorize?response_type=token&client_id=${encodedClientID}&scope=${encodedScope}&redirect_uri=${encodedRedirect}&show_dialog=true`;
+  let url = `https://accounts.spotify.com/authorize?response_type=code&client_id=${encodedClientID}&scope=${encodedScope}&redirect_uri=${encodedRedirect}&show_dialog=true`;
 
   res.redirect(url);
 }

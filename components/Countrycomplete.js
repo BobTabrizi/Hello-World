@@ -129,7 +129,7 @@ class Autocomplete extends React.Component {
             input {
               border: 1px solid #999;
               padding: 0.5rem;
-              width: 300px;
+              width: 305px;
               color: black;
             }
 
