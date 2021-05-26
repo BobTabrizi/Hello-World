@@ -1,0 +1,18 @@
+.pageHeader {
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.inputContainer {
+  flex-direction: row;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding: 25vh 5% 10px;
+}
+
+.inputs {
+  display: flex;
+  margin: 1%;
+}

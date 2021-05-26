@@ -13,14 +13,16 @@ import tokenHelper from "../BackendFunctions/getToken";
 import listRetriever from "../BackendFunctions/getLists";
 import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/DiscoverButton";
-import PlaylistGenerator from "../components/PlayListGenerator";
+import RandomPlaylist from "../components/RandomPlaylist";
+import CustomPlaylist from "../components/CustomPlaylist";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 //Line below to fix css issues with spotify button.
 config.autoAddCss = false;
 export default function Home(props) {
   const [token, setToken] = useState("");
-
+  const [country, setCountry] = useState(["", ""]);
   useEffect(() => {
+    console.log(country);
     //console.log(window.location.search.length);
     if (window.location.search.length > 10) {
       let hashParams = {};
@@ -89,11 +91,13 @@ export default function Home(props) {
         </Head>
         <AuthHelper token={token} />
         <div className="searchBody">
-          <Countrycomplete />
-          <DiscoverButton />
-          <PlaylistGenerator />
+          <Countrycomplete updateCountry={setCountry} linkRef={"/playlist/"} />
         </div>
-        <button onClick={listRetriever}>Get Playlist</button>
+        <div className="functionButtons">
+          <DiscoverButton />
+          <RandomPlaylist />
+          <CustomPlaylist />
+        </div>
       </div>
     </>
   );

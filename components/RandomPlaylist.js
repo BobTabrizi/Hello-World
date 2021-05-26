@@ -3,7 +3,7 @@ import Link from "next/link";
 import CountryData from "../Countries.json";
 import { render } from "react-dom";
 import styles from "../styles/GeneratorButton.module.css";
-export default function playlistGenerator() {
+export default function randomPlaylist() {
   const [randomCountry, setRandomCountry] = useState("");
   const [token, setToken] = useState("");
 

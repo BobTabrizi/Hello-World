@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import Countries from "../Countries";
+import styles from "../styles/CountryComplete.module.css";
 class Autocomplete extends React.Component {
   constructor(props) {
     super(props);
@@ -38,12 +39,12 @@ class Autocomplete extends React.Component {
       selectedCountry: e.currentTarget.getAttribute("value"),
       predictionShown: false,
     });
-    /*
-    this.props.updateCountry([
-      e.currentTarget.innerText,
-      e.currentTarget.getAttribute("value"),
-    ]);
-    */
+    if (this.props.updateCountry) {
+      this.props.updateCountry([
+        e.currentTarget.innerText,
+        e.currentTarget.getAttribute("value"),
+      ]);
+    }
   };
 
   render() {
@@ -63,7 +64,7 @@ class Autocomplete extends React.Component {
     if (predictionShown && userInput) {
       if (filteredPredictions.length) {
         predictionComponent = (
-          <div className="predictionList">
+          <div className={styles.predictionList}>
             <ul>
               {filteredPredictions.map((prediction, idx) => {
                 let className = "prediction-inactive";
@@ -103,74 +104,30 @@ class Autocomplete extends React.Component {
         );
       }
     }
-
+    let pageRef;
+    if (this.props.linkRef) {
+      let customRef = this.props.linkRef;
+      pageRef = `${customRef}${this.state.selectedCountry}`;
+    }
     return (
       <div>
         <Fragment>
           <input
             type="text"
-            placeholder="Find a Country"
+            placeholder="Select a Country"
             onChange={onTextChanged}
             value={userInput}
+            className={styles.input}
           />
-          <Link href={`/playlist/${this.state.selectedCountry}`}>
-            <button style={{ height: 30, width: 30, borderRadius: 30 }}>
-              <i className="fa fa-search"></i>
-            </button>
-          </Link>
+          {this.props.linkRef && (
+            <Link href={pageRef}>
+              <button style={{ height: 30, width: 30, borderRadius: 30 }}>
+                <i className="fa fa-search"></i>
+              </button>
+            </Link>
+          )}
           {predictionComponent}
         </Fragment>
-        <style jsx>
-          {`
-            body {
-              font-family: sans-serif;
-            }
-
-            input {
-              border: 1px solid #999;
-              padding: 0.5rem;
-              width: 305px;
-              color: black;
-            }
-
-            .null-predictions {
-              color: #999;
-              padding: 0.5rem;
-            }
-
-            .predictionList {
-              border: 1px solid #999;
-              border-top-width: 0;
-              list-style: none;
-              margin-top: 0;
-              max-height: 143px;
-              overflow-y: auto;
-              padding-left: 0;
-              width: calc(300px + 1rem);
-            }
-
-            .predictionList li {
-              padding: 0.5rem;
-            }
-
-            li:hover {
-              background-color: #d3d3d3;
-              cursor: pointer;
-              font-weight: 700;
-            }
-
-            .prediction-active,
-            .predictionList {
-              background-color: #d3d3d3;
-              cursor: pointer;
-              font-weight: 700;
-            }
-
-            .predictionList li:not(:last-of-type) {
-              border-bottom: 1px solid #999;
-            }
-          `}
-        </style>
       </div>
     );
   }
