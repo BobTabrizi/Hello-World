@@ -63,7 +63,7 @@ export default function Home(props) {
             `http://localhost:3000/api/auth/refreshToken?tokenValue=${refToken}`
           );
           let tokenInfo = await refreshToken.json();
-          localStorage.setItem("Token", tokenInfo);
+          localStorage.setItem("Token", tokenInfo.access_token);
           let currTime = Date.now();
           localStorage.setItem("TokenTime", currTime);
           setToken(tokenInfo.access_token);
