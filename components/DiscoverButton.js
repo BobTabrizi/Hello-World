@@ -14,7 +14,7 @@ export default function DiscoverButton() {
 
   return (
     <>
-      <Link href={`/playlist/${randomCountry}`}>
+      <Link href={`/playlist/${randomCountry}?random=true`}>
         <button className={styles.button}>I'm feeling adventurous</button>
       </Link>
     </>

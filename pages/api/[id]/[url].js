@@ -67,9 +67,10 @@ export default async function handler(req, res) {
 
   const countryID = req.query.id;
   const url = req.query.url;
-  //Find the corresponding url and pass it
-  // const url = "";
 
+  //Find the corresponding url and pass it
+
+  /*
   let pulledList = await setAccessToken()
     .then((token) => {
       return getSongs(token, url);
@@ -104,5 +105,7 @@ export default async function handler(req, res) {
   delete pulledList.items;
 
   const response = await db.collection("Countries").insertOne(pulledList);
+  */
+
   res.json(response);
 }

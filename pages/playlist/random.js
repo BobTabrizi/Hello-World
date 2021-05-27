@@ -5,13 +5,16 @@ import Link from "next/link";
 import { connectToDatabase } from "../../util/mongodb";
 import { useRouter } from "next/router";
 import SongButton from "../../components/SongButton";
+import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
 
 export default function randomPlaylist({ songs }) {
   const [token, setToken] = useState("");
 
   const handleSongClick = async (e, uri) => {
-    //window.open(url, "_blank");
+    fetch(
+      `http://localhost:3000/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
+    );
 
     fetch("https://api.spotify.com/v1/me/player/devices", {
       method: "GET",
@@ -51,55 +54,7 @@ export default function randomPlaylist({ songs }) {
   useEffect(() => {
     //On first load, get details and create the playlist.
     if (token === "") {
-      let uriArray = [];
-
-      for (let i = 0; i < songs.length; i++) {
-        uriArray.push(songs[i].track.uri);
-      }
-      let tempToken = localStorage.getItem("Token");
-      console.log(tempToken);
-      setToken(tempToken);
-      fetch("https://api.spotify.com/v1/me/", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${tempToken}`,
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
-        .then((resp) => resp.json())
-        .then((response) => {
-          let data = {
-            name: "Test API V5",
-            description: "This is a test",
-            public: true,
-          };
-
-          fetch(`https://api.spotify.com/v1/users/${response.id}/playlists`, {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${tempToken}`,
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify(data),
-          })
-            .then((resp) => resp.json())
-            .then((response) => {
-              fetch(
-                `https://api.spotify.com/v1/playlists/${response.id}/tracks`,
-                {
-                  method: "POST",
-                  headers: {
-                    Authorization: `Bearer ${tempToken}`,
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                  },
-                  body: JSON.stringify(uriArray),
-                }
-              );
-            });
-        });
+      ListCreator("Random Countries", songs);
     }
   });
   return (
@@ -137,7 +92,6 @@ export default function randomPlaylist({ songs }) {
 }
 
 export async function getServerSideProps(context) {
-  //console.log(context.query);
   const id = context.query;
   //  console.log(id.id);
   const { db } = await connectToDatabase();

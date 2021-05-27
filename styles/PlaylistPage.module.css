@@ -21,11 +21,89 @@
   position: relative;
 }
 
+@media only screen and (min-width: 900px) {
+  .songDetails {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(8, 28, 34);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+    margin-left: 4%;
+    position: relative;
+    -webkit-transform: translateY(-50%);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .songDetails {
+    flex: 100%;
+  }
+
+  .songItems {
+    width: 25%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    display: flex;
+    padding: 1rem 40px 1rem 0;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .songDetails {
+    flex: 100%;
+  }
+
+  .songItems {
+    width: 33%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    display: flex;
+    padding: 1rem 40px 1rem 0;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .songDetails {
+    flex: 100%;
+  }
+
+  .songItems {
+    width: 50%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    display: flex;
+    padding: 1rem 40px 1rem 0;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .songDetails {
+    display: flex;
+  }
+
+  .songItems {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    padding: 1rem 40px 1rem 0;
+    position: relative;
+  }
+}
+
 .songDetails {
   display: flex;
   flex-direction: column;
   background-color: rgb(8, 28, 34);
-  width: 70%;
   padding-top: 10px;
   padding-left: 10px;
   padding-bottom: 10px;

@@ -22,7 +22,7 @@ export default function Home(props) {
   const [token, setToken] = useState("");
   const [country, setCountry] = useState(["", ""]);
   useEffect(() => {
-    console.log(country);
+    //console.log(country);
     //console.log(window.location.search.length);
     if (window.location.search.length > 10) {
       let hashParams = {};

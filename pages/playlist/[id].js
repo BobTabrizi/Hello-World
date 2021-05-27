@@ -7,13 +7,24 @@ import { useRouter } from "next/router";
 import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
 
-export default function Playlist({ songs, countryName }) {
+export default function Playlist({ songs, countryName, countryID }) {
   const [token, setToken] = useState("");
 
   //Base case for unsigned in user, open new window with url.
   //Return to this when user integration is implemented.
   const handleSongClick = async (e, uri) => {
     //window.open(url, "_blank");
+
+    //Logging SongPlay count
+    if (searchTypeRandom === true)
+      fetch(
+        `http://localhost:3000/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
+      );
+    else {
+      fetch(
+        `http://localhost:3000/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
+      );
+    }
 
     fetch("https://api.spotify.com/v1/me/player/devices", {
       method: "GET",
@@ -109,9 +120,32 @@ export default function Playlist({ songs, countryName }) {
 
 export async function getServerSideProps(context) {
   //console.log(context.query);
-  const id = context.query;
-  //  console.log(id.id);
   const { db } = await connectToDatabase();
+  const id = context.query;
+  if (!context.query.random) {
+    //Logging Searched Countries
+    db.collection("testCollection").findOneAndUpdate(
+      { countryID: id.id },
+      {
+        $inc: {
+          "Data.searchCountries.searches": 1,
+        },
+      },
+      { remove: false }
+    );
+  } else {
+    //Logging Randomly Discovered Countries
+    db.collection("testCollection").findOneAndUpdate(
+      { countryID: id.id },
+      {
+        $inc: {
+          "Data.randomCountries.searches": 1,
+        },
+      },
+      { remove: false }
+    );
+  }
+
   const data = await db
     .collection("Countries")
     .find({ countryID: id.id })
@@ -122,6 +156,10 @@ export async function getServerSideProps(context) {
   const countryName = resData[0].countryName;
 
   return {
-    props: { songs: songs, countryName: countryName },
+    props: {
+      songs: songs,
+      countryName: countryName,
+      countryID: id.id,
+    },
   };
 }
