@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import CountryData from "../Countries.json";
-import { render } from "react-dom";
+import CountryData from "../../Data/Countries.json";
 import styles from "../styles/GeneratorButton.module.css";
-export default function CustomPlaylist() {
+export default function randomPlaylist() {
+  const [randomCountry, setRandomCountry] = useState("");
   const [token, setToken] = useState("");
 
   useEffect(() => {
+    if (randomCountry === "") {
+      let rNum = Math.floor(Math.random() * 243);
+      setRandomCountry(CountryData[rNum].code);
+    }
     let tempToken = localStorage.getItem("Token");
     setToken(tempToken);
   });
@@ -16,8 +20,8 @@ export default function CustomPlaylist() {
   } else if (token.length > 1) {
     return (
       <>
-        <Link href={`/playlist/CustomPlaylist`}>
-          <button className={styles.button}>Make a Customized Playlist</button>
+        <Link href={`/playlist/random`}>
+          <button className={styles.button}>Make a Random Playlist</button>
         </Link>
       </>
     );

@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Header from "../../components/Header";
 import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
-import { connectToDatabase } from "../../util/mongodb";
+import { connectToDatabase } from "../../../util/mongodb";
 import { useRouter } from "next/router";
 import SongButton from "../../components/SongButton";
 import ListCreator from "../../BackendFunctions/CreateList";

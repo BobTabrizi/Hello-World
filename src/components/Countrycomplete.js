@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
-import Countries from "../Countries";
+import Countries from "../../Data/Countries.json";
 import styles from "../styles/CountryComplete.module.css";
 class Autocomplete extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import CountryData from "../Countries.json";
+import CountryData from "../../Data/Countries.json";
 import styles from "../styles/GeneratorButton.module.css";
 export default function DiscoverButton() {
   const [randomCountry, setRandomCountry] = useState("");

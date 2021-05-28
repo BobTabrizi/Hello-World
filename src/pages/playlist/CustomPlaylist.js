@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Header from "../../components/Header";
 import styles from "../../styles/CustomPlaylist.module.css";
 import Link from "next/link";
 import SongButton from "../../components/SongButton";

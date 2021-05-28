@@ -1,12 +1,10 @@
 import Head from "next/head";
-import Header from "../../components/Header";
 import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
-import { connectToDatabase } from "../../util/mongodb";
+import { connectToDatabase } from "../../../util/mongodb";
 import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
 import ListHelper from "../../BackendFunctions/GetLists";
-import { TemporaryCredentials } from "aws-sdk";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
 export default function GeneratedList({ countryCode }) {
   const [token, setToken] = useState("");
@@ -30,8 +28,9 @@ export default function GeneratedList({ countryCode }) {
       let songArray;
       songArray = await ListHelper(countryCode);
       setSectionedLists(songArray);
-      let countries = songArray[3];
-      songArray.length = 3;
+      let countries = songArray[songArray.length - 1];
+      // ListCreator(countries, mergedSongArray);
+      songArray.length = songArray.length - 1;
       let mergedSongArray = songArray.flat(1);
       setSongs(mergedSongArray);
       let trackURI = [];
@@ -39,7 +38,6 @@ export default function GeneratedList({ countryCode }) {
         trackURI.push(`${mergedSongArray[i].track.uri}`);
       }
       setUriArray(trackURI);
-      // ListCreator(countries, mergedSongArray);
     }
     setToken(tempToken);
   });

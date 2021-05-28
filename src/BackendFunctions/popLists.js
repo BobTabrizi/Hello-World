@@ -1,5 +1,5 @@
-import Data from "../Data.json";
-//import Data from "../ExternalData.json";
+import Data from "../../Data/Data.json";
+//import Data from "../../Data/ExternalData.json";
 export default function popLists() {
   const getLists = async () => {
     //  for (var key in Data) {

@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../../../util/mongodb";
+import { connectToDatabase } from "../../../../util/mongodb";
 var AccessTokenSet = false;
 var AccessToken = null;
 

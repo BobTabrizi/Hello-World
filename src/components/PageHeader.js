@@ -1,4 +1,4 @@
-import worlds from "../HelloWorlds.json";
+import worlds from "../../Data/HelloWorlds.json";
 import React, { useState, useEffect } from "react";
 
 export default function Header() {

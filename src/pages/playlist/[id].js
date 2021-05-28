@@ -1,13 +1,10 @@
 import Head from "next/head";
-import Header from "../../components/Header";
 import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
-import { connectToDatabase } from "../../util/mongodb";
-import { useRouter } from "next/router";
+import { connectToDatabase } from "../../../util/mongodb";
 import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
-import countries from "../../Countries.json";
-import countryMap from "../../countryMap.json";
+import countryMap from "../../../Data/countryMap.json";
 import listHelper from "../../BackendFunctions/GetLists";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
 export default function Playlist({ countryID, searchTypeRandom, countryName }) {
