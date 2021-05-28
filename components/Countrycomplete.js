@@ -100,7 +100,7 @@ class Autocomplete extends React.Component {
         );
       } else {
         predictionComponent = (
-          <div className="null-predictions">No Countries Found</div>
+          <div className={styles.nullpredictions}>No Countries Found</div>
         );
       }
     }

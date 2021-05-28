@@ -10,7 +10,7 @@ import Data from "../Data.json";
 import React, { useEffect, useState } from "react";
 import Countrycomplete from "../components/Countrycomplete";
 import tokenHelper from "../BackendFunctions/getToken";
-import listRetriever from "../BackendFunctions/getLists";
+import listRetriever from "../BackendFunctions/popLists";
 import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/DiscoverButton";
 import RandomPlaylist from "../components/RandomPlaylist";
@@ -98,6 +98,7 @@ export default function Home(props) {
           <RandomPlaylist />
           <CustomPlaylist />
         </div>
+        <button onClick={listRetriever}> Get Data</button>
       </div>
     </>
   );

@@ -39,7 +39,10 @@
   color: black;
 }
 
-.null-predictions {
-  color: #999;
+.nullpredictions {
+  color: white;
   padding: 0.5rem;
+  position: absolute;
+  text-align: center;
+  margin-left: 9%;
 }

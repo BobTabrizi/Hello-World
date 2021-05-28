@@ -4,64 +4,44 @@ import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
 import { connectToDatabase } from "../../util/mongodb";
 import SongButton from "../../components/SongButton";
-import Countrycomplete from "../../components/Countrycomplete";
 import React, { useState, useEffect } from "react";
+import ListHelper from "../../BackendFunctions/GetLists";
 import { TemporaryCredentials } from "aws-sdk";
-import ListCreator from "../../BackendFunctions/CreateList";
-export default function GeneratedList({
-  songs,
-  countries,
-  sectionedSongs,
-  countryCode,
-}) {
+import DeviceManager from "../../BackendFunctions/DeviceManager";
+export default function GeneratedList({ countryCode }) {
   const [token, setToken] = useState("");
+  const [sectionedLists, setSectionedLists] = useState([]);
+  const [songs, setSongs] = useState([]);
+  const [uriArr, setUriArray] = useState([]);
+  const [pageHeading, setPageHeading] = useState("Custom Playlist");
 
-  const handleSongClick = async (e, uri, selectedCountry) => {
+  const handleSongClick = async (e, trackNumber, selectedCountryID) => {
     //Logging SongPlay count
     fetch(
-      `http://localhost:3000/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountry}`
+      `http://localhost:3000/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
     );
-
-    fetch("https://api.spotify.com/v1/me/player/devices", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((response) => {
-        let index = 0;
-        while (response.devices[index]) {
-          if (!response.devices[index].is_restricted) {
-            return response.devices[index].id;
-          }
-        }
-      })
-      .then((device) => {
-        fetch("https://api.spotify.com/v1/me/player/play", {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          params: {
-            device_id: device,
-          },
-          data: {
-            context_uri: uri,
-          },
-        });
-      });
+    DeviceManager(token, uriArr, trackNumber);
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     //On first load, get details and create the playlist.
+    let tempToken = localStorage.getItem("Token");
     if (token === "") {
-      ListCreator(countries, songs);
+      let songArray;
+      songArray = await ListHelper(countryCode);
+      setSectionedLists(songArray);
+      let countries = songArray[3];
+      songArray.length = 3;
+      let mergedSongArray = songArray.flat(1);
+      setSongs(mergedSongArray);
+      let trackURI = [];
+      for (let i = 0; i < mergedSongArray.length; i++) {
+        trackURI.push(`${mergedSongArray[i].track.uri}`);
+      }
+      setUriArray(trackURI);
+      // ListCreator(countries, mergedSongArray);
     }
+    setToken(tempToken);
   });
   return (
     <>
@@ -77,52 +57,15 @@ export default function GeneratedList({
       <Link href="/">
         <a>Back to Home</a>
       </Link>
-      <div className={styles.pageHeader}>Here are your Playlists</div>
+      <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
+        {pageHeading}
+      </div>
+
       <div className={styles.songContainer}>
-        {sectionedSongs[0] &&
-          sectionedSongs[0].map((song) => (
-            <div className={styles.songItems}>
-              <div
-                onClick={(e) =>
-                  handleSongClick(e, song.track.uri, countryCode[0])
-                }
-              >
-                <SongButton song={song} />
-                <div className={styles.songDetails}>
-                  <div className={styles.trackName}>{song.track.name}</div>
-                  <div className={styles.artistName}>
-                    {song.track.artists[0].name}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        {sectionedSongs[1] &&
-          sectionedSongs[1].map((song) => (
-            <div className={styles.songItems}>
-              <div
-                onClick={(e) =>
-                  handleSongClick(e, song.track.uri, countryCode[1])
-                }
-              >
-                <SongButton song={song} />
-                <div className={styles.songDetails}>
-                  <div className={styles.trackName}>{song.track.name}</div>
-                  <div className={styles.artistName}>
-                    {song.track.artists[0].name}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        {sectionedSongs[2] &&
-          sectionedSongs[2].map((song) => (
-            <div className={styles.songItems}>
-              <div
-                onClick={(e) =>
-                  handleSongClick(e, song.track.uri, countryCode[2])
-                }
-              >
+        {songs &&
+          songs.map((song, index) => (
+            <div className={styles.songItems} key={index}>
+              <div onClick={(e) => handleSongClick(e, index, song.countryID)}>
                 <SongButton song={song} />
                 <div className={styles.songDetails}>
                   <div className={styles.trackName}>{song.track.name}</div>
@@ -141,49 +84,20 @@ export async function getServerSideProps(context) {
   // console.log(context.query);
   const { db } = await connectToDatabase();
   let countryList = context.query.countries.split(" ");
-  //console.log(countryList);
-
   for (let i = 0; i < countryList.length; i++) {
     db.collection("testCollection").findOneAndUpdate(
       { countryID: countryList[i] },
       {
         $inc: {
-          "Data.customCountries.searches": 1,
+          "Data.customCountries.appearances": 1,
         },
       },
       { remove: false }
     );
   }
-  let finalData = [],
-    sectionData = [],
-    tempData = [],
-    countryNames = [];
-
-  const data = await db
-    .collection("Countries")
-    .find({ countryID: { $in: countryList } })
-    .limit(3)
-    .toArray();
-  const resData = JSON.parse(JSON.stringify(data));
-  //console.log(resData);
-  for (let i = 0; i < countryList.length; i++) {
-    let playListLength = resData[i].Playlists[0].tracks.length;
-    countryNames.push(resData[i].countryName);
-    //let rNum = Math.floor(Math.random() * (playListLength - 1));
-    for (let j = 0; j < 30; j++) {
-      finalData.push(resData[i].Playlists[0].tracks[j]);
-      tempData.push(resData[i].Playlists[0].tracks[j]);
-    }
-    sectionData[i] = tempData;
-    tempData = [];
-  }
-
   return {
     props: {
-      songs: finalData,
-      countries: countryNames,
       countryCode: countryList,
-      sectionedSongs: sectionData,
     },
   };
 }

@@ -70,7 +70,6 @@ export default async function handler(req, res) {
 
   //Find the corresponding url and pass it
 
-  /*
   let pulledList = await setAccessToken()
     .then((token) => {
       return getSongs(token, url);
@@ -89,7 +88,7 @@ export default async function handler(req, res) {
       url: url,
       href: pulledList.href,
       totalTracks: pulledList.total,
-      spotifyOwned: false,
+      spotifyOwned: true,
       tracks: pulledList.items,
     },
   ];
@@ -104,8 +103,15 @@ export default async function handler(req, res) {
   delete pulledList.href;
   delete pulledList.items;
 
-  const response = await db.collection("Countries").insertOne(pulledList);
-  */
+  const response = await db.collection("testCollection").update(
+    { countryID: countryID },
+    {
+      $set: {
+        Playlists: pulledList.Playlists,
+      },
+    }
+  );
+  //const response = await db.collection("testCollection").insertOne(pulledList);
 
   res.json(response);
 }

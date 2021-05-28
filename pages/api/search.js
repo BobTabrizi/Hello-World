@@ -4,23 +4,23 @@ export default async function handler(req, res) {
   const { db } = await connectToDatabase();
 
   const data = await db
-    .collection("Playlists")
+    .collection("testCollection")
     .aggregate([
       {
         $search: {
           search: {
             query: req.query.term,
-            path: ["countryID"],
+            path: ["countryID", "countryName"],
           },
         },
       },
       {
         $project: {
-          items: 1,
+          items: 2,
         },
       },
       {
-        $limit: 1,
+        $limit: 2,
       },
     ])
     .toArray();
