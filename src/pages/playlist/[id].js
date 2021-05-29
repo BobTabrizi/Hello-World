@@ -7,9 +7,11 @@ import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import listHelper from "../../BackendFunctions/GetLists";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
+import SkeletonElement from "../../Skeletons/SkeletonElement";
+import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
 export default function Playlist({ countryID, searchTypeRandom, countryName }) {
   const [token, setToken] = useState("");
-  const [songs, setSongs] = useState([]);
+  const [songs, setSongs] = useState(null);
   const [uriArr, setUriArray] = useState([]);
 
   const handleSongClick = async (e, trackNumber) => {
@@ -29,8 +31,12 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
 
   useEffect(async () => {
     let tempToken = localStorage.getItem("Token");
+
+    //Boolean for helper function.
+    let isRandomPlaylist = false;
     if (token === "") {
-      const result = await listHelper([countryID]);
+      setToken(tempToken);
+      const result = await listHelper([countryID], isRandomPlaylist);
       let trackURI = [];
       for (let i = 0; i < result[0].Playlists[0].tracks.length; i++) {
         trackURI.push(`${result[0].Playlists[0].tracks[i].track.uri}`);
@@ -39,7 +45,6 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
       setSongs(songs);
       setUriArray(trackURI);
     }
-    setToken(tempToken);
   });
 
   return (
@@ -59,7 +64,14 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
       <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
         {countryName}
       </div>
+
       <div className={styles.songContainer}>
+        {!songs &&
+          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+            <div className={styles.songItems} key={n}>
+              <SkeletonSongItem key={n} />
+            </div>
+          ))}
         {songs &&
           songs.map((song, index) => (
             <div className={styles.songItems} key={index}>

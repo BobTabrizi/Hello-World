@@ -6,10 +6,11 @@ import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
 import ListHelper from "../../BackendFunctions/GetLists";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
+import SkeletonElement from "../../Skeletons/SkeletonElement";
+import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
 export default function GeneratedList({ countryCode }) {
   const [token, setToken] = useState("");
-  const [sectionedLists, setSectionedLists] = useState([]);
-  const [songs, setSongs] = useState([]);
+  const [songs, setSongs] = useState(null);
   const [uriArr, setUriArray] = useState([]);
   const [pageHeading, setPageHeading] = useState("Custom Playlist");
 
@@ -25,9 +26,9 @@ export default function GeneratedList({ countryCode }) {
     //On first load, get details and create the playlist.
     let tempToken = localStorage.getItem("Token");
     if (token === "") {
-      let songArray;
-      songArray = await ListHelper(countryCode);
-      setSectionedLists(songArray);
+      setToken(tempToken);
+      let isRandomPlaylist = false;
+      let songArray = await ListHelper(countryCode, isRandomPlaylist);
       let countries = songArray[songArray.length - 1];
       // ListCreator(countries, mergedSongArray);
       songArray.length = songArray.length - 1;
@@ -39,7 +40,6 @@ export default function GeneratedList({ countryCode }) {
       }
       setUriArray(trackURI);
     }
-    setToken(tempToken);
   });
   return (
     <>
@@ -60,6 +60,12 @@ export default function GeneratedList({ countryCode }) {
       </div>
 
       <div className={styles.songContainer}>
+        {!songs &&
+          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+            <div className={styles.songItems} key={n}>
+              <SkeletonSongItem key={n} />
+            </div>
+          ))}
         {songs &&
           songs.map((song, index) => (
             <div className={styles.songItems} key={index}>

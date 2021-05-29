@@ -61,3 +61,165 @@ a {
   margin-right: 1%;
   text-align: center;
 }
+.skeleton {
+  background-color: rgb(8, 28, 34);
+  margin: 10px 0;
+  border-radius: 4px;
+}
+.skeleton-wrapper {
+  background: rgb(8, 28, 34);
+  margin-left: 5%;
+  margin-right: 2%;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton.text {
+  width: 100%;
+  height: 12px;
+}
+
+.skeleton.title {
+  width: 40%;
+  margin-left: 5%;
+  height: 20px;
+  background-color: gray;
+  border-radius: 25px;
+}
+
+.skeleton.artist {
+  width: 60%;
+  margin-left: 5%;
+  height: 20px;
+  background-color: gray;
+  border-radius: 25px;
+}
+
+.skeleton.songBG {
+  display: flex;
+  position: relative;
+  height: 225px;
+  width: 225px;
+}
+
+.skeleton.songImage {
+  background: grey;
+}
+
+.skeleton.SongItem {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(8, 28, 34);
+  border: 1px solid black;
+  position: relative;
+}
+
+@media only screen and (min-width: 900px) {
+  .skeleton.songDetails {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(8, 28, 34);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .skeleton.songDetails {
+    flex: 100%;
+  }
+
+  .skeleton.songItems {
+    width: 25%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    display: flex;
+    padding: 1rem 40px 1rem 1rem;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .skeleton.songDetails {
+    flex: 100%;
+  }
+
+  .skeleton.songItems {
+    width: 33%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    display: flex;
+    padding: 1rem 40px 1rem 1rem;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .skeleton.songDetails {
+    flex: 100%;
+  }
+
+  .skeleton.songItems {
+    width: 50%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    display: flex;
+    padding: 1rem 40px 1rem 1rem;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .skeleton.songDetails {
+    display: flex;
+  }
+
+  .skeleton.songItems {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    padding: 1rem 40px 1rem 1rem;
+    position: relative;
+  }
+}
+
+.animation-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: loading 2.5s infinite;
+}
+
+.animation {
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  transform: skewX(20deg);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.02);
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-150%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}

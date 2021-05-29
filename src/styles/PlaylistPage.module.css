@@ -1,7 +1,5 @@
 .songContainer {
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 2%;
+  margin: 5% auto;
   display: flex;
   flex-wrap: wrap;
 }
@@ -12,12 +10,24 @@
   border-radius: 0.25rem;
   margin-bottom: 3%;
   display: flex;
-  padding: 1rem 40px 1rem 0;
+  padding: 1rem 40px 1rem 1rem;
   position: relative;
 }
 
 .songImages {
   display: flex;
+  position: relative;
+}
+
+.songDetails {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(8, 28, 34);
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  border: 1px solid black;
   position: relative;
 }
 
@@ -31,9 +41,7 @@
     padding-bottom: 10px;
     padding-right: 10px;
     border: 1px solid black;
-    margin-left: 4%;
     position: relative;
-    -webkit-transform: translateY(-50%);
   }
 }
 
@@ -48,7 +56,7 @@
     border-radius: 0.25rem;
     margin-bottom: 3%;
     display: flex;
-    padding: 1rem 40px 1rem 0;
+    padding: 1rem 40px 1rem 1rem;
     position: relative;
   }
 }
@@ -64,7 +72,7 @@
     border-radius: 0.25rem;
     margin-bottom: 3%;
     display: flex;
-    padding: 1rem 40px 1rem 0;
+    padding: 1rem 40px 1rem 1rem;
     position: relative;
   }
 }
@@ -80,7 +88,7 @@
     border-radius: 0.25rem;
     margin-bottom: 3%;
     display: flex;
-    padding: 1rem 40px 1rem 0;
+    padding: 1rem 40px 1rem 1rem;
     position: relative;
   }
 }
@@ -95,23 +103,9 @@
     overflow: hidden;
     border-radius: 0.25rem;
     margin-bottom: 3%;
-    padding: 1rem 40px 1rem 0;
+    padding: 1rem 40px 1rem 1rem;
     position: relative;
   }
-}
-
-.songDetails {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(8, 28, 34);
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  padding-right: 10px;
-  border: 1px solid black;
-  margin-left: 4%;
-  position: relative;
-  -webkit-transform: translateY(-50%);
 }
 
 .trackName {
@@ -132,9 +126,9 @@
 }
 
 .reactiveButton {
+  position: absolute;
   top: 15%;
   left: 15%;
-  position: absolute;
   z-index: 10;
 }
 

@@ -1,59 +1,44 @@
 import Head from "next/head";
 import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
+import Countries from "../../../Data/Countries.json";
 import { connectToDatabase } from "../../../util/mongodb";
-import { useRouter } from "next/router";
 import SongButton from "../../components/SongButton";
 import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
-
-export default function randomPlaylist({ songs }) {
+import listHelper from "../../BackendFunctions/GetLists";
+import DeviceManager from "../../BackendFunctions/DeviceManager";
+import SkeletonElement from "../../Skeletons/SkeletonElement";
+import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
+export default function randomPlaylist({ countryArray }) {
   const [token, setToken] = useState("");
+  const [songs, setSongs] = useState(null);
+  const [uriArray, setUriArray] = useState([]);
 
-  const handleSongClick = async (e, uri) => {
+  const handleSongClick = async (e, trackNumber, selectedCountryID) => {
     fetch(
-      `http://localhost:3000/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
+      `http://localhost:3000/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
     );
 
-    fetch("https://api.spotify.com/v1/me/player/devices", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((resp) => resp.json())
-      .then((response) => {
-        let index = 0;
-        while (response.devices[index]) {
-          if (!response.devices[index].is_restricted) {
-            return response.devices[index].id;
-          }
-        }
-      })
-      .then((device) => {
-        fetch("https://api.spotify.com/v1/me/player/play", {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          params: {
-            device_id: device,
-          },
-          data: {
-            context_uri: uri,
-          },
-        });
-      });
+    DeviceManager(token, uriArray, trackNumber);
   };
 
-  useEffect(() => {
+  useEffect(async () => {
+    let tempToken = localStorage.getItem("Token");
     //On first load, get details and create the playlist.
     if (token === "") {
-      ListCreator("Random Countries", songs);
+      setToken(tempToken);
+      //ListCreator("Random Countries", songs);
+
+      let isRandomPlaylist = true;
+
+      let songData = await listHelper(countryArray, isRandomPlaylist);
+      let trackURI = [];
+      for (let i = 0; i < songData.length; i++) {
+        trackURI.push(`${songData[i].track.uri}`);
+      }
+      setUriArray(trackURI);
+      setSongs(songData);
     }
   });
   return (
@@ -70,11 +55,20 @@ export default function randomPlaylist({ songs }) {
       <Link href="/">
         <a>Back to Home</a>
       </Link>
+      <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
+        Random Playlists
+      </div>
       <div className={styles.songContainer}>
+        {!songs &&
+          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+            <div className={styles.songItems} key={n}>
+              <SkeletonSongItem key={n} />
+            </div>
+          ))}
         {songs &&
-          songs.map((song) => (
-            <div className={styles.songItems}>
-              <div onClick={(e) => handleSongClick(e, song.track.uri)}>
+          songs.map((song, index) => (
+            <div className={styles.songItems} key={index}>
+              <div onClick={(e) => handleSongClick(e, index, song.countryID)}>
                 <SongButton song={song} />
                 <div className={styles.songDetails}>
                   <div className={styles.trackName}>{song.track.name}</div>
@@ -91,35 +85,33 @@ export default function randomPlaylist({ songs }) {
 }
 
 export async function getServerSideProps(context) {
-  const id = context.query;
-  //  console.log(id.id);
   const { db } = await connectToDatabase();
-  const data = await db
-    .collection("Countries")
-    .aggregate([{ $sample: { size: 50 } }])
-    .toArray();
+  let countryArr = [];
+  for (let i = 0; i < 10; i++) {
+    let rNum = Math.floor(Math.random() * 100);
 
-  let randomSongs = [];
-  const resData = JSON.parse(JSON.stringify(data));
-
-  for (let i = 0; i < 50; i++) {
-    let playListLength = resData[i].Playlists[0].tracks.length;
-    let rNum = Math.floor(Math.random() * (playListLength - 1));
-    let songName = resData[i].Playlists[0].tracks[rNum].track.name;
-
-    //Handling Potential duplicate tracks.
-    if (
-      randomSongs.filter((item) => item.track.name === songName).length !== 0
-    ) {
-      let shiftFactor = 0;
-      if (rNum < playListLength) shiftFactor = 1;
-      else if (rNum >= playListLength) shiftFactor = -1;
-      randomSongs.push(resData[i].Playlists[0].tracks[rNum + shiftFactor]);
+    //Handle duplicates
+    if (countryArr.includes(Countries[rNum].code)) {
+      i--;
       continue;
     }
-    randomSongs.push(resData[i].Playlists[0].tracks[rNum]);
+    countryArr.push(Countries[rNum].code);
   }
+  for (let i = 0; i < countryArr.length; i++) {
+    db.collection("testCollection").findOneAndUpdate(
+      { countryID: countryArr[i] },
+      {
+        $inc: {
+          "Data.randomCountries.appearances": 1,
+        },
+      },
+      { remove: false }
+    );
+  }
+
+  console.log(countryArr);
+
   return {
-    props: { songs: randomSongs },
+    props: { countryArray: countryArr },
   };
 }
