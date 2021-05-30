@@ -24,6 +24,7 @@ export default function Home(props) {
     //console.log(country);
     //console.log(window.location.search.length);
     console.log("test");
+    console.log(token);
     if (window.location.search.length > 10) {
       let hashParams = {};
       let a,
@@ -42,7 +43,7 @@ export default function Home(props) {
         localStorage.setItem("RefreshToken", tokenData.refresh_token);
         let currTime = Date.now();
         localStorage.setItem("TokenTime", currTime);
-        console.log(tokenData.acess_token);
+        console.log(tokenData.access_token);
         setToken(tokenData.access_token);
       };
 
