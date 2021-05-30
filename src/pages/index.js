@@ -23,6 +23,7 @@ export default function Home(props) {
   useEffect(() => {
     //console.log(country);
     //console.log(window.location.search.length);
+    console.log("test");
     if (window.location.search.length > 10) {
       let hashParams = {};
       let a,
@@ -41,6 +42,7 @@ export default function Home(props) {
         localStorage.setItem("RefreshToken", tokenData.refresh_token);
         let currTime = Date.now();
         localStorage.setItem("TokenTime", currTime);
+        console.log(tokenData.acess_token);
         setToken(tokenData.access_token);
       };
 
