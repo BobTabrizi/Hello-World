@@ -34,5 +34,9 @@ export default function DeviceManager(token, uriArr, trackNumber) {
         },
         body: JSON.stringify(data),
       });
+    })
+    .catch((error) => {
+      console.log(error);
+      window.open(href, "_blank");
     });
 }
