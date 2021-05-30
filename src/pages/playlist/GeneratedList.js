@@ -30,7 +30,7 @@ export default function GeneratedList({ countryCode }) {
       let isRandomPlaylist = false;
       let songArray = await ListHelper(countryCode, isRandomPlaylist);
       let countries = songArray[songArray.length - 1];
-      // ListCreator(countries, mergedSongArray);
+      ListCreator(countries, mergedSongArray);
       songArray.length = songArray.length - 1;
       let mergedSongArray = songArray.flat(1);
       setSongs(mergedSongArray);

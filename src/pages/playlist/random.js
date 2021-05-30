@@ -28,7 +28,7 @@ export default function randomPlaylist({ countryArray }) {
     //On first load, get details and create the playlist.
     if (token === "") {
       setToken(tempToken);
-      //ListCreator("Random Countries", songs);
+      ListCreator("Random Countries", songs);
 
       let isRandomPlaylist = true;
 
