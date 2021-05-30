@@ -17,7 +17,7 @@ export default function GeneratedList({ countryCode }) {
   const handleSongClick = async (e, trackNumber, selectedCountryID) => {
     //Logging SongPlay count
     fetch(
-      `${process.env.VERCEL_URL}/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
+      `https://hello-world-bobtabrizi.vercel.app/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
     );
     DeviceManager(token, uriArr, trackNumber);
   };

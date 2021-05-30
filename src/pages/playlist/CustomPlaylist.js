@@ -12,9 +12,9 @@ export default function CustomPlaylist({ songs }) {
 
   const [countryString, setCountryString] = useState("");
   useEffect(() => {
-    console.log(countryOne);
-    console.log(countryTwo);
-    console.log(countryThree);
+    // console.log(countryOne);
+    // console.log(countryTwo);
+    // console.log(countryThree);
     let dividerOne = "";
     let dividerTwo = "";
     if (countryOne[1] && countryTwo[1] !== "") dividerOne = "+";
