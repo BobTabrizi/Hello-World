@@ -19,11 +19,11 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
     //Logging SongPlay count
     if (searchTypeRandom === true)
       fetch(
-        `http://localhost:3000/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
+        `https://hello-world-bobtabrizi.vercel.app/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
       );
     else {
       fetch(
-        `http://localhost:3000/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
+        `https://hello-world-bobtabrizi.vercel.app/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
       );
     }
     DeviceManager(token, uriArr, trackNumber);
