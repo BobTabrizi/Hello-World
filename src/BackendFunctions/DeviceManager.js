@@ -1,4 +1,4 @@
-export default function DeviceManager(token, uriArr, trackNumber) {
+export default function DeviceManager(token, uriArr, trackNumber, href) {
   fetch("https://api.spotify.com/v1/me/player/devices", {
     method: "GET",
     headers: {

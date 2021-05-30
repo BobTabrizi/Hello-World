@@ -13,7 +13,7 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
   const [songs, setSongs] = useState(null);
   const [uriArr, setUriArray] = useState([]);
 
-  const handleSongClick = async (e, trackNumber) => {
+  const handleSongClick = async (e, trackNumber, href) => {
     //window.open(url, "_blank");
     //Logging SongPlay count
     if (searchTypeRandom === true)
@@ -25,7 +25,7 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
         `http://localhost:3000/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
       );
     }
-    DeviceManager(token, uriArr, trackNumber);
+    DeviceManager(token, uriArr, trackNumber, href);
   };
 
   useEffect(async () => {
@@ -55,12 +55,21 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
             href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
             rel="stylesheet"
           ></link>
+          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
       </div>
       <Link href="/">
-        <a>Back to Home</a>
+        <a>
+          <div className={styles.returnButton} style={{ fontSize: 20 }}>
+            Back to Home
+          </div>
+        </a>
       </Link>
-      <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
+      <div className={styles.playlistHeader} style={{ fontSize: 70 }}>
         {countryName}
       </div>
 
@@ -74,7 +83,11 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
         {songs &&
           songs.map((song, index) => (
             <div className={styles.songItems} key={index}>
-              <div onClick={(e) => handleSongClick(e, index)}>
+              <div
+                onClick={(e) =>
+                  handleSongClick(e, index, song.track.external_urls.spotify)
+                }
+              >
                 <SongButton song={song} />
                 <div className={styles.songDetails}>
                   <div className={styles.trackName}>{song.track.name}</div>

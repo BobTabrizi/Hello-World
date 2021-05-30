@@ -15,12 +15,12 @@ export default function GeneratedList({ countryCode }) {
   const [uriArr, setUriArray] = useState([]);
   const [pageHeading, setPageHeading] = useState("Custom Playlist");
 
-  const handleSongClick = async (e, trackNumber, selectedCountryID) => {
+  const handleSongClick = async (e, trackNumber, selectedCountryID, href) => {
     //Logging SongPlay count
     fetch(
       `http://localhost:3000/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
     );
-    DeviceManager(token, uriArr, trackNumber);
+    DeviceManager(token, uriArr, trackNumber, href);
   };
 
   useEffect(async () => {
@@ -51,10 +51,18 @@ export default function GeneratedList({ countryCode }) {
             href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
             rel="stylesheet"
           ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
       </div>
       <Link href="/">
-        <a>Back to Home</a>
+        <a>
+          <div className={styles.returnButton} style={{ fontSize: 20 }}>
+            Back to Home
+          </div>
+        </a>
       </Link>
       <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
         {pageHeading}
@@ -70,7 +78,16 @@ export default function GeneratedList({ countryCode }) {
         {songs &&
           songs.map((song, index) => (
             <div className={styles.songItems} key={index}>
-              <div onClick={(e) => handleSongClick(e, index, song.countryID)}>
+              <div
+                onClick={(e) =>
+                  handleSongClick(
+                    e,
+                    index,
+                    song.countryID,
+                    song.track.external_urls.spotify
+                  )
+                }
+              >
                 <SongButton song={song} />
                 <div className={styles.songDetails}>
                   <div className={styles.trackName}>{song.track.name}</div>

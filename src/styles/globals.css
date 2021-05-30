@@ -51,7 +51,7 @@ a {
 }
 
 .headerTitle {
-  color: aqua;
+  color: rgba(255, 255, 255, 0.87);
   font-size: 40;
   text-align: "start";
 }

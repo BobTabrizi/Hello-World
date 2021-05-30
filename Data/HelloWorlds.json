@@ -24,52 +24,25 @@
       
     },
     {
-        "languageID": "ar",
-        "text":"مرحبا بالعالم"
-      
-    }, 
-    {
         "languageID": "af",
         "text":"Hello Wêreld"
       
-    },  {
-        "languageID": "hy",
-        "text":"Բարեւ աշխարհ"
-      
-    },
+    }, 
     {
         "languageID": "az",
         "text":"Salam dünya"
       
     },
-    {
-        "languageID": "be",
-        "text":"Прывітанне Сусвет"
-      
-    },
+
     {
         "languageID": "bs",
         "text":"Zdravo svijete"
       
     },
-    {
-        "languageID": "bg",
-        "text":"Здравей свят"
-      
-    },
-    {
-        "languageID": "my",
-        "text":"မင်္ဂလာပါကမ္ဘာလောက"
-      
-    },
+
     {
         "languageID": "ca",
         "text":"Hola món"
-      
-    },
-    {
-        "languageID": "zh",
-        "text":"你好，世界"
       
     },
     {
@@ -77,46 +50,7 @@
         "text":"Dia duit an Domhan"
       
     },
-    {
-        "languageID": "ja",
-        "text":"こんにちは世界"
-      
-    },
-    {
-        "languageID": "kk",
-        "text":"Сәлем Әлем"
-      
-    },
-    {
-        "languageID": "km",
-        "text":"សួស្តី​ពិភពលោក"
-      
-    },
-    {
-        "languageID": "ko",
-        "text":"안녕하세요 세계"
-      
-    },
-    {
-        "languageID": "el",
-        "text":"Γειά σου Κόσμε"
-      
-    },
-    {
-        "languageID": "fa",
-        "text":"سلام دنیا"
-      
-    },
-    {
-        "languageID": "pl",
-        "text":"Witaj świecie"
-      
-    },
-    {
-        "languageID": "he",
-        "text":"שלום עולם"
-      
-    },
+
     {
         "languageID": "lt",
         "text":"Labas pasauli"
@@ -135,11 +69,6 @@
     {
         "languageID": "zu",
         "text":"Sawubona Mhlaba"
-      
-    },
-    {
-        "languageID": "vi",
-        "text":"Chào thế giới"
       
     },
     {

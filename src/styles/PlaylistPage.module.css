@@ -134,5 +134,14 @@
 
 .playlistHeader {
   text-align: center;
-  color: aqua;
+  color: white;
+  font-family: "Codystar";
+}
+
+.returnButton {
+  color: white;
+  font-family: "Codystar";
+  left: 20px;
+  top: 40px;
+  position: absolute;
 }

@@ -10,9 +10,7 @@ export default function getLists(countries, isRandom) {
   };
 
   const getList = async (countries) => {
-    const data = await fetch(
-      `https://hello-world-bobtabrizi.vercel.app/api/${countries}`
-    );
+    const data = await fetch(`http://localhost:3000/api/${countries}`);
     const resp = await data.json();
     return resp;
   };
@@ -24,9 +22,7 @@ export default function getLists(countries, isRandom) {
     let countryNames = [];
     let numCountries = countries[0].length;
     for (let i = 0; i < numCountries; i++) {
-      tmpData = await fetch(
-        `https://hello-world-bobtabrizi.vercel.app/api/${countries[0][i]}`
-      );
+      tmpData = await fetch(`http://localhost:3000/api/${countries[0][i]}`);
       getJson = await tmpData.json();
       countryNames.push(getJson[0].countryName);
       let currTracks = getJson[0].Playlists[0].tracks;
@@ -84,9 +80,7 @@ export default function getLists(countries, isRandom) {
 
     for (let i = 0; i < countries.length; i++) {
       playlistRequests.push(
-        retrieveData(
-          `https://hello-world-bobtabrizi.vercel.app/api/${countries[i]}`
-        )
+        retrieveData(`http://localhost:3000/api/${countries[i]}`)
       );
     }
     let processedData = await Promise.all(playlistRequests).then((allData) => {

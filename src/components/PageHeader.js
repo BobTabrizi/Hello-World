@@ -2,21 +2,25 @@ import worlds from "../../Data/HelloWorlds.json";
 import React, { useState, useEffect } from "react";
 
 export default function Header() {
-  const [randomTextIndex, setRandomTextIndex] = useState(1);
+  const [randomTextIndex, setRandomTextIndex] = useState(0);
   const handleTextIndex = () => {
-    let idx = Math.floor(Math.random() * 29 + 1);
-    setRandomTextIndex(idx);
+    if (randomTextIndex === 0) {
+      let idx = Math.floor(Math.random() * 14 + 1);
+      setRandomTextIndex(idx);
+    } else {
+      setRandomTextIndex(0);
+    }
   };
 
   return (
     <div
       className="headerTitle"
       style={{
-        fontSize: 40,
+        fontSize: 60,
         textAlign: "center",
+        fontFamily: "Codystar",
       }}
       onMouseEnter={(e) => handleTextIndex()}
-      onMouseLeave={(e) => setRandomTextIndex(0)}
     >
       <span>{worlds[randomTextIndex].text}</span>
     </div>

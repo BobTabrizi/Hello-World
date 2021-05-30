@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Header from "../components/header";
+import Header from "../components/PageHeader";
 import styles from "../styles/Home.module.css";
 import { S3 } from "@aws-sdk/client-s3";
 //import { connectToDatabase } from "../util/mongodb";
@@ -74,7 +74,6 @@ export default function Home(props) {
 
   return (
     <>
-      <Header />
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -86,8 +85,14 @@ export default function Home(props) {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           ></link>
+          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
+            rel="stylesheet"
+          ></link>
           <style>{dom.css()}</style>
         </Head>
+        <Header />
         <AuthHelper token={token} />
         <div className="searchBody">
           <Countrycomplete updateCountry={setCountry} linkRef={"/playlist/"} />
