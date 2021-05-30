@@ -7,7 +7,6 @@ import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import listHelper from "../../BackendFunctions/GetLists";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
-import SkeletonElement from "../../Skeletons/SkeletonElement";
 import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
 export default function Playlist({ countryID, searchTypeRandom, countryName }) {
   const [token, setToken] = useState("");
@@ -19,11 +18,11 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
     //Logging SongPlay count
     if (searchTypeRandom === true)
       fetch(
-        `https://hello-world-bobtabrizi.vercel.app/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
+        `http://localhost:3000/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
       );
     else {
       fetch(
-        `https://hello-world-bobtabrizi.vercel.app/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
+        `http://localhost:3000/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
       );
     }
     DeviceManager(token, uriArr, trackNumber);

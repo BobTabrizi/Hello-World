@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Header from "../components/PageHeader";
+import Header from "../components/header";
 import styles from "../styles/Home.module.css";
 import { S3 } from "@aws-sdk/client-s3";
 //import { connectToDatabase } from "../util/mongodb";
@@ -34,7 +34,7 @@ export default function Home(props) {
 
       const fetchToken = async () => {
         let token = await fetch(
-          `https://hello-world-bobtabrizi.vercel.app/api/auth/getToken?codeValue=${hashParams.code}`
+          `http://localhost:3000/api/auth/getToken?codeValue=${hashParams.code}`
         );
         let tokenData = await token.json();
         localStorage.setItem("Token", tokenData.access_token);
@@ -59,7 +59,7 @@ export default function Home(props) {
 
         const fetchRefreshedToken = async () => {
           let refreshToken = await fetch(
-            `https://hello-world-bobtabrizi.vercel.app/api/auth/refreshToken?tokenValue=${refToken}`
+            `http://localhost:3000/api/auth/refreshToken?tokenValue=${refToken}`
           );
           let tokenInfo = await refreshToken.json();
           localStorage.setItem("Token", tokenInfo.access_token);
@@ -97,6 +97,7 @@ export default function Home(props) {
           <RandomPlaylist />
           <CustomPlaylist />
         </div>
+        <button onClick={listRetriever}> Get Data</button>
       </div>
     </>
   );

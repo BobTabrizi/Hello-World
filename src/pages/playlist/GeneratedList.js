@@ -5,6 +5,7 @@ import { connectToDatabase } from "../../../util/mongodb";
 import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
 import ListHelper from "../../BackendFunctions/GetLists";
+import ListCreate from "../../BackendFunctions/CreateList";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
 import SkeletonElement from "../../Skeletons/SkeletonElement";
 import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
@@ -17,7 +18,7 @@ export default function GeneratedList({ countryCode }) {
   const handleSongClick = async (e, trackNumber, selectedCountryID) => {
     //Logging SongPlay count
     fetch(
-      `https://hello-world-bobtabrizi.vercel.app/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
+      `http://localhost:3000/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
     );
     DeviceManager(token, uriArr, trackNumber);
   };

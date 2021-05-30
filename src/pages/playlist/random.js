@@ -8,7 +8,7 @@ import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
 import listHelper from "../../BackendFunctions/GetLists";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
-import SkeletonElement from "../../Skeletons/SkeletonElement";
+import ListCreator from "../../BackendFunctions/CreateList";
 import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
 export default function randomPlaylist({ countryArray }) {
   const [token, setToken] = useState("");
@@ -17,7 +17,7 @@ export default function randomPlaylist({ countryArray }) {
 
   const handleSongClick = async (e, trackNumber, selectedCountryID) => {
     fetch(
-      `https://hello-world-bobtabrizi.vercel.app/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
+      `http://localhost:3000/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
     );
 
     DeviceManager(token, uriArray, trackNumber);
