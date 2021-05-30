@@ -23,8 +23,6 @@ export default function Home(props) {
   useEffect(() => {
     //console.log(country);
     //console.log(window.location.search.length);
-    console.log("test");
-    console.log(token);
     if (window.location.search.length > 10) {
       let hashParams = {};
       let a,
@@ -43,7 +41,6 @@ export default function Home(props) {
         localStorage.setItem("RefreshToken", tokenData.refresh_token);
         let currTime = Date.now();
         localStorage.setItem("TokenTime", currTime);
-        console.log(tokenData.access_token);
         setToken(tokenData.access_token);
       };
 
@@ -62,7 +59,7 @@ export default function Home(props) {
 
         const fetchRefreshedToken = async () => {
           let refreshToken = await fetch(
-            `${process.env.VERCEL_URL}/api/auth/refreshToken?tokenValue=${refToken}`
+            `https://hello-world-bobtabrizi.vercel.app/api/auth/refreshToken?tokenValue=${refToken}`
           );
           let tokenInfo = await refreshToken.json();
           localStorage.setItem("Token", tokenInfo.access_token);
