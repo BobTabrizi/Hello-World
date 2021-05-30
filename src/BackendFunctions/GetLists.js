@@ -10,9 +10,7 @@ export default function getLists(countries, isRandom) {
   };
 
   const getList = async (countries) => {
-    const data = await fetch(
-      `https://hello-world-bobtabrizi.vercel.app/api/${countries}`
-    );
+    const data = await fetch(`${process.env.VERCEL_URL}/api/${countries}`);
     const resp = await data.json();
     return resp;
   };

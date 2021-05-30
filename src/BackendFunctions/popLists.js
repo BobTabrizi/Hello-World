@@ -5,9 +5,7 @@ export default function popLists() {
     //  for (var key in Data) {
     const id = Data[2].countryID;
     const url = Data[2].playlists[0].url;
-    const data = await fetch(
-      `https://hello-world-bobtabrizi.vercel.app/api/${id}/${url}`
-    );
+    const data = await fetch(`${process.env.VERCEL_URL}/api/${id}/${url}`);
     //  }
   };
 

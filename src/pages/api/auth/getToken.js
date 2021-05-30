@@ -8,9 +8,7 @@ export default async function handler(req, res) {
 
   var encodedAuth = new Buffer(clientString).toString("base64");
   const getAccessToken = () => {
-    let encodedRedirect = encodeURIComponent(
-      `https://hello-world-bobtabrizi.vercel.app/`
-    );
+    let encodedRedirect = encodeURIComponent(`${process.env.VERCEL_URL}/`);
 
     return fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
