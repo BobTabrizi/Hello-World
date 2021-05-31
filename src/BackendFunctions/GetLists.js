@@ -10,7 +10,7 @@ export default function getLists(countries, isRandom) {
   };
 
   const getList = async (countries) => {
-    const data = await fetch(`http://localhost:3000/api/${countries}`);
+    const data = await fetch(`${process.env.VERCEL_URL}/api/${countries}`);
     const resp = await data.json();
     return resp;
   };
@@ -22,7 +22,7 @@ export default function getLists(countries, isRandom) {
     let countryNames = [];
     let numCountries = countries[0].length;
     for (let i = 0; i < numCountries; i++) {
-      tmpData = await fetch(`http://localhost:3000/api/${countries[0][i]}`);
+      tmpData = await fetch(`${process.env.VERCEL_URL}/api/${countries[0][i]}`);
       getJson = await tmpData.json();
       countryNames.push(getJson[0].countryName);
       let currTracks = getJson[0].Playlists[0].tracks;
@@ -80,7 +80,7 @@ export default function getLists(countries, isRandom) {
 
     for (let i = 0; i < countries.length; i++) {
       playlistRequests.push(
-        retrieveData(`http://localhost:3000/api/${countries[i]}`)
+        retrieveData(`${process.env.VERCEL_URL}api/${countries[i]}`)
       );
     }
     let processedData = await Promise.all(playlistRequests).then((allData) => {

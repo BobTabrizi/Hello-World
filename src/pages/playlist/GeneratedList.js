@@ -18,7 +18,7 @@ export default function GeneratedList({ countryCode }) {
   const handleSongClick = async (e, trackNumber, selectedCountryID, href) => {
     //Logging SongPlay count
     fetch(
-      `http://localhost:3000/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
+      `${process.env.VERCEL_URL}/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
     );
     DeviceManager(token, uriArr, trackNumber, href);
   };
