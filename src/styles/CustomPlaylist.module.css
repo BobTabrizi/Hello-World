@@ -2,6 +2,15 @@
   color: white;
   text-align: center;
   font-size: xx-large;
+  font-family: "Codystar";
+}
+
+.returnButton {
+  color: white;
+  font-family: "Codystar";
+  left: 20px;
+  top: 40px;
+  position: absolute;
 }
 
 .inputContainer {
@@ -15,4 +24,14 @@
 .inputs {
   display: flex;
   margin: 1%;
+}
+.button {
+  font-family: "Codystar";
+  background: rgb(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }

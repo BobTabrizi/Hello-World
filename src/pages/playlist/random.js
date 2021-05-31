@@ -69,7 +69,7 @@ export default function randomPlaylist({ countryArray }) {
       <div className={styles.songContainer}>
         {!songs &&
           [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-            <div className={styles.songItems} key={n}>
+            <div className={styles.skeletonSongItems} key={n}>
               <SkeletonSongItem key={n} />
             </div>
           ))}

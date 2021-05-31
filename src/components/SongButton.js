@@ -15,7 +15,7 @@ export default function SongButton(props) {
 
   return (
     <div
-      className={styles.songImages}
+      className={styles.songButton}
       onMouseEnter={(e) => showPlayButton(e)}
       onMouseLeave={(e) => hidePlayButton(e)}
     >
@@ -26,7 +26,7 @@ export default function SongButton(props) {
         alt="Song Image"
       ></img>
       <button className={styles.reactiveButton} style={{ display: hover }}>
-        <img height="70%" width="70%" src="/SpotifyButton.png"></img>
+        <img height="100%" width="100%" src="/SpotifyButton.png"></img>
       </button>
     </div>
   );

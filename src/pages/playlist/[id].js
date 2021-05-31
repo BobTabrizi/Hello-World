@@ -62,38 +62,38 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
           ></link>
         </Head>
       </div>
-      <Link href="/">
-        <a>
-          <div className={styles.returnButton} style={{ fontSize: 20 }}>
-            Back to Home
-          </div>
-        </a>
-      </Link>
+
       <div className={styles.playlistHeader} style={{ fontSize: 70 }}>
+        <Link href="/">
+          <a>
+            <div className={styles.returnButton} style={{ fontSize: 20 }}>
+              Back to Home
+            </div>
+          </a>
+        </Link>
         {countryName}
       </div>
 
       <div className={styles.songContainer}>
         {!songs &&
           [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-            <div className={styles.songItems} key={n}>
+            <div className={styles.skeletonSongItems} key={n}>
               <SkeletonSongItem key={n} />
             </div>
           ))}
         {songs &&
           songs.map((song, index) => (
             <div className={styles.songItems} key={index}>
-              <div
+              <SongButton
                 onClick={(e) =>
                   handleSongClick(e, index, song.track.external_urls.spotify)
                 }
-              >
-                <SongButton song={song} />
-                <div className={styles.songDetails}>
-                  <div className={styles.trackName}>{song.track.name}</div>
-                  <div className={styles.artistName}>
-                    {song.track.artists[0].name}
-                  </div>
+                song={song}
+              />
+              <div className={styles.songDetails}>
+                <div className={styles.trackName}>{song.track.name}</div>
+                <div className={styles.artistName}>
+                  {song.track.artists[0].name}
                 </div>
               </div>
             </div>

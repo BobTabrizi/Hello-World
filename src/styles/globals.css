@@ -83,7 +83,7 @@ a {
 .skeleton.title {
   width: 40%;
   margin-left: 5%;
-  height: 20px;
+  height: 15px;
   background-color: gray;
   border-radius: 25px;
 }
@@ -91,7 +91,7 @@ a {
 .skeleton.artist {
   width: 60%;
   margin-left: 5%;
-  height: 20px;
+  height: 15px;
   background-color: gray;
   border-radius: 25px;
 }
@@ -220,6 +220,6 @@ a {
     opacity: 0;
   }
   100% {
-    transform: translateX(-150%);
+    transform: translateX(150%);
   }
 }

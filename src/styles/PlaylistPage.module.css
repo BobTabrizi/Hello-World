@@ -1,26 +1,45 @@
 .songContainer {
-  margin: 5% auto;
   display: flex;
+  flex-flow: row;
   flex-wrap: wrap;
+  width: 100%;
+  padding: 3%;
 }
 
-.songItems {
-  width: 20%;
+.songItems,
+.skeletonSongItems {
+  width: 17%;
   overflow: hidden;
+  flex-direction: column;
   border-radius: 0.25rem;
-  margin-bottom: 3%;
   display: flex;
-  padding: 1rem 40px 1rem 1rem;
-  position: relative;
+  padding: 2rem 1rem 1rem 1.5rem;
+  box-sizing: content-box;
+  align-content: flex-start;
+  max-width: 250px;
 }
 
+.songItems:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.75s;
+}
 .songImages {
   display: flex;
   position: relative;
 }
 
+.songButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .songDetails {
   display: flex;
+  text-align: center;
   flex-direction: column;
   background-color: rgb(8, 28, 34);
   padding-top: 10px;
@@ -29,6 +48,25 @@
   padding-right: 10px;
   border: 1px solid black;
   position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1440px) {
+  .songDetails {
+    flex: 100%;
+  }
+
+  .songItems,
+  .skeletonSongItems {
+    width: 19%;
+    margin-left: 3%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    display: flex;
+    padding: 1rem 1rem 1rem 1rem;
+    position: relative;
+  }
 }
 
 @media only screen and (min-width: 900px) {
@@ -45,13 +83,20 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
+  .returnButton {
+  }
+}
+
+@media only screen and (max-width: 1155px) {
   .songDetails {
     flex: 100%;
   }
 
-  .songItems {
-    width: 25%;
+  .songItems,
+  .skeletonSongItems {
+    width: 20%;
+    margin-left: 6%;
     overflow: hidden;
     border-radius: 0.25rem;
     margin-bottom: 3%;
@@ -61,13 +106,14 @@
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 850px) {
   .songDetails {
     flex: 100%;
   }
 
-  .songItems {
-    width: 33%;
+  .songItems,
+  .skeletonSongItems {
+    width: 35%;
     overflow: hidden;
     border-radius: 0.25rem;
     margin-bottom: 3%;
@@ -77,38 +123,45 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 690px) {
   .songDetails {
-    flex: 100%;
+    display: flex;
   }
 
-  .songItems {
-    width: 50%;
+  .songItems,
+  .skeletonSongItems {
+    width: 100%;
+    margin-left: 20%;
     overflow: hidden;
     border-radius: 0.25rem;
     margin-bottom: 3%;
     display: flex;
     padding: 1rem 40px 1rem 1rem;
     position: relative;
+    align-content: center;
+    justify-content: center;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .songDetails {
     display: flex;
+    padding: 5%;
   }
 
-  .songItems {
-    width: 100%;
+  .songItems,
+  .skeletonSongItems {
+    width: 90%;
     overflow: hidden;
     border-radius: 0.25rem;
     margin-bottom: 3%;
-    padding: 1rem 40px 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     position: relative;
   }
 }
 
 .trackName {
+  width: 100%;
 }
 
 .artistName {
@@ -127,9 +180,22 @@
 
 .reactiveButton {
   position: absolute;
-  top: 15%;
+  width: 70%;
+  height: 70%;
   left: 15%;
+  align-self: center;
   z-index: 10;
+}
+.reactiveButton:active,
+.reactiveButton:focus {
+  outline: none;
+}
+
+.reactiveButton:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s;
 }
 
 .playlistHeader {
@@ -141,7 +207,6 @@
 .returnButton {
   color: white;
   font-family: "Codystar";
-  left: 20px;
+  left: 50px;
   top: 40px;
-  position: absolute;
 }

@@ -80,7 +80,6 @@ export default async function handler(req, res) {
     .catch((error) => {
       console.log(error);
     });
-  //console.log(temp);
 
   pulledList.Playlists = [
     {
@@ -92,17 +91,18 @@ export default async function handler(req, res) {
       tracks: pulledList.items,
     },
   ];
-
-  console.log(pulledList.Playlists[0].tracks[0].track);
   pulledList.countryID = countryID;
+  let listTracks = pulledList.Playlists[0].tracks;
+  for (let i = 0; i < pulledList.total; i++) {
+    listTracks[i].countryID = countryID;
+  }
   delete pulledList.limit,
     delete pulledList.next,
     delete pulledList.previous,
-    delete pulledList.offset;
-  delete pulledList.total;
-  delete pulledList.href;
-  delete pulledList.items;
-
+    delete pulledList.offset,
+    delete pulledList.total,
+    delete pulledList.href,
+    delete pulledList.items;
   const response = await db.collection("testCollection").update(
     { countryID: countryID },
     {
@@ -112,6 +112,5 @@ export default async function handler(req, res) {
     }
   );
   //const response = await db.collection("testCollection").insertOne(pulledList);
-
   res.json(response);
 }

@@ -35,10 +35,18 @@ export default function CustomPlaylist({ songs }) {
             href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
             rel="stylesheet"
           ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
       </div>
       <Link href="/">
-        <a>Back to Home</a>
+        <a>
+          <div className={styles.returnButton} style={{ fontSize: 20 }}>
+            Back to Home
+          </div>
+        </a>
       </Link>
       <div className={styles.pageHeader}>
         Choose up to 3 countries and get a playlist.
