@@ -17,11 +17,11 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
     //Logging SongPlay count
     if (searchTypeRandom === true)
       fetch(
-        `${process.env.NEXT_PUBLIC_DEV_URL}/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
+        `${process.env.NEXT_PUBLIC_PROD_URL}/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
       );
     else {
       fetch(
-        `${process.env.NEXT_PUBLIC_DEV_URL}/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
+        `${process.env.NEXT_PUBLIC_PROD_URL}/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
       );
     }
     DeviceManager(token, uriArr, trackNumber, href);

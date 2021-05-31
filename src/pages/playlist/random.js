@@ -16,7 +16,7 @@ export default function randomPlaylist({ countryArray }) {
 
   const handleSongClick = async (e, trackNumber, selectedCountryID, href) => {
     fetch(
-      `${process.env.NEXT_PUBLIC_DEV_URL}/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
+      `${process.env.NEXT_PUBLIC_PROD_URL}/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
     );
 
     DeviceManager(token, uriArray, trackNumber, href);

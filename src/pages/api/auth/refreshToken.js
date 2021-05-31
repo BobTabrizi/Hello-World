@@ -1,8 +1,5 @@
 export default async function handler(req, res) {
   const data = req.query;
-
-  console.log(data.tokenValue);
-
   var clientString =
     process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET;
 
