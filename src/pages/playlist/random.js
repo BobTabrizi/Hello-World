@@ -16,7 +16,7 @@ export default function randomPlaylist({ countryArray }) {
 
   const handleSongClick = async (e, trackNumber, selectedCountryID, href) => {
     fetch(
-      `${process.env.VERCEL_URL}/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
+      `https://hello-world-bobtabrizi.vercel.app/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
     );
 
     DeviceManager(token, uriArray, trackNumber, href);
