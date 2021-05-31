@@ -8,7 +8,6 @@ import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
 import listHelper from "../../BackendFunctions/GetLists";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
-import ListCreator from "../../BackendFunctions/CreateList";
 import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
 export default function randomPlaylist({ countryArray }) {
   const [token, setToken] = useState("");

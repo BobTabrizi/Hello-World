@@ -5,7 +5,7 @@ import { connectToDatabase } from "../../../util/mongodb";
 import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
 import ListHelper from "../../BackendFunctions/GetLists";
-import ListCreate from "../../BackendFunctions/CreateList";
+import ListCreator from "../../BackendFunctions/CreateList";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
 import SkeletonElement from "../../Skeletons/SkeletonElement";
 import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
