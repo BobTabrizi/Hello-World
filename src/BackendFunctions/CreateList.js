@@ -1,10 +1,10 @@
 export default function CreateList(countries, songs) {
-  console.log(countries);
   let uriArray = [];
   for (let i = 0; i < songs.length; i++) {
     uriArray.push(songs[i].track.uri);
   }
   let tempToken = localStorage.getItem("Token");
+  console.log(tempToken);
   fetch("https://api.spotify.com/v1/me/", {
     method: "GET",
     headers: {
@@ -16,7 +16,7 @@ export default function CreateList(countries, songs) {
     .then((resp) => resp.json())
     .then((response) => {
       let data;
-
+      console.log(response.id);
       if (countries === "Random Countries") {
         data = {
           name: "Random Playlist",

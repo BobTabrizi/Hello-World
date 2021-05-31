@@ -103,7 +103,7 @@ export default async function handler(req, res) {
     delete pulledList.total,
     delete pulledList.href,
     delete pulledList.items;
-  const response = await db.collection("testCollection").update(
+  const response = await db.collection("Countries").update(
     { countryID: countryID },
     {
       $set: {
@@ -111,6 +111,5 @@ export default async function handler(req, res) {
       },
     }
   );
-  //const response = await db.collection("testCollection").insertOne(pulledList);
   res.json(response);
 }

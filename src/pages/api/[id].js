@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
   const id = req.query.id;
   const data = await db
-    .collection("testCollection")
+    .collection("Countries")
     .find({ countryID: id })
     .limit(1)
     .toArray();

@@ -3,9 +3,9 @@
   background-color: transparent;
   border-radius: 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
-  padding: 2%;
-  margin-right: 2%;
-  margin-top: 7%;
+  padding: 0.5em 1em;
+  margin-left: 1%;
+  margin-top: 5%;
 }
 
 .button:hover {

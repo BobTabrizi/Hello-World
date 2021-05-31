@@ -120,7 +120,7 @@ export default async function handler(req, res) {
   pulledList = cleanData(pulledList);
   let status = "Lists Successfully Updated";
   for (var item in pulledList) {
-    db.collection("testCollection")
+    db.collection("Countries")
       .update(
         { countryID: pulledList[item].countryID },
         {

@@ -2,8 +2,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "../components/PageHeader";
 import styles from "../styles/Home.module.css";
-import { S3 } from "@aws-sdk/client-s3";
-//import { connectToDatabase } from "../util/mongodb";
+//import { S3 } from "@aws-sdk/client-s3";
+//import { connectToDatabase } from "../../util/mongodb";
 import FlagCarousel from "../components/Carousel";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -15,14 +15,11 @@ import DiscoverButton from "../components/DiscoverButton";
 import RandomPlaylist from "../components/RandomPlaylist";
 import CustomPlaylist from "../components/CustomPlaylist";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
-//Line below to fix css issues with spotify button.
 config.autoAddCss = false;
-export default function Home(props) {
+export default function Home() {
   const [token, setToken] = useState("");
   const [country, setCountry] = useState(["", ""]);
   useEffect(() => {
-    //console.log(country);
-    //console.log(window.location.search.length);
     if (window.location.search.length > 10) {
       let hashParams = {};
       let a,
@@ -34,8 +31,10 @@ export default function Home(props) {
 
       const fetchToken = async () => {
         let token = await fetch(
-          `https://hello-world-bobtabrizi.vercel.app/api/auth/getToken?codeValue=${hashParams.code}`
+          `${process.env.NEXT_PUBLIC_DEV_URL}/api/auth/getToken?codeValue=${hashParams.code}`
         );
+
+        console.log(token);
         let tokenData = await token.json();
         localStorage.setItem("Token", tokenData.access_token);
         localStorage.setItem("RefreshToken", tokenData.refresh_token);
@@ -59,7 +58,7 @@ export default function Home(props) {
 
         const fetchRefreshedToken = async () => {
           let refreshToken = await fetch(
-            `https://hello-world-bobtabrizi.vercel.app/api/auth/refreshToken?tokenValue=${refToken}`
+            `${process.env.NEXT_PUBLIC_DEV_URL}/api/auth/refreshToken?tokenValue=${refToken}`
           );
           let tokenInfo = await refreshToken.json();
           localStorage.setItem("Token", tokenInfo.access_token);
@@ -105,32 +104,4 @@ export default function Home(props) {
       </div>
     </>
   );
-}
-
-export async function getServerSideProps(context) {
-  //let token = await tokenHelper();
-
-  let images = [];
-  // console.log(context);
-  //for (var key in Data) {
-  /*
-  const id = Data[3].countryID;
-
-  fetch(`http://localhost:3000/api/${id}/flag`, {
-    method: "GET",
-  })
-    .then((body) => {
-      return body.text();
-    })
-    .then((data) => {
-      console.log(data);
-    });
-
-  // }
-*/
-
-  let temp = "Temp";
-  return {
-    props: { temp: temp },
-  };
 }

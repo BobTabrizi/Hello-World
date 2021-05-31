@@ -14,15 +14,14 @@ export default function Playlist({ countryID, searchTypeRandom, countryName }) {
   const [uriArr, setUriArray] = useState([]);
 
   const handleSongClick = async (e, trackNumber, href) => {
-    //window.open(url, "_blank");
     //Logging SongPlay count
     if (searchTypeRandom === true)
       fetch(
-        `https://hello-world-bobtabrizi.vercel.app/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
+        `${process.env.NEXT_PUBLIC_DEV_URL}/api/datalog/logRandom?SongPlays=1&countryID=${countryID}`
       );
     else {
       fetch(
-        `https://hello-world-bobtabrizi.vercel.app/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
+        `${process.env.NEXT_PUBLIC_DEV_URL}/api/datalog/logSearch?SongPlays=1&countryID=${countryID}`
       );
     }
     DeviceManager(token, uriArr, trackNumber, href);
@@ -113,7 +112,7 @@ export async function getServerSideProps(context) {
   if (!context.query.random) {
     searchTypeRandom = false;
     //Logging Searched Countries
-    db.collection("testCollection").findOneAndUpdate(
+    db.collection("Countries").findOneAndUpdate(
       { countryID: id.id },
       {
         $inc: {
@@ -125,11 +124,11 @@ export async function getServerSideProps(context) {
   } else {
     searchTypeRandom = true;
     //Logging Randomly Discovered Countries
-    db.collection("testCollection").findOneAndUpdate(
+    db.collection("Countries").findOneAndUpdate(
       { countryID: id.id },
       {
         $inc: {
-          "Data.randomCountries.searches": 1,
+          "Data.randomCountries.appearances": 1,
         },
       },
       { remove: false }

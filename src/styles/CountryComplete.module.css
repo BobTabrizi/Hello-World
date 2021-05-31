@@ -18,9 +18,13 @@
   overflow-y: auto;
   padding-left: 0;
   /*background-color: rgba(241, 247, 247, 0.39);*/
-  background-color: gray;
+  background-color: rgb(114, 111, 111);
   width: calc(410px);
   position: absolute;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .predictionList li {

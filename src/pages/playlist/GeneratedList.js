@@ -18,7 +18,7 @@ export default function GeneratedList({ countryCode }) {
   const handleSongClick = async (e, trackNumber, selectedCountryID, href) => {
     //Logging SongPlay count
     fetch(
-      `https://hello-world-bobtabrizi.vercel.app/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
+      `${process.env.NEXT_PUBLIC_DEV_URL}/api/datalog/logCustom?SongPlays=1&countryID=${selectedCountryID}`
     );
     DeviceManager(token, uriArr, trackNumber, href);
   };
@@ -31,10 +31,11 @@ export default function GeneratedList({ countryCode }) {
       let isRandomPlaylist = false;
       let songArray = await ListHelper(countryCode, isRandomPlaylist);
       let countries = songArray[songArray.length - 1];
-      ListCreator(countries, mergedSongArray);
+
       songArray.length = songArray.length - 1;
       let mergedSongArray = songArray.flat(1);
       setSongs(mergedSongArray);
+      ListCreator(countries, mergedSongArray);
       let trackURI = [];
       for (let i = 0; i < mergedSongArray.length; i++) {
         trackURI.push(`${mergedSongArray[i].track.uri}`);
@@ -57,14 +58,15 @@ export default function GeneratedList({ countryCode }) {
           ></link>
         </Head>
       </div>
-      <Link href="/">
-        <a>
-          <div className={styles.returnButton} style={{ fontSize: 20 }}>
-            Back to Home
-          </div>
-        </a>
-      </Link>
+
       <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
+        <Link href="/">
+          <a>
+            <div className={styles.returnButton} style={{ fontSize: 20 }}>
+              Back to Home
+            </div>
+          </a>
+        </Link>
         {pageHeading}
       </div>
 
@@ -107,11 +109,11 @@ export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
   let countryList = context.query.countries.split(" ");
   for (let i = 0; i < countryList.length; i++) {
-    db.collection("testCollection").findOneAndUpdate(
+    db.collection("Countries").findOneAndUpdate(
       { countryID: countryList[i] },
       {
         $inc: {
-          "Data.customCountries.appearances": 1,
+          "Data.customCountries.searches": 1,
         },
       },
       { remove: false }

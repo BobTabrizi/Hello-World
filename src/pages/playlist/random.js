@@ -16,7 +16,7 @@ export default function randomPlaylist({ countryArray }) {
 
   const handleSongClick = async (e, trackNumber, selectedCountryID, href) => {
     fetch(
-      `https://hello-world-bobtabrizi.vercel.app/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
+      `${process.env.NEXT_PUBLIC_DEV_URL}/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
     );
 
     DeviceManager(token, uriArray, trackNumber, href);
@@ -27,10 +27,7 @@ export default function randomPlaylist({ countryArray }) {
     //On first load, get details and create the playlist.
     if (token === "") {
       setToken(tempToken);
-      ListCreator("Random Countries", songs);
-
       let isRandomPlaylist = true;
-
       let songData = await listHelper(countryArray, isRandomPlaylist);
       let trackURI = [];
       for (let i = 0; i < songData.length; i++) {
@@ -38,6 +35,7 @@ export default function randomPlaylist({ countryArray }) {
       }
       setUriArray(trackURI);
       setSongs(songData);
+      ListCreator("Random Countries", songData);
     }
   });
   return (
@@ -55,15 +53,16 @@ export default function randomPlaylist({ countryArray }) {
           ></link>
         </Head>
       </div>
-      <Link href="/">
-        <a>
-          <div className={styles.returnButton} style={{ fontSize: 20 }}>
-            Back to Home
-          </div>
-        </a>
-      </Link>
+
       <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
-        Random Playlists
+        <Link href="/">
+          <a>
+            <div className={styles.returnButton} style={{ fontSize: 20 }}>
+              Back to Home
+            </div>
+          </a>
+        </Link>
+        Random Playlist
       </div>
       <div className={styles.songContainer}>
         {!songs &&
@@ -114,7 +113,7 @@ export async function getServerSideProps(context) {
     countryArr.push(Countries[rNum].code);
   }
   for (let i = 0; i < countryArr.length; i++) {
-    db.collection("testCollection").findOneAndUpdate(
+    db.collection("Countries").findOneAndUpdate(
       { countryID: countryArr[i] },
       {
         $inc: {
@@ -124,9 +123,6 @@ export async function getServerSideProps(context) {
       { remove: false }
     );
   }
-
-  console.log(countryArr);
-
   return {
     props: { countryArray: countryArr },
   };

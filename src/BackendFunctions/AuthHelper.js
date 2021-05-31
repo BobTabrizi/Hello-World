@@ -6,16 +6,16 @@ export default function AuthHelper(props) {
   const [token, setToken] = useState("");
 
   useEffect(() => {
-    //console.log(localStorage.getItem("Token"));
-    if (localStorage.getItem("Token")) {
+    if (localStorage.getItem("Token") !== "undefined") {
       let tempToken = localStorage.getItem("Token");
       setToken(tempToken);
     }
+    if (localStorage.getItem("Token") === null) {
+      setToken("");
+    }
   });
-  // if (props.token !== null) {
   if (token.length > 1) {
     return <div>Signed In</div>;
-    //  }
   } else {
     return (
       <Link href="/api/auth/Login">

@@ -89,7 +89,7 @@ class Autocomplete extends React.Component {
                       <img
                         src={`/flags/${prediction.code}.png`}
                         height="50"
-                        width="50"
+                        width="70"
                       ></img>
                     </div>
                   </li>
@@ -121,7 +121,7 @@ class Autocomplete extends React.Component {
           />
           {this.props.linkRef && (
             <Link href={pageRef}>
-              <button style={{ height: 30, width: 30, borderRadius: 30 }}>
+              <button style={{ height: 25, width: 25, borderRadius: 25 }}>
                 <i className="fa fa-search"></i>
               </button>
             </Link>
