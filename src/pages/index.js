@@ -31,7 +31,7 @@ export default function Home() {
 
       const fetchToken = async () => {
         let token = await fetch(
-          `${process.env.NEXT_PUBLIC_DEV_URL}/api/auth/getToken?codeValue=${hashParams.code}`
+          `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/getToken?codeValue=${hashParams.code}`
         );
 
         console.log(token);
@@ -58,7 +58,7 @@ export default function Home() {
 
         const fetchRefreshedToken = async () => {
           let refreshToken = await fetch(
-            `${process.env.NEXT_PUBLIC_DEV_URL}/api/auth/refreshToken?tokenValue=${refToken}`
+            `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/refreshToken?tokenValue=${refToken}`
           );
           let tokenInfo = await refreshToken.json();
           localStorage.setItem("Token", tokenInfo.access_token);
