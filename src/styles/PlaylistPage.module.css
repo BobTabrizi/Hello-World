@@ -83,11 +83,6 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .returnButton {
-  }
-}
-
 @media only screen and (max-width: 1155px) {
   .songDetails {
     flex: 100%;
@@ -209,4 +204,12 @@
   font-family: "Codystar";
   left: 50px;
   top: 40px;
+  background-color: rgb(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 30px;
+  margin-top: 5%;
+}
+
+.returnButton:hover {
+  background: rgb(255, 255, 255, 0.4);
 }

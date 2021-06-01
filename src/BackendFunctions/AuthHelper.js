@@ -10,6 +10,9 @@ export default function AuthHelper(props) {
       let tempToken = localStorage.getItem("Token");
       setToken(tempToken);
     }
+    if (localStorage.getItem("Token") === "undefined") {
+      localStorage.setItem("Token", token);
+    }
     if (localStorage.getItem("Token") === null) {
       setToken("");
     }

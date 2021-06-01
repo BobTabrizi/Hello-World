@@ -112,20 +112,24 @@ class Autocomplete extends React.Component {
     return (
       <div>
         <Fragment>
-          <input
-            type="text"
-            placeholder="Select a Country"
-            onChange={onTextChanged}
-            value={userInput}
-            className={styles.input}
-          />
-          {this.props.linkRef && (
-            <Link href={pageRef}>
-              <button style={{ height: 25, width: 25, borderRadius: 25 }}>
-                <i className="fa fa-search"></i>
-              </button>
-            </Link>
-          )}
+          <form>
+            <input
+              type="text"
+              placeholder="Select a Country"
+              onChange={onTextChanged}
+              value={userInput}
+              className={styles.input}
+              autoComplete="off"
+            />
+
+            {this.props.linkRef && (
+              <Link href={pageRef}>
+                <button style={{ height: 25, width: 25, borderRadius: 25 }}>
+                  <i className="fa fa-search"></i>
+                </button>
+              </Link>
+            )}
+          </form>
           {predictionComponent}
         </Fragment>
       </div>

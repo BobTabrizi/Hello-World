@@ -9,7 +9,6 @@ export default function DeviceManager(token, uriArr, trackNumber, href) {
   })
     .then((resp) => resp.json())
     .then((response) => {
-      console.log(response);
       let index = 0;
       while (response.devices[index]) {
         if (!response.devices[index].is_restricted) {

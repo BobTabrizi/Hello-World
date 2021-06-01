@@ -7,20 +7,11 @@ import SongButton from "../../components/SongButton";
 import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
 import listHelper from "../../BackendFunctions/GetLists";
-import DeviceManager from "../../BackendFunctions/DeviceManager";
-import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
-export default function randomPlaylist({ countryArray }) {
+import SongList from "../../components/SongList";
+export default function randomPlaylist({ countryArray, logUrl }) {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState(null);
   const [uriArray, setUriArray] = useState([]);
-
-  const handleSongClick = async (e, trackNumber, selectedCountryID, href) => {
-    fetch(
-      `${process.env.NEXT_PUBLIC_PROD_URL}/api/datalog/logRandom?SongPlays=1&countryID=${selectedCountryID}`
-    );
-
-    DeviceManager(token, uriArray, trackNumber, href);
-  };
 
   useEffect(async () => {
     let tempToken = localStorage.getItem("Token");
@@ -28,7 +19,12 @@ export default function randomPlaylist({ countryArray }) {
     if (token === "") {
       setToken(tempToken);
       let isRandomPlaylist = true;
-      let songData = await listHelper(countryArray, isRandomPlaylist);
+      let isCustomPlaylist = false;
+      let songData = await listHelper(
+        countryArray,
+        isRandomPlaylist,
+        isCustomPlaylist
+      );
       let trackURI = [];
       for (let i = 0; i < songData.length; i++) {
         trackURI.push(`${songData[i].track.uri}`);
@@ -55,46 +51,23 @@ export default function randomPlaylist({ countryArray }) {
       </div>
 
       <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
-        <Link href="/">
-          <a>
-            <div className={styles.returnButton} style={{ fontSize: 20 }}>
-              Back to Home
-            </div>
-          </a>
-        </Link>
+        <div>
+          <Link href="/">
+            <a>
+              <button className={styles.returnButton} style={{ fontSize: 20 }}>
+                Return to main page
+              </button>
+            </a>
+          </Link>
+        </div>
         Random Playlist
       </div>
-      <div className={styles.songContainer}>
-        {!songs &&
-          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
-            <div className={styles.skeletonSongItems} key={n}>
-              <SkeletonSongItem key={n} />
-            </div>
-          ))}
-        {songs &&
-          songs.map((song, index) => (
-            <div className={styles.songItems} key={index}>
-              <div
-                onClick={(e) =>
-                  handleSongClick(
-                    e,
-                    index,
-                    song.countryID,
-                    song.track.external_urls.spotify
-                  )
-                }
-              >
-                <SongButton song={song} />
-                <div className={styles.songDetails}>
-                  <div className={styles.trackName}>{song.track.name}</div>
-                  <div className={styles.artistName}>
-                    {song.track.artists[0].name}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-      </div>
+      <SongList
+        songs={songs}
+        uriArray={uriArray}
+        token={token}
+        logUrl={logUrl}
+      />
     </>
   );
 }
@@ -104,7 +77,6 @@ export async function getServerSideProps(context) {
   let countryArr = [];
   for (let i = 0; i < 10; i++) {
     let rNum = Math.floor(Math.random() * 100);
-
     //Handle duplicates
     if (countryArr.includes(Countries[rNum].code)) {
       i--;
@@ -112,6 +84,9 @@ export async function getServerSideProps(context) {
     }
     countryArr.push(Countries[rNum].code);
   }
+
+  let logString = "/api/datalog/logRandom?SongPlays=1&countryID=";
+
   for (let i = 0; i < countryArr.length; i++) {
     db.collection("Countries").findOneAndUpdate(
       { countryID: countryArr[i] },
@@ -124,6 +99,6 @@ export async function getServerSideProps(context) {
     );
   }
   return {
-    props: { countryArray: countryArr },
+    props: { countryArray: countryArr, logUrl: logString },
   };
 }

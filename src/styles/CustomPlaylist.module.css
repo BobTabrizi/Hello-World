@@ -8,9 +8,15 @@
 .returnButton {
   color: white;
   font-family: "Codystar";
-  left: 20px;
+  left: 50px;
   top: 40px;
-  position: absolute;
+  background-color: rgb(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 30px;
+  margin-top: 3rem;
+}
+.returnButton:hover {
+  background-color: rgb(255, 255, 255, 0.4);
 }
 
 .inputContainer {

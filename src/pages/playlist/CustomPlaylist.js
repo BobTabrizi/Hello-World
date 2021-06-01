@@ -38,15 +38,19 @@ export default function CustomPlaylist({ songs }) {
           ></link>
         </Head>
       </div>
-      <Link href="/">
-        <a>
-          <div className={styles.returnButton} style={{ fontSize: 20 }}>
-            Back to Home
-          </div>
-        </a>
-      </Link>
       <div className={styles.pageHeader}>
-        Choose up to 3 countries and get a playlist.
+        <div>
+          <Link href="/">
+            <a>
+              <button className={styles.returnButton} style={{ fontSize: 16 }}>
+                Return to main page
+              </button>
+            </a>
+          </Link>
+        </div>
+        <div style={{ marginTop: "1rem", fontSize: 40 }}>
+          Choose up to 3 countries and get a playlist
+        </div>
       </div>
       <div className={styles.inputContainer}>
         <div className={styles.inputs}>

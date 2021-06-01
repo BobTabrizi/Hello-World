@@ -26,7 +26,6 @@ export default function getToken(isRefreshToken) {
   var encodedAuth = new Buffer(clientString).toString("base64");
 
   const getAccessToken = (isRefreshToken) => {
-    //let grantString = "client_credentials";
     if (isRefreshToken) {
       console.log("Refreshed");
       grantString = "refresh_token";

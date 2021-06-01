@@ -50,7 +50,7 @@ export default function Home() {
       const Hour = 1000 * 60 * 60;
       let HourAgo = Date.now() - Hour;
       if (tempTime < HourAgo) {
-        console.log("expiration reached");
+        console.log("Token Refreshed");
         let refToken = localStorage.getItem("RefreshToken");
 
         localStorage.removeItem("Token");

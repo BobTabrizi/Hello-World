@@ -52,14 +52,16 @@ a {
 
 .headerTitle {
   color: rgba(255, 255, 255, 0.87);
-  font-size: 40;
+  font-size: 45;
   text-align: "start";
+  margin-top: 4%;
 }
 
 .functionButtons {
+  display: flex;
   padding: 5px 10px;
-  margin-right: 2rem;
   text-align: center;
+  flex-direction: column;
 }
 .skeleton {
   background-color: rgb(8, 28, 34);
@@ -81,19 +83,29 @@ a {
 }
 
 .skeleton.title {
-  width: 40%;
-  margin-left: 5%;
+  width: 70%;
   height: 15px;
   background-color: gray;
   border-radius: 25px;
 }
 
 .skeleton.artist {
-  width: 60%;
-  margin-left: 5%;
+  width: 35%;
   height: 15px;
   background-color: gray;
   border-radius: 25px;
+}
+.skeleton.songImg {
+  width: 175px;
+  height: 175px;
+  background: gray;
+}
+
+.skeletonDetails {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .skeleton.songBG {
@@ -107,12 +119,11 @@ a {
   background: grey;
 }
 
-.skeleton.SongItem {
-  display: flex;
-  flex-direction: column;
+.SongItem {
   background-color: rgb(8, 28, 34);
   border: 1px solid black;
-  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 900px) {
