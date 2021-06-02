@@ -60,7 +60,7 @@ export default function randomPlaylist({ countryArray, logUrl }) {
             </a>
           </Link>
         </div>
-        Random Playlist
+        <div style={{ marginTop: "1.5rem" }}> Random Playlist</div>
       </div>
       <SongList
         songs={songs}

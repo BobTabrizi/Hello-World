@@ -57,6 +57,7 @@ const getCustomList = async (countries) => {
 
 const DataProcessor = (allData) => {
   let combinedList = [];
+  console.log(allData);
   for (let j = 0; j < allData.length; j++) {
     let currentCountry = allData[j][0];
     let countryName = currentCountry.countryName;

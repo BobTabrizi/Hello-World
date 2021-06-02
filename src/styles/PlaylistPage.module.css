@@ -23,8 +23,16 @@
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  transition: 0.75s;
+  transition: 0.5s;
 }
+
+.songItems:not(:hover) {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: 0.5s;
+}
+
 .songImages {
   display: flex;
   position: relative;
@@ -204,10 +212,10 @@
   font-family: "Codystar";
   left: 50px;
   top: 40px;
-  background-color: rgb(255, 255, 255, 0.2);
+  background-color: rgb(255, 255, 255, 0.3);
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 30px;
-  margin-top: 5%;
+  margin-top: 2rem;
 }
 
 .returnButton:hover {

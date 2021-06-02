@@ -4,12 +4,10 @@ import Header from "../components/PageHeader";
 import styles from "../styles/Home.module.css";
 //import { S3 } from "@aws-sdk/client-s3";
 //import { connectToDatabase } from "../../util/mongodb";
-import FlagCarousel from "../components/Carousel";
+//import FlagCarousel from "../components/Carousel";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Countrycomplete from "../components/Countrycomplete";
-import tokenHelper from "../BackendFunctions/getToken";
-import listRetriever from "../BackendFunctions/popLists";
 import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/DiscoverButton";
 import RandomPlaylist from "../components/RandomPlaylist";
@@ -33,8 +31,6 @@ export default function Home() {
         let token = await fetch(
           `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/getToken?codeValue=${hashParams.code}`
         );
-
-        console.log(token);
         let tokenData = await token.json();
         localStorage.setItem("Token", tokenData.access_token);
         localStorage.setItem("RefreshToken", tokenData.refresh_token);

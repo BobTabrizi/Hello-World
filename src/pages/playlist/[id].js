@@ -61,7 +61,7 @@ export default function Playlist({ countryID, countryName, logUrl }) {
             </a>
           </Link>
         </div>
-        {countryName}
+        <div style={{ marginTop: "1.5rem" }}>{countryName}</div>
       </div>
 
       <SongList

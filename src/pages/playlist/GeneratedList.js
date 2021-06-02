@@ -64,7 +64,7 @@ export default function GeneratedList({ countryCodes, logUrl }) {
             </a>
           </Link>
         </div>
-        {pageHeading}
+        <div style={{ marginTop: "1.5rem" }}> {pageHeading}</div>
       </div>
       <SongList
         songs={songs}
