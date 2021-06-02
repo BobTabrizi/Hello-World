@@ -17,6 +17,7 @@ config.autoAddCss = false;
 export default function Home() {
   const [token, setToken] = useState("");
   const [country, setCountry] = useState(["", ""]);
+  const [ButtonState, setButtonState] = useState("Visible");
   useEffect(() => {
     if (window.location.search.length > 10) {
       let hashParams = {};
@@ -90,9 +91,14 @@ export default function Home() {
         <Header />
         <AuthHelper token={token} />
         <div className="searchBody">
-          <Countrycomplete updateCountry={setCountry} linkRef={"/playlist/"} />
+          <Countrycomplete
+            searchButton={false}
+            updateCountry={setCountry}
+            linkRef={"/playlist/"}
+            updateButtonState={setButtonState}
+          />
         </div>
-        <div className="functionButtons">
+        <div className="functionButtons" style={{ visibility: ButtonState }}>
           <DiscoverButton />
           <RandomPlaylist />
           <CustomPlaylist />

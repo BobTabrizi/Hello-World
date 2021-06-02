@@ -2,6 +2,9 @@ import React, { Fragment } from "react";
 import Link from "next/link";
 import Countries from "../../Data/Countries.json";
 import styles from "../styles/CountryComplete.module.css";
+import Router, { withRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 class Autocomplete extends React.Component {
   constructor(props) {
     super(props);
@@ -10,14 +13,22 @@ class Autocomplete extends React.Component {
       filteredPredictions: [],
       userInput: "",
       finalPrediction: "",
+      nullPrediction: "hidden",
       predictionShown: true,
+      searchButton: this.props.searchButton,
     };
   }
 
-  onTextChanged = (e) => {
+  onTextChanged = (e, value) => {
+    let userInput;
     var predictions = Countries;
-    const userInput = e.currentTarget.value;
-
+    if (e.currentTarget.value[0] !== undefined) {
+      userInput =
+        e.currentTarget.value[0].toUpperCase() +
+        e.currentTarget.value.substring(1);
+    } else {
+      userInput = e.currentTarget.value;
+    }
     const filteredPredictions = predictions.filter(
       (prediction) =>
         prediction.name.toLowerCase().indexOf(userInput.toLowerCase()) > -1
@@ -25,12 +36,12 @@ class Autocomplete extends React.Component {
     this.setState({
       currentPrediction: 0,
       filteredPredictions,
-      userInput: e.currentTarget.value,
+      userInput: userInput,
       predictionShown: true,
     });
   };
 
-  onClick = (e) => {
+  onClick = (e, countryCode) => {
     this.setState({
       currentPrediction: 0,
       filteredPredictions: [],
@@ -44,6 +55,11 @@ class Autocomplete extends React.Component {
         e.currentTarget.innerText,
         e.currentTarget.getAttribute("value"),
       ]);
+    }
+    if (this.props.linkRef === "/playlist/") {
+      Router.push({
+        pathname: `${this.props.linkRef}${countryCode}`,
+      });
     }
   };
 
@@ -60,9 +76,23 @@ class Autocomplete extends React.Component {
     } = this;
 
     let predictionComponent;
+    let nullComponent;
 
+    //Hide Main Page Buttons on search for transparent background
+    if (this.props.updateButtonState) {
+      this.props.updateButtonState("Visible");
+    }
+    nullComponent = (
+      <div className={styles.nullComponent} style={{ visibility: "Hidden" }}>
+        No Countries Found
+      </div>
+    );
     if (predictionShown && userInput) {
-      if (filteredPredictions.length) {
+      if (filteredPredictions.length && filteredPredictions[0] !== "Selected") {
+        if (this.props.updateButtonState) {
+          this.props.updateButtonState("Hidden");
+        }
+
         predictionComponent = (
           <div className={styles.predictionList}>
             <ul>
@@ -76,7 +106,7 @@ class Autocomplete extends React.Component {
                     className={className}
                     key={prediction.name}
                     value={prediction.code}
-                    onClick={onClick}
+                    onClick={(e) => onClick(e, prediction.code)}
                   >
                     <div
                       style={{
@@ -99,11 +129,21 @@ class Autocomplete extends React.Component {
           </div>
         );
       } else {
-        predictionComponent = (
-          <div className={styles.nullpredictions}>No Countries Found</div>
-        );
+        predictionComponent = null;
+
+        if (filteredPredictions[0] !== "Selected") {
+          nullComponent = (
+            <div
+              className={styles.nullComponent}
+              style={{ visibility: "Visible" }}
+            >
+              No Countries Found
+            </div>
+          );
+        }
       }
     }
+
     let pageRef;
     if (this.props.linkRef) {
       let customRef = this.props.linkRef;
@@ -112,28 +152,57 @@ class Autocomplete extends React.Component {
     return (
       <div>
         <Fragment>
-          <form>
-            <input
-              type="text"
-              placeholder="Select a Country"
-              onChange={onTextChanged}
-              value={userInput}
-              className={styles.input}
-              autoComplete="off"
-            />
+          {nullComponent}
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <div className={styles.inputContainer}>
+              <div className={styles.searchIcon}>
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  style={{
+                    marginRight: 10,
+                    color: "gray",
+                    verticalAlign: "middle",
+                  }}
+                  size="1x"
+                ></FontAwesomeIcon>
+              </div>
 
-            {this.props.linkRef && (
-              <Link href={pageRef}>
-                <button style={{ height: 25, width: 25, borderRadius: 25 }}>
-                  <i className="fa fa-search"></i>
-                </button>
-              </Link>
-            )}
+              <input
+                type="text"
+                placeholder="Select a Country"
+                onChange={(e) => onTextChanged(e, userInput)}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter") {
+                    if (this.props.linkRef === "/playlist/") {
+                      Router.push({
+                        pathname: `${this.props.linkRef}${userInput}`,
+                      });
+                    } else {
+                      this.setState({ filteredPredictions: ["Selected"] });
+                    }
+                  }
+                }}
+                value={userInput}
+                className={styles.input}
+                autoComplete="off"
+              />
+            </div>
           </form>
+          {this.props.linkRef && this.props.searchButton && (
+            <Link href={pageRef}>
+              <button style={{ height: 25, width: 25, borderRadius: 25 }}>
+                <i className="fa fa-search"></i>
+              </button>
+            </Link>
+          )}
           {predictionComponent}
         </Fragment>
       </div>
     );
   }
 }
-export default Autocomplete;
+export default withRouter(Autocomplete);

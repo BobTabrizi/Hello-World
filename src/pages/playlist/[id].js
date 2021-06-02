@@ -77,14 +77,30 @@ export default function Playlist({ countryID, countryName, logUrl }) {
 export async function getServerSideProps(context) {
   //console.log(context.query);
   const { db } = await connectToDatabase();
-  const id = context.query;
-  const countryName = countryMap[id.id];
+
+  //Enable page access to both country code and names.
+  let id;
+  let countryName;
+  if (countryMap[context.query.id]) {
+    id = context.query.id;
+    countryName = countryMap[id];
+  } else {
+    const getKeyByValue = (obj, value) =>
+      Object.keys(obj).find((key) => obj[key] === value);
+    id = getKeyByValue(countryMap, context.query.id);
+    if (id) {
+      countryName = context.query.id;
+    } else {
+      throw new Error("Country Not Found");
+    }
+  }
+
   let dataString;
   if (!context.query.random) {
     dataString = `/api/datalog/logSearch?SongPlays=1&countryID=`;
     //Logging Searched Countries
     db.collection("Countries").findOneAndUpdate(
-      { countryID: id.id },
+      { countryID: id },
       {
         $inc: {
           "Data.searchCountries.searches": 1,
@@ -96,7 +112,7 @@ export async function getServerSideProps(context) {
     dataString = `/api/datalog/logRandom?SongPlays=1&countryID=`;
     //Logging Randomly Discovered Countries
     db.collection("Countries").findOneAndUpdate(
-      { countryID: id.id },
+      { countryID: id },
       {
         $inc: {
           "Data.randomCountries.appearances": 1,
@@ -107,7 +123,7 @@ export async function getServerSideProps(context) {
   }
   return {
     props: {
-      countryID: id.id,
+      countryID: id,
       countryName: countryName,
       logUrl: dataString,
     },

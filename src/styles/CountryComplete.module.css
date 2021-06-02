@@ -1,5 +1,5 @@
 .predictionList li:hover {
-  background-color: #8d8d8d;
+  background-color: rgba(241, 247, 247, 0.5);
   cursor: pointer;
   font-weight: 700;
 }
@@ -17,8 +17,8 @@
   max-height: 300px;
   overflow-y: auto;
   padding-left: 0;
-  /*background-color: rgba(241, 247, 247, 0.39);*/
-  background-color: rgb(114, 111, 111);
+  background-color: rgba(241, 247, 247, 0.39);
+  /*background-color: rgb(114, 111, 111);*/
   width: calc(410px);
   position: absolute;
   border-bottom-left-radius: 20px;
@@ -45,8 +45,23 @@
 
 .nullpredictions {
   color: white;
-  padding: 0.5rem;
+  padding: 0.2rem;
   position: absolute;
   text-align: center;
   margin-left: 9%;
+}
+
+.inputContainer {
+  position: relative;
+  border: 1px solid #000;
+}
+
+.inputContainer > .searchIcon {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+}
+
+.inputContainer > input {
+  padding-left: 40px;
 }

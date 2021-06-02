@@ -4,6 +4,8 @@ import Link from "next/link";
 import SongButton from "../../components/SongButton";
 import Countrycomplete from "../../components/Countrycomplete";
 import React, { useState, useEffect } from "react";
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 export default function CustomPlaylist({ songs }) {
   const [token, setToken] = useState("");
   const [countryOne, setCountryOne] = useState(["", ""]);
@@ -36,6 +38,11 @@ export default function CustomPlaylist({ songs }) {
             href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
             rel="stylesheet"
           ></link>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          ></link>
+          <style>{dom.css()}</style>
         </Head>
       </div>
       <div className={styles.pageHeader}>
