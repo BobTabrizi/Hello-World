@@ -25,7 +25,6 @@ export default function Playlist({ countryID, countryName, logUrl }) {
       let trackURI = [];
 
       let countryTracks = result[0].Playlists[0].tracks;
-      countryTracks.length = 83;
       for (let i = 0; i < countryTracks.length; i++) {
         trackURI.push(`${result[0].Playlists[0].tracks[i].track.uri}`);
       }
