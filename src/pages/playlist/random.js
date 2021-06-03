@@ -3,18 +3,23 @@ import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
 import Countries from "../../../Data/Countries.json";
 import { connectToDatabase } from "../../../util/mongodb";
-import SongButton from "../../components/SongButton";
 import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
-import SpotifyData from "../../../Data/Data.json";
-import NonSpotify from "../../../Data/ExternalData.json";
 import listHelper from "../../BackendFunctions/GetLists";
 import SongList from "../../components/SongList";
-export default function randomPlaylist({ countryArray, logUrl }) {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+export default function randomPlaylist({
+  countryArray,
+  countryNameArray,
+  logUrl,
+}) {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState(null);
   const [uriArray, setUriArray] = useState([]);
-
+  const [playlistUrl, setPlaylistURL] = useState("https://open.spotify.com/");
   useEffect(async () => {
     let tempToken = localStorage.getItem("Token");
     //On first load, get details and create the playlist.
@@ -30,12 +35,12 @@ export default function randomPlaylist({ countryArray, logUrl }) {
 
       let trackURI = [];
       for (let i = 0; i < songData.length; i++) {
-        console.log(songData[i].track.album.images[0].url);
         trackURI.push(`${songData[i].track.uri}`);
       }
       setUriArray(trackURI);
       setSongs(songData);
-      ListCreator("Random Countries", songData);
+      let playlistURL = await ListCreator(countryNameArray, "random", songData);
+      setPlaylistURL(playlistURL);
     }
   });
   return (
@@ -51,6 +56,7 @@ export default function randomPlaylist({ countryArray, logUrl }) {
             href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
             rel="stylesheet"
           ></link>
+          <style>{dom.css()}</style>
         </Head>
       </div>
 
@@ -65,6 +71,26 @@ export default function randomPlaylist({ countryArray, logUrl }) {
           </Link>
         </div>
         <div style={{ marginTop: "1.5rem" }}> Random Playlist</div>
+        <a href={playlistUrl} target="_blank">
+          <button
+            className={styles.spotifyLink}
+            style={{
+              fontSize: 18,
+              textAlign: "center",
+            }}
+          >
+            <FontAwesomeIcon
+              icon={faSpotify}
+              style={{
+                marginRight: 10,
+                color: "#1DB954",
+                verticalAlign: "middle",
+              }}
+              size="2x"
+            ></FontAwesomeIcon>
+            View it on Spotify
+          </button>
+        </a>
       </div>
       <SongList
         songs={songs}
@@ -78,23 +104,23 @@ export default function randomPlaylist({ countryArray, logUrl }) {
 
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
-  let countryArr = [];
+  let countryCodeArr = [];
+  let countryNameArr = [];
   for (let i = 0; i < 10; i++) {
     let rNum = Math.floor(Math.random() * 100);
     //Handle duplicates
-    if (countryArr.includes(Countries[rNum].code)) {
+    if (countryCodeArr.includes(Countries[rNum].code)) {
       i--;
       continue;
     }
-    countryArr.push(Countries[rNum].code);
+    countryCodeArr.push(Countries[rNum].code);
+    countryNameArr.push(Countries[rNum].name);
   }
-
-  console.log(countryArr);
   let logString = "/api/datalog/logRandom?SongPlays=1&countryID=";
 
-  for (let i = 0; i < countryArr.length; i++) {
+  for (let i = 0; i < countryCodeArr.length; i++) {
     db.collection("Countries").findOneAndUpdate(
-      { countryID: countryArr[i] },
+      { countryID: countryCodeArr[i] },
       {
         $inc: {
           "Data.randomCountries.appearances": 1,
@@ -104,6 +130,10 @@ export async function getServerSideProps(context) {
     );
   }
   return {
-    props: { countryArray: countryArr, logUrl: logString },
+    props: {
+      countryArray: countryCodeArr,
+      countryNameArray: countryNameArr,
+      logUrl: logString,
+    },
   };
 }

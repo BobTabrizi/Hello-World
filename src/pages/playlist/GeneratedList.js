@@ -2,16 +2,19 @@ import Head from "next/head";
 import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
 import { connectToDatabase } from "../../../util/mongodb";
-import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
 import ListHelper from "../../BackendFunctions/GetLists";
 import ListCreator from "../../BackendFunctions/CreateList";
 import SongList from "../../components/SongList";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 export default function GeneratedList({ countryCodes, logUrl }) {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState(null);
   const [uriArray, setUriArray] = useState([]);
+  const [playlistUrl, setPlaylistURL] = useState("https://open.spotify.com/");
   const [pageHeading, setPageHeading] = useState("Custom Playlist");
 
   useEffect(async () => {
@@ -31,7 +34,8 @@ export default function GeneratedList({ countryCodes, logUrl }) {
       songArray.length = songArray.length - 1;
       let mergedSongArray = songArray.flat(1);
       setSongs(mergedSongArray);
-      ListCreator(countries, mergedSongArray);
+      let playlistURL = await ListCreator(countries, "custom", mergedSongArray);
+      setPlaylistURL(playlistURL);
       let trackURI = [];
       for (let i = 0; i < mergedSongArray.length; i++) {
         trackURI.push(`${mergedSongArray[i].track.uri}`);
@@ -52,6 +56,7 @@ export default function GeneratedList({ countryCodes, logUrl }) {
             href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
             rel="stylesheet"
           ></link>
+          <style>{dom.css()}</style>
         </Head>
       </div>
       <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
@@ -65,7 +70,28 @@ export default function GeneratedList({ countryCodes, logUrl }) {
           </Link>
         </div>
         <div style={{ marginTop: "1.5rem" }}> {pageHeading}</div>
+        <a href={playlistUrl} target="_blank">
+          <button
+            className={styles.spotifyLink}
+            style={{
+              fontSize: 18,
+              textAlign: "center",
+            }}
+          >
+            <FontAwesomeIcon
+              icon={faSpotify}
+              style={{
+                marginRight: 10,
+                color: "#1DB954",
+                verticalAlign: "middle",
+              }}
+              size="2x"
+            ></FontAwesomeIcon>
+            View it on Spotify
+          </button>
+        </a>
       </div>
+
       <SongList
         songs={songs}
         uriArray={uriArray}

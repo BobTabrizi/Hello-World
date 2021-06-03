@@ -18,6 +18,38 @@ const retrieveData = (url) => {
       });
   });
 };
+
+const DataProcessor = (allData) => {
+  let combinedList = [];
+  for (let j = 0; j < allData.length; j++) {
+    let currentCountry = allData[j][0];
+    let countryName = currentCountry.countryName;
+    let tracks = currentCountry.Playlists[0].tracks;
+
+    for (let x = 0; x < 10; x++) {
+      let playListLength = tracks.length;
+      let rNum = Math.floor(Math.random() * (playListLength - 1));
+      let songName = tracks[rNum].track.name;
+      //Handling Potential duplicate tracks.
+      if (
+        combinedList.filter((item) => item.track.name === songName).length !== 0
+      ) {
+        let shiftFactor = 0;
+        if (rNum < playListLength) shiftFactor = 1;
+        else if (rNum >= playListLength) {
+          shiftFactor = -1;
+        }
+
+        tracks[rNum + shiftFactor].countryID = countryName;
+        combinedList.push(tracks[rNum + shiftFactor]);
+        continue;
+      }
+      combinedList.push(tracks[rNum]);
+    }
+  }
+  return combinedList;
+};
+
 const getList = async (countries) => {
   const data = await fetch(
     `${process.env.NEXT_PUBLIC_PROD_URL}/api/${countries}`
@@ -53,38 +85,6 @@ const getCustomList = async (countries) => {
   }
   Data.push(countryNames);
   return Data;
-};
-
-const DataProcessor = (allData) => {
-  let combinedList = [];
-  console.log(allData);
-  for (let j = 0; j < allData.length; j++) {
-    let currentCountry = allData[j][0];
-    let countryName = currentCountry.countryName;
-    let tracks = currentCountry.Playlists[0].tracks;
-
-    for (let x = 0; x < 10; x++) {
-      let playListLength = tracks.length;
-      let rNum = Math.floor(Math.random() * (playListLength - 1));
-      let songName = tracks[rNum].track.name;
-      //Handling Potential duplicate tracks.
-      if (
-        combinedList.filter((item) => item.track.name === songName).length !== 0
-      ) {
-        let shiftFactor = 0;
-        if (rNum < playListLength) shiftFactor = 1;
-        else if (rNum >= playListLength) {
-          shiftFactor = -1;
-        }
-
-        tracks[rNum + shiftFactor].countryID = countryName;
-        combinedList.push(tracks[rNum + shiftFactor]);
-        continue;
-      }
-      combinedList.push(tracks[rNum]);
-    }
-  }
-  return combinedList;
 };
 
 const getRandomList = async (countries) => {

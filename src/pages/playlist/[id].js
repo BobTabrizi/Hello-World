@@ -2,7 +2,6 @@ import Head from "next/head";
 import styles from "../../styles/PlaylistPage.module.css";
 import Link from "next/link";
 import { connectToDatabase } from "../../../util/mongodb";
-import SongButton from "../../components/SongButton";
 import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import listHelper from "../../BackendFunctions/GetLists";
@@ -13,7 +12,6 @@ export default function Playlist({ countryID, countryName, logUrl }) {
   const [uriArray, setUriArray] = useState([]);
   useEffect(async () => {
     let tempToken = localStorage.getItem("Token");
-
     //Boolean for helper function.
     let isRandomPlaylist = false;
     let isCustomPlaylist = false;
@@ -25,7 +23,10 @@ export default function Playlist({ countryID, countryName, logUrl }) {
         isCustomPlaylist
       );
       let trackURI = [];
-      for (let i = 0; i < result[0].Playlists[0].tracks.length; i++) {
+
+      let countryTracks = result[0].Playlists[0].tracks;
+      countryTracks.length = 83;
+      for (let i = 0; i < countryTracks.length; i++) {
         trackURI.push(`${result[0].Playlists[0].tracks[i].track.uri}`);
       }
       const songs = result[0].Playlists[0].tracks;

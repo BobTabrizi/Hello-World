@@ -1,10 +1,8 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Header from "../components/PageHeader";
 import styles from "../styles/Home.module.css";
 //import { S3 } from "@aws-sdk/client-s3";
 //import { connectToDatabase } from "../../util/mongodb";
-//import FlagCarousel from "../components/Carousel";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Countrycomplete from "../components/Countrycomplete";

@@ -60,6 +60,12 @@ const retrieveData = (url, token, id) => {
         }
         data.tracks.countryID = id;
         data.tracks.url = url;
+
+        /*Edge case handling for locality/null track data (for non official lists)
+        data.tracks.items = data.tracks.items.filter(
+          (trackItem) => trackItem.is_local !== true && trackItem.track !== null
+        );
+        */
         resolve(data.tracks);
       });
   });
@@ -72,7 +78,7 @@ const cleanData = (pulledList) => {
         genre: "Popular",
         url: pulledList[i].url,
         href: pulledList[i].href,
-        totalTracks: pulledList[i].total,
+        totalTracks: pulledList[i].items.length,
         spotifyOwned: true,
         tracks: pulledList[i].items,
       },
@@ -90,7 +96,6 @@ const cleanData = (pulledList) => {
 };
 const getSongs = async (token) => {
   let playlistData = [];
-
   for (var key in Data) {
     const id = Data[key].countryID;
     const url = Data[key].playlists[0].url;
@@ -117,6 +122,7 @@ export default async function handler(req, res) {
     });
 
   pulledList = cleanData(pulledList);
+
   let status = "Lists Successfully Updated";
   for (var item in pulledList) {
     db.collection("Countries")
@@ -130,5 +136,6 @@ export default async function handler(req, res) {
       )
       .catch((err) => (status = err));
   }
+
   res.json(status);
 }
