@@ -6,17 +6,22 @@
 }
 
 .returnButton {
-  color: white;
-  font-family: "Codystar";
+  border-width: 1px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  padding: 0.5em 1em;
   left: 50px;
   top: 40px;
-  background-color: rgb(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 30px;
-  margin-top: 3rem;
+  background-color: rgb(255, 255, 255, 0.1);
+  margin-top: 2rem;
 }
 .returnButton:hover {
   background-color: rgb(255, 255, 255, 0.4);
+}
+
+.returnButton:focus {
+  outline: none;
 }
 
 .inputContainer {
@@ -33,12 +38,19 @@
 }
 .button {
   font-family: "Codystar";
-  background: rgb(255, 255, 255, 0.2);
-  border-radius: 20px;
+  border-width: 1px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  background-color: rgb(255, 255, 255, 0.1);
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin-top: 3rem;
 }
 
 .button:hover {
   background-color: rgba(255, 255, 255, 0.4);
+}
+
+.button:focus {
+  outline: none;
 }

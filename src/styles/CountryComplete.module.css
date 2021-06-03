@@ -43,6 +43,10 @@
   color: black;
 }
 
+.input:focus {
+  outline: none;
+}
+
 .nullpredictions {
   color: white;
   padding: 0.2rem;
@@ -53,7 +57,6 @@
 
 .inputContainer {
   position: relative;
-  border: 1px solid #000;
 }
 
 .inputContainer > .searchIcon {
