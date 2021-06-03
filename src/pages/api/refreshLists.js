@@ -1,4 +1,4 @@
-//import Data from "../../../Data/Data.json";
+import Data from "../../../Data/Data.json";
 import { connectToDatabase } from "../../../util/mongodb";
 var AccessTokenSet = false;
 var AccessToken = null;
@@ -94,7 +94,6 @@ const getSongs = async (token) => {
   for (var key in Data) {
     const id = Data[key].countryID;
     const url = Data[key].playlists[0].url;
-
     playlistData.push(retrieveData(url, token, id));
   }
   let Playlists = await Promise.all(playlistData).then((Data) => {

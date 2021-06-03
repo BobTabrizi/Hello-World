@@ -6,6 +6,8 @@ import { connectToDatabase } from "../../../util/mongodb";
 import SongButton from "../../components/SongButton";
 import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
+import SpotifyData from "../../../Data/Data.json";
+import NonSpotify from "../../../Data/ExternalData.json";
 import listHelper from "../../BackendFunctions/GetLists";
 import SongList from "../../components/SongList";
 export default function randomPlaylist({ countryArray, logUrl }) {
@@ -25,8 +27,10 @@ export default function randomPlaylist({ countryArray, logUrl }) {
         isRandomPlaylist,
         isCustomPlaylist
       );
+
       let trackURI = [];
       for (let i = 0; i < songData.length; i++) {
+        console.log(songData[i].track.album.images[0].url);
         trackURI.push(`${songData[i].track.uri}`);
       }
       setUriArray(trackURI);
@@ -85,6 +89,7 @@ export async function getServerSideProps(context) {
     countryArr.push(Countries[rNum].code);
   }
 
+  console.log(countryArr);
   let logString = "/api/datalog/logRandom?SongPlays=1&countryID=";
 
   for (let i = 0; i < countryArr.length; i++) {

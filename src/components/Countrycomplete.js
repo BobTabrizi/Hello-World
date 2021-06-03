@@ -1,25 +1,36 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Link from "next/link";
 import Countries from "../../Data/Countries.json";
+import countryMap from "../../Data/countryMap.json";
 import styles from "../styles/CountryComplete.module.css";
-import Router, { withRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-class Autocomplete extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentPrediction: 0,
-      filteredPredictions: [],
-      userInput: "",
-      finalPrediction: "",
-      nullPrediction: "hidden",
-      predictionShown: true,
-      searchButton: this.props.searchButton,
-    };
-  }
+export default function Autocomplete(props) {
+  const [currentPrediction, setCurrentPrediction] = useState(0);
+  const [filteredPredictions, setFilteredPredictions] = useState([]);
+  const [userInput, setUserInput] = useState("");
+  const [buttonState, setButtonState] = useState("Visible");
+  const [predictionShown, setPredictionShown] = useState(true);
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const router = useRouter();
+  const getKeyByValue = (obj, value) => {
+    return Object.keys(obj).find((key) => obj[key] === value);
+  };
 
-  onTextChanged = (e, value) => {
+  useEffect(() => {
+    if (userInput.length > 0) {
+      if (props.updateButtonState) {
+        props.updateButtonState("hidden");
+      }
+    } else {
+      if (props.updateButtonState) {
+        props.updateButtonState("Visible");
+      }
+    }
+  });
+
+  const onTextChanged = (e, value) => {
     let userInput;
     var predictions = Countries;
     if (e.currentTarget.value[0] !== undefined) {
@@ -33,176 +44,164 @@ class Autocomplete extends React.Component {
       (prediction) =>
         prediction.name.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
-    this.setState({
-      currentPrediction: 0,
-      filteredPredictions,
-      userInput: userInput,
-      predictionShown: true,
-    });
+    setCurrentPrediction(0);
+    setFilteredPredictions(filteredPredictions);
+    setUserInput(userInput);
+    setPredictionShown(true);
   };
 
-  onClick = (e, countryCode) => {
-    this.setState({
-      currentPrediction: 0,
-      filteredPredictions: [],
-      userInput: e.currentTarget.innerText,
-      finalPrediction: e.currentTarget.innerText,
-      selectedCountry: e.currentTarget.getAttribute("value"),
-      predictionShown: false,
-    });
-    if (this.props.updateCountry) {
-      this.props.updateCountry([
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      let countryCode = getKeyByValue(countryMap, userInput);
+      let countryName;
+      if (filteredPredictions.length === 1) {
+        countryCode = filteredPredictions[0].code;
+        countryName = filteredPredictions[0].name;
+        setUserInput(filteredPredictions[0].name);
+        setFilteredPredictions(["Selected"]);
+        if (props.linkRef === "/playlist/") {
+          Router.push({
+            pathname: `${props.linkRef}${filteredPredictions[0].code}`,
+          });
+        }
+      }
+      if (countryCode && props.linkRef === "/playlist/") {
+        router.push({
+          pathname: `${props.linkRef}${countryCode}`,
+        });
+      }
+
+      if (props.updateCountry && countryCode) {
+        props.updateCountry([userInput, countryCode]);
+      }
+    }
+  };
+
+  const onClick = (e, countryCode) => {
+    setCurrentPrediction(0);
+    setFilteredPredictions([]);
+    setUserInput(e.currentTarget.innerText);
+    setSelectedCountry(e.currentTarget.getAttribute("value"));
+    setPredictionShown(false);
+    if (props.updateCountry) {
+      props.updateCountry([
         e.currentTarget.innerText,
         e.currentTarget.getAttribute("value"),
       ]);
     }
-    if (this.props.linkRef === "/playlist/") {
-      Router.push({
-        pathname: `${this.props.linkRef}${countryCode}`,
+    if (props.linkRef === "/playlist/") {
+      router.push({
+        pathname: `${props.linkRef}${countryCode}`,
       });
     }
   };
 
-  render() {
-    const {
-      onTextChanged,
-      onClick,
-      state: {
-        currentPrediction,
-        filteredPredictions,
-        userInput,
-        predictionShown,
-      },
-    } = this;
-
-    let predictionComponent;
-    let nullComponent;
-
-    //Hide Main Page Buttons on search for transparent background
-    if (this.props.updateButtonState) {
-      this.props.updateButtonState("Visible");
-    }
-    nullComponent = (
-      <div className={styles.nullComponent} style={{ visibility: "Hidden" }}>
-        No Countries Found
-      </div>
-    );
-    if (predictionShown && userInput) {
-      if (filteredPredictions.length && filteredPredictions[0] !== "Selected") {
-        if (this.props.updateButtonState) {
-          this.props.updateButtonState("Hidden");
-        }
-
-        predictionComponent = (
-          <div className={styles.predictionList}>
-            <ul>
-              {filteredPredictions.map((prediction, idx) => {
-                let className = "prediction-inactive";
-                if (idx === currentPrediction) {
-                  className = "prediction-active";
-                }
-                return (
-                  <li
-                    className={className}
-                    key={prediction.name}
-                    value={prediction.code}
-                    onClick={(e) => onClick(e, prediction.code)}
+  let predictionComponent;
+  let nullComponent;
+  //Hide Main Page Buttons on search for transparent background
+  nullComponent = (
+    <div className={styles.nullComponent} style={{ visibility: "Hidden" }}>
+      No Countries Found
+    </div>
+  );
+  if (predictionShown && userInput) {
+    if (filteredPredictions.length && filteredPredictions[0] !== "Selected") {
+      predictionComponent = (
+        <div className={styles.predictionList}>
+          <ul>
+            {filteredPredictions.map((prediction, idx) => {
+              let className = "prediction-inactive";
+              if (idx === currentPrediction) {
+                className = "prediction-active";
+              }
+              return (
+                <li
+                  className={className}
+                  key={prediction.name}
+                  value={prediction.code}
+                  onClick={(e) => onClick(e, prediction.code)}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                    }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      {prediction.name}
-                      <img
-                        src={`/flags/${prediction.code}.png`}
-                        height="50"
-                        width="70"
-                      ></img>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+                    {prediction.name}
+                    <img
+                      src={`/flags/${prediction.code}.png`}
+                      height="50"
+                      width="70"
+                    ></img>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      );
+    } else {
+      predictionComponent = null;
+      if (filteredPredictions[0] !== "Selected") {
+        nullComponent = (
+          <div
+            className={styles.nullComponent}
+            style={{ visibility: "Visible" }}
+          >
+            No Countries Found
           </div>
         );
-      } else {
-        predictionComponent = null;
-
-        if (filteredPredictions[0] !== "Selected") {
-          nullComponent = (
-            <div
-              className={styles.nullComponent}
-              style={{ visibility: "Visible" }}
-            >
-              No Countries Found
-            </div>
-          );
-        }
       }
     }
-
-    let pageRef;
-    if (this.props.linkRef) {
-      let customRef = this.props.linkRef;
-      pageRef = `${customRef}${this.state.selectedCountry}`;
-    }
-    return (
-      <div>
-        <Fragment>
-          {nullComponent}
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
-            <div className={styles.inputContainer}>
-              <div className={styles.searchIcon}>
-                <FontAwesomeIcon
-                  icon={faSearch}
-                  style={{
-                    marginRight: 10,
-                    color: "gray",
-                    verticalAlign: "middle",
-                  }}
-                  size="1x"
-                ></FontAwesomeIcon>
-              </div>
-
-              <input
-                type="text"
-                placeholder="Select a Country"
-                onChange={(e) => onTextChanged(e, userInput)}
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") {
-                    if (this.props.linkRef === "/playlist/") {
-                      Router.push({
-                        pathname: `${this.props.linkRef}${userInput}`,
-                      });
-                    } else {
-                      this.setState({ filteredPredictions: ["Selected"] });
-                    }
-                  }
-                }}
-                value={userInput}
-                className={styles.input}
-                autoComplete="off"
-              />
-            </div>
-          </form>
-          {this.props.linkRef && this.props.searchButton && (
-            <Link href={pageRef}>
-              <button style={{ height: 25, width: 25, borderRadius: 25 }}>
-                <i className="fa fa-search"></i>
-              </button>
-            </Link>
-          )}
-          {predictionComponent}
-        </Fragment>
-      </div>
-    );
   }
+  let pageRef;
+  if (props.linkRef) {
+    let customRef = props.linkRef;
+    pageRef = `${customRef}${selectedCountry}`;
+  }
+  return (
+    <div>
+      <Fragment>
+        {nullComponent}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <div className={styles.inputContainer}>
+            <div className={styles.searchIcon}>
+              <FontAwesomeIcon
+                icon={faSearch}
+                style={{
+                  marginRight: 10,
+                  color: "gray",
+                  verticalAlign: "middle",
+                }}
+                size="1x"
+              ></FontAwesomeIcon>
+            </div>
+
+            <input
+              type="text"
+              placeholder="Select a Country"
+              onChange={(e) => onTextChanged(e, userInput)}
+              onKeyPress={(e) => handleKeyPress(e)}
+              value={userInput}
+              className={styles.input}
+              autoComplete="off"
+            />
+          </div>
+        </form>
+        {props.linkRef && props.searchButton && (
+          <Link href={pageRef}>
+            <button style={{ height: 25, width: 25, borderRadius: 25 }}>
+              <i className="fa fa-search"></i>
+            </button>
+          </Link>
+        )}
+        {predictionComponent}
+      </Fragment>
+    </div>
+  );
 }
-export default withRouter(Autocomplete);
