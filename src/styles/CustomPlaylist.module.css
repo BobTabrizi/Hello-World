@@ -17,7 +17,7 @@
   margin-top: 2rem;
 }
 .returnButton:hover {
-  background-color: rgb(255, 255, 255, 0.4);
+  background-color: rgb(255, 255, 255, 0.2);
 }
 
 .returnButton:focus {
@@ -48,7 +48,7 @@
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .button:focus {

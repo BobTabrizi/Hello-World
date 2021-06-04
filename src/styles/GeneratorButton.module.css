@@ -1,6 +1,5 @@
 .button {
   border-width: 1px;
-  background-color: transparent;
   border-radius: 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
   padding: 0.5em 1em;
@@ -11,7 +10,7 @@
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .button:focus {
