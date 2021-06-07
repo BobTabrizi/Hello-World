@@ -1,8 +1,6 @@
+var querystring = require("querystring");
 export default async function handler(req, res) {
   const data = req.query;
-
-  console.log(data.codeValue);
-
   var clientString =
     process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET;
 
@@ -12,9 +10,24 @@ export default async function handler(req, res) {
       `${process.env.NEXT_PUBLIC_PROD_URL}/`
     );
 
+    let queryData;
+    console.log(data.Type);
+    if (data.Type === "Anon") {
+      queryData = {
+        grant_type: `client_credentials`,
+      };
+    } else {
+      queryData = {
+        grant_type: `authorization_code`,
+        code: `${data.codeValue}`,
+        redirect_uri: `${process.env.NEXT_PUBLIC_PROD_URL}/`,
+      };
+    }
+    let dataParam = querystring.stringify(queryData);
+
     return fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
-      body: `grant_type=authorization_code&code=${data.codeValue}&redirect_uri=${encodedRedirect}`,
+      body: dataParam,
       headers: {
         Authorization: "Basic " + encodedAuth,
         "Content-Type": "application/x-www-form-urlencoded",
@@ -23,7 +36,7 @@ export default async function handler(req, res) {
       .then((resp) => resp.json())
       .then((response) => {
         console.log("New Token Recieved");
-        //console.log(response);
+        console.log(response);
         return response;
       })
       .catch((error) => {

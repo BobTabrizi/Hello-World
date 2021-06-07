@@ -59,13 +59,13 @@ export default function Autocomplete(props) {
         countryName = filteredPredictions[0].name;
         setUserInput(filteredPredictions[0].name);
         setFilteredPredictions(["Selected"]);
-        if (props.linkRef === "/playlist/") {
+        if (props.linkRef === "/country/") {
           Router.push({
             pathname: `${props.linkRef}${filteredPredictions[0].code}`,
           });
         }
       }
-      if (countryCode && props.linkRef === "/playlist/") {
+      if (countryCode && props.linkRef === "/country/") {
         router.push({
           pathname: `${props.linkRef}${countryCode}`,
         });
@@ -89,7 +89,7 @@ export default function Autocomplete(props) {
         e.currentTarget.getAttribute("value"),
       ]);
     }
-    if (props.linkRef === "/playlist/") {
+    if (props.linkRef === "/country/") {
       router.push({
         pathname: `${props.linkRef}${countryCode}`,
       });

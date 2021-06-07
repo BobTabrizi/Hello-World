@@ -16,6 +16,32 @@ export default function Home() {
   const [token, setToken] = useState("");
   const [country, setCountry] = useState(["", ""]);
   const [ButtonState, setButtonState] = useState("Visible");
+  const [tokenState, setTokenState] = useState(false);
+
+  const fetchToken = async (hashParams) => {
+    let token = await fetch(
+      `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/getToken?codeValue=${hashParams}&Type=UserToken`
+    );
+    let tokenData = await token.json();
+    localStorage.setItem("Token", tokenData.access_token);
+    localStorage.setItem("RefreshToken", tokenData.refresh_token);
+    let currTime = Date.now();
+    localStorage.setItem("TokenTime", currTime);
+    setToken(tokenData.access_token);
+    return tokenData.access_token;
+  };
+
+  const fetchRefreshedToken = async (refToken) => {
+    let refreshToken = await fetch(
+      `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/refreshToken?tokenValue=${refToken}&?Type=RefreshToken`
+    );
+    let tokenInfo = await refreshToken.json();
+    localStorage.setItem("Token", tokenInfo.access_token);
+    let currTime = Date.now();
+    localStorage.setItem("TokenTime", currTime);
+    setToken(tokenInfo.access_token);
+  };
+
   useEffect(() => {
     if (window.location.search.length > 10) {
       let hashParams = {};
@@ -25,20 +51,10 @@ export default function Home() {
       while ((a = b.exec(c))) {
         hashParams[a[1]] = decodeURIComponent(a[2]);
       }
-
-      const fetchToken = async () => {
-        let token = await fetch(
-          `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/getToken?codeValue=${hashParams.code}`
-        );
-        let tokenData = await token.json();
-        localStorage.setItem("Token", tokenData.access_token);
-        localStorage.setItem("RefreshToken", tokenData.refresh_token);
-        let currTime = Date.now();
-        localStorage.setItem("TokenTime", currTime);
-        setToken(tokenData.access_token);
-      };
-
-      fetchToken();
+      if (!tokenState) {
+        fetchToken(hashParams.code);
+        setTokenState(true);
+      }
       window.history.replaceState(null, "", "/");
     } else if (localStorage.getItem("TokenTime")) {
       let tempTime = localStorage.getItem("TokenTime");
@@ -47,21 +63,9 @@ export default function Home() {
       if (tempTime < HourAgo) {
         console.log("Token Refreshed");
         let refToken = localStorage.getItem("RefreshToken");
-
         localStorage.removeItem("Token");
         localStorage.removeItem("TokenTime");
-
-        const fetchRefreshedToken = async () => {
-          let refreshToken = await fetch(
-            `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/refreshToken?tokenValue=${refToken}`
-          );
-          let tokenInfo = await refreshToken.json();
-          localStorage.setItem("Token", tokenInfo.access_token);
-          let currTime = Date.now();
-          localStorage.setItem("TokenTime", currTime);
-          setToken(tokenInfo.access_token);
-        };
-        fetchRefreshedToken();
+        fetchRefreshedToken(refToken);
       }
     }
   });
@@ -92,7 +96,7 @@ export default function Home() {
           <Countrycomplete
             searchButton={false}
             updateCountry={setCountry}
-            linkRef={"/playlist/"}
+            linkRef={"/country/"}
             updateButtonState={setButtonState}
           />
         </div>

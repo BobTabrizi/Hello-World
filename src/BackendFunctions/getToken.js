@@ -1,10 +1,10 @@
-export default function getToken(isRefreshToken) {
+export default function getToken() {
   var AccessTokenSet = false;
   var AccessToken = null;
   const setAccessToken = () => {
     let tokenPromise = null;
     if (!AccessTokenSet) {
-      tokenPromise = getAccessToken(isRefreshToken)
+      tokenPromise = getAccessToken()
         .then((response) => {
           AccessTokenSet = true;
           return response.access_token;
@@ -25,12 +25,7 @@ export default function getToken(isRefreshToken) {
 
   var encodedAuth = new Buffer(clientString).toString("base64");
 
-  const getAccessToken = (isRefreshToken) => {
-    if (isRefreshToken) {
-      console.log("Refreshed");
-      grantString = "refresh_token";
-    }
-
+  const getAccessToken = () => {
     return fetch("https://accounts.spotify.com/api/token", {
       method: "POST",
       body: `grant_type=client_credentials`,
@@ -42,6 +37,7 @@ export default function getToken(isRefreshToken) {
       .then((resp) => resp.json())
       .then((response) => {
         console.log("New Token Recieved");
+        console.log(response);
         return response;
       })
       .catch((error) => {
