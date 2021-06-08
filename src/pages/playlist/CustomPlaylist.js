@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../../styles/CustomPlaylist.module.css";
 import Link from "next/link";
-import SongButton from "../../components/SongButton";
+import SongButton from "../../components/PlaylistPage/SongButton";
 import Countrycomplete from "../../components/Countrycomplete";
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

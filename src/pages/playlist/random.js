@@ -6,7 +6,7 @@ import { connectToDatabase } from "../../../util/mongodb";
 import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
 import listHelper from "../../BackendFunctions/GetLists";
-import SongList from "../../components/SongList";
+import SongList from "../../components/PlaylistPage/SongList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
@@ -30,7 +30,8 @@ export default function randomPlaylist({
       let songData = await listHelper(
         countryArray,
         isRandomPlaylist,
-        isCustomPlaylist
+        isCustomPlaylist,
+        "NA"
       );
 
       let trackURI = [];

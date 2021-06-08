@@ -5,7 +5,7 @@ import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
 import ListHelper from "../../BackendFunctions/GetLists";
 import ListCreator from "../../BackendFunctions/CreateList";
-import SongList from "../../components/SongList";
+import SongList from "../../components/PlaylistPage/SongList";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
@@ -28,7 +28,8 @@ export default function GeneratedList({ countryCodes, logUrl }) {
       let songArray = await ListHelper(
         countryCodes,
         isRandomPlaylist,
-        isCustomPlaylist
+        isCustomPlaylist,
+        "NA"
       );
       let countries = songArray[songArray.length - 1];
       songArray.length = songArray.length - 1;

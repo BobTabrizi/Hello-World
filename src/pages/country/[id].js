@@ -1,10 +1,12 @@
 import Head from "next/head";
-import styles from "../../styles/PlaylistPage.module.css";
+import styles from "../../styles/CountryPage.module.css";
 import Link from "next/link";
 import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import GetCountryLists from "../../BackendFunctions/GetCountryLists";
+import Playlist from "../../components/CountryPage/Playlist";
+
 export default function Country({ countryID, countryName }) {
   const [token, setToken] = useState("");
   const [playlists, setPlaylists] = useState(null);
@@ -16,8 +18,9 @@ export default function Country({ countryID, countryName }) {
         `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/getToken?Type=Anon`
       );
       let tokenData = await token.json();
-      console.log(tokenData);
+      //  console.log(tokenData);
       const countryLists = await GetCountryLists(countryID);
+      // console.log(countryLists);
       setPlaylists(countryLists);
     }
   });
@@ -50,6 +53,8 @@ export default function Country({ countryID, countryName }) {
           </Link>
         </div>
         <div style={{ marginTop: "1.5rem" }}>{countryName}</div>
+
+        <Playlist countryID={countryID} lists={playlists}></Playlist>
       </div>
     </>
   );

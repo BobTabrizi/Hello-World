@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "../styles/PlaylistPage.module.css";
-import SongButton from "../components/SongButton";
-import SkeletonSongItem from "../Skeletons/SkeletonSongItem";
+import styles from "../../styles/PlaylistPage.module.css";
+import SongButton from "./SongButton";
+import SkeletonSongItem from "../../Skeletons/SkeletonSongItem";
 export default function SongList(props) {
   return (
     <div className={styles.songContainer}>

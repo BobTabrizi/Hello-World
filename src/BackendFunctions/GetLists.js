@@ -1,10 +1,10 @@
-export default function getLists(countries, isRandom, isCustom) {
+export default function getLists(countries, isRandom, isCustom, genre) {
   if (isRandom === true) {
     return getRandomList(countries);
   } else if (isCustom === true) {
     return getCustomList([countries]);
   } else {
-    return getList([countries]);
+    return getList([countries], genre);
   }
 }
 
@@ -50,9 +50,9 @@ const DataProcessor = (allData) => {
   return combinedList;
 };
 
-const getList = async (countries) => {
+const getList = async (countries, genre) => {
   const data = await fetch(
-    `${process.env.NEXT_PUBLIC_PROD_URL}/api/${countries}`
+    `${process.env.NEXT_PUBLIC_PROD_URL}/api/${countries}?genre=${genre}`
   );
   const resp = await data.json();
   return resp;

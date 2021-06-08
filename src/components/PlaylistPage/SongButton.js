@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "../styles/PlaylistPage.module.css";
-import DeviceManager from "../BackendFunctions/DeviceManager";
+import styles from "../../styles/PlaylistPage.module.css";
+import DeviceManager from "../../BackendFunctions/DeviceManager";
 export default function SongButton(props) {
   const [hover, setHover] = useState("none");
 

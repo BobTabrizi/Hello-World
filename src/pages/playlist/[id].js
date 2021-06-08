@@ -5,8 +5,8 @@ import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import listHelper from "../../BackendFunctions/GetLists";
-import SongList from "../../components/SongList";
-export default function Playlist({ countryID, countryName, logUrl }) {
+import SongList from "../../components/PlaylistPage/SongList";
+export default function Playlist({ countryID, countryName, logUrl, genre }) {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState(null);
   const [uriArray, setUriArray] = useState([]);
@@ -20,16 +20,24 @@ export default function Playlist({ countryID, countryName, logUrl }) {
       const result = await listHelper(
         [countryID],
         isRandomPlaylist,
-        isCustomPlaylist
+        isCustomPlaylist,
+        genre
       );
       let trackURI = [];
-
-      let countryTracks = result[0].Playlists[0].tracks;
-      for (let i = 0; i < countryTracks.length; i++) {
-        trackURI.push(`${result[0].Playlists[0].tracks[i].track.uri}`);
+      let selectedList;
+      for (let i = 0; i < result[0].Playlists.length; i++) {
+        if (genre === result[0].Playlists[i].genre) {
+          selectedList = i;
+        }
       }
-      const songs = result[0].Playlists[0].tracks;
-      setSongs(songs);
+
+      let countryTracks = result[0].Playlists[selectedList].tracks;
+      console.log(countryTracks);
+      for (let i = 0; i < countryTracks.length; i++) {
+        trackURI.push(`${countryTracks[i].track.uri}`);
+      }
+      //const songs = result[0].Playlists[0].tracks;
+      setSongs(countryTracks);
       setUriArray(trackURI);
     }
   });
@@ -61,6 +69,15 @@ export default function Playlist({ countryID, countryName, logUrl }) {
             </a>
           </Link>
         </div>
+        <div>
+          <Link href={`/country/${countryID}`}>
+            <a>
+              <button className={styles.returnButton} style={{ fontSize: 18 }}>
+                Return to {countryName}
+              </button>
+            </a>
+          </Link>
+        </div>
         <div style={{ marginTop: "1.5rem" }}>{countryName}</div>
       </div>
 
@@ -81,6 +98,7 @@ export async function getServerSideProps(context) {
   //Enable page access to both country code and names.
   let id;
   let countryName;
+  let genre = context.query.genre;
   if (countryMap[context.query.id]) {
     id = context.query.id;
     countryName = countryMap[id];
@@ -126,6 +144,7 @@ export async function getServerSideProps(context) {
       countryID: id,
       countryName: countryName,
       logUrl: dataString,
+      genre: genre,
     },
   };
 }
