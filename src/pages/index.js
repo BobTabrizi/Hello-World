@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "../components/PageHeader";
+import Header from "../components/HomePage/PageHeader";
 import styles from "../styles/Home.module.css";
 //import { S3 } from "@aws-sdk/client-s3";
 //import { connectToDatabase } from "../../util/mongodb";
@@ -7,11 +7,12 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Countrycomplete from "../components/Countrycomplete";
 import AuthHelper from "../BackendFunctions/AuthHelper";
-import DiscoverButton from "../components/DiscoverButton";
-import RandomPlaylist from "../components/RandomPlaylist";
-import CustomPlaylist from "../components/CustomPlaylist";
+import DiscoverButton from "../components/HomePage/DiscoverButton";
+import RandomPlaylist from "../components/HomePage/RandomPlaylist";
+import CustomPlaylist from "../components/HomePage/CustomPlaylist";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
-import ListPop from "../BackendFunctions/popLists";
+import PopList from "../BackendFunctions/popLists";
+import popLists from "../BackendFunctions/popLists";
 config.autoAddCss = false;
 export default function Home() {
   const [token, setToken] = useState("");
@@ -106,7 +107,7 @@ export default function Home() {
           <RandomPlaylist />
           <CustomPlaylist />
         </div>
-        <button onClick={ListPop}>Get Data</button>
+        <button onClick={popLists}>Get Data</button>
       </div>
     </>
   );

@@ -65,19 +65,25 @@ const getSongs = (token, url) => {
 };
 
 const cleanData = (pulledList, url, countryID, playlistType) => {
-  console.log(playlistType);
-  (pulledList = {
+  let imgSrc;
+
+  pulledList.items = pulledList.items.filter(
+    (trackItem) => trackItem.is_local !== true && trackItem.track !== null
+  );
+  let totalTracks = pulledList.items.length;
+  pulledList = {
     genre: playlistType,
     url: url,
     href: pulledList.href,
-    totalTracks: pulledList.total,
-    spotifyOwned: false,
+    totalTracks: pulledList.items.length,
+    spotifyOwned: true,
     tracks: pulledList.items,
-  }),
-    (pulledList.countryID = countryID);
-  let listTracks = pulledList.totalTracks;
-  for (let i = 0; i < pulledList.total; i++) {
-    listTracks[i].countryID = countryID;
+    image: imgSrc,
+  };
+
+  // console.log(pulledList.tracks[2]);
+  for (let i = 0; i < totalTracks; i++) {
+    pulledList.tracks[i].countryID = countryID;
   }
   delete pulledList.limit,
     delete pulledList.next,
@@ -103,8 +109,6 @@ export default async function handler(req, res) {
     urlArray.push(Data[DataNumber].playlists[i].url);
   }
 
-  console.log(urlArray);
-
   let token = await setAccessToken();
 
   let pulledArray = [];
@@ -115,7 +119,6 @@ export default async function handler(req, res) {
     temp = cleanData(temp, urlArray[i], countryID, Type);
     pulledArray.push(temp);
   }
-  console.log(pulledArray);
 
   response = await db.collection("testCollection").update(
     { countryID: countryID },
@@ -125,18 +128,5 @@ export default async function handler(req, res) {
       },
     }
   );
-  /*
-  const response = await db.collection("Countries").update(
-    { countryID: countryID },
-    {
-      $set: {
-        Playlists: pulledList.Playlists,
-      },
-    }
-  );
-*/
-
-  response = "temp";
-
   res.json(response);
 }

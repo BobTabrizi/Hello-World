@@ -5,7 +5,7 @@ import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import listHelper from "../../BackendFunctions/GetLists";
-import SongList from "../../components/PlaylistPage/SongList";
+import SongList from "../../components/PlaylistPages/SongList";
 export default function Playlist({ countryID, countryName, logUrl, genre }) {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState(null);
@@ -30,13 +30,11 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
           selectedList = i;
         }
       }
-
       let countryTracks = result[0].Playlists[selectedList].tracks;
-      console.log(countryTracks);
       for (let i = 0; i < countryTracks.length; i++) {
+        console.log(countryTracks[i].track);
         trackURI.push(`${countryTracks[i].track.uri}`);
       }
-      //const songs = result[0].Playlists[0].tracks;
       setSongs(countryTracks);
       setUriArray(trackURI);
     }
@@ -78,7 +76,9 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
             </a>
           </Link>
         </div>
-        <div style={{ marginTop: "1.5rem" }}>{countryName}</div>
+        <div style={{ marginTop: "1.5rem" }}>
+          {genre} in {countryName}
+        </div>
       </div>
 
       <SongList
@@ -92,7 +92,6 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
 }
 
 export async function getServerSideProps(context) {
-  //console.log(context.query);
   const { db } = await connectToDatabase();
 
   //Enable page access to both country code and names.
@@ -114,14 +113,16 @@ export async function getServerSideProps(context) {
   }
 
   let dataString;
+
   if (!context.query.random) {
     dataString = `/api/datalog/logSearch?SongPlays=1&countryID=`;
     //Logging Searched Countries
-    db.collection("Countries").findOneAndUpdate(
+    let dataLocation = `Data.searchCountries.${genre}Hits`;
+    db.collection("testCollection").findOneAndUpdate(
       { countryID: id },
       {
         $inc: {
-          "Data.searchCountries.searches": 1,
+          [dataLocation]: 1,
         },
       },
       { remove: false }
@@ -129,14 +130,15 @@ export async function getServerSideProps(context) {
   } else {
     dataString = `/api/datalog/logRandom?SongPlays=1&countryID=`;
     //Logging Randomly Discovered Countries
-    db.collection("Countries").findOneAndUpdate(
+    db.collection("testCollection").findOneAndUpdate(
       { countryID: id },
       {
         $inc: {
-          "Data.randomCountries.appearances": 1,
+          "Data.randomCountries.Hits": 1,
         },
       },
-      { remove: false }
+      { remove: false },
+      { upsert: true }
     );
   }
   return {

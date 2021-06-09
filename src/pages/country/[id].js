@@ -5,7 +5,7 @@ import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import GetCountryLists from "../../BackendFunctions/GetCountryLists";
-import Playlist from "../../components/CountryPage/Playlist";
+import Playlist from "../../components/CountryPages/Playlist";
 
 export default function Country({ countryID, countryName }) {
   const [token, setToken] = useState("");
@@ -18,9 +18,7 @@ export default function Country({ countryID, countryName }) {
         `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/getToken?Type=Anon`
       );
       let tokenData = await token.json();
-      //  console.log(tokenData);
       const countryLists = await GetCountryLists(countryID);
-      // console.log(countryLists);
       setPlaylists(countryLists);
     }
   });
@@ -53,7 +51,6 @@ export default function Country({ countryID, countryName }) {
           </Link>
         </div>
         <div style={{ marginTop: "1.5rem" }}>{countryName}</div>
-
         <Playlist countryID={countryID} lists={playlists}></Playlist>
       </div>
     </>
@@ -61,7 +58,6 @@ export default function Country({ countryID, countryName }) {
 }
 
 export async function getServerSideProps(context) {
-  //console.log(context.query);
   const { db } = await connectToDatabase();
 
   //Enable page access to both country code and names.
@@ -80,7 +76,6 @@ export async function getServerSideProps(context) {
       throw new Error("Country Not Found");
     }
   }
-
   return {
     props: {
       countryID: id,

@@ -313,7 +313,7 @@
         "code": "GA"
     },
     {
-        "name": "Gambia",
+        "name": "Gambia", 
         "code": "GM"
     },
     {
@@ -461,11 +461,11 @@
         "code": "KI"
     },
     {
-        "name": "South Korea",
+        "name": "North Korea",
         "code": "KP"
     },
     {
-        "name": "North Korea",
+        "name": "South Korea",
         "code": "KR"
     },
     {

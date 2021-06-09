@@ -10,9 +10,9 @@ export default function popLists() {
   */
   const getLists = async () => {
     //  for (var key in Data) {
-    for (let i = 0; i < Data.length; i++) {
+    for (let i = 0; i < 2; i++) {
       const id = Data[i].countryID;
-      console.log(id);
+      //console.log(id);
       // const url = Data[2].playlists[1].url;
       const data = await fetch(
         `${process.env.NEXT_PUBLIC_PROD_URL}/api/${id}/tempPopLists?Number=${i}`

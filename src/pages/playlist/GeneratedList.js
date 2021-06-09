@@ -5,10 +5,9 @@ import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
 import ListHelper from "../../BackendFunctions/GetLists";
 import ListCreator from "../../BackendFunctions/CreateList";
-import SongList from "../../components/PlaylistPage/SongList";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+import SongList from "../../components/PlaylistPages/SongList";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
+import SpotifyButton from "../../components/PlaylistPages/SpotifyViewButton";
 config.autoAddCss = false;
 export default function GeneratedList({ countryCodes, logUrl }) {
   const [token, setToken] = useState("");
@@ -71,26 +70,7 @@ export default function GeneratedList({ countryCodes, logUrl }) {
           </Link>
         </div>
         <div style={{ marginTop: "1.5rem" }}> {pageHeading}</div>
-        <a href={playlistUrl} target="_blank">
-          <button
-            className={styles.spotifyLink}
-            style={{
-              fontSize: 18,
-              textAlign: "center",
-            }}
-          >
-            <FontAwesomeIcon
-              icon={faSpotify}
-              style={{
-                marginRight: 10,
-                color: "#1DB954",
-                verticalAlign: "middle",
-              }}
-              size="2x"
-            ></FontAwesomeIcon>
-            View it on Spotify
-          </button>
-        </a>
+        <SpotifyButton playlistUrl={playlistUrl} />
       </div>
 
       <SongList
