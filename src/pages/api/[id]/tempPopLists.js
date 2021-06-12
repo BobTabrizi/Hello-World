@@ -1,6 +1,7 @@
 import { connectToDatabase } from "../../../../util/mongodb";
 import Data from "../../../../Data/Data.json";
-
+//import Data from "../../../../Data/ExternalData.json";
+import AWSImages from "../../../../Data/AWSData.json";
 var AccessTokenSet = false;
 var AccessToken = null;
 
@@ -65,7 +66,9 @@ const getSongs = (token, url) => {
 };
 
 const cleanData = (pulledList, url, countryID, playlistType) => {
-  let imgSrc;
+  let img;
+
+  img = AWSImages[playlistType];
 
   pulledList.items = pulledList.items.filter(
     (trackItem) => trackItem.is_local !== true && trackItem.track !== null
@@ -78,7 +81,7 @@ const cleanData = (pulledList, url, countryID, playlistType) => {
     totalTracks: pulledList.items.length,
     spotifyOwned: true,
     tracks: pulledList.items,
-    image: imgSrc,
+    image: img,
   };
 
   // console.log(pulledList.tracks[2]);
@@ -119,14 +122,14 @@ export default async function handler(req, res) {
     temp = cleanData(temp, urlArray[i], countryID, Type);
     pulledArray.push(temp);
   }
-
   response = await db.collection("testCollection").update(
     { countryID: countryID },
     {
       $set: {
         Playlists: pulledArray,
       },
-    }
+    },
+    { upsert: true }
   );
   res.json(response);
 }

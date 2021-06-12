@@ -11,6 +11,7 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
   const [songs, setSongs] = useState(null);
   const [uriArray, setUriArray] = useState([]);
   useEffect(async () => {
+    console.log(countryID);
     let tempToken = localStorage.getItem("Token");
     //Boolean for helper function.
     let isRandomPlaylist = false;
@@ -32,7 +33,6 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
       }
       let countryTracks = result[0].Playlists[selectedList].tracks;
       for (let i = 0; i < countryTracks.length; i++) {
-        console.log(countryTracks[i].track);
         trackURI.push(`${countryTracks[i].track.uri}`);
       }
       setSongs(countryTracks);
@@ -98,6 +98,7 @@ export async function getServerSideProps(context) {
   let id;
   let countryName;
   let genre = context.query.genre;
+  console.log(context.query.id);
   if (countryMap[context.query.id]) {
     id = context.query.id;
     countryName = countryMap[id];
