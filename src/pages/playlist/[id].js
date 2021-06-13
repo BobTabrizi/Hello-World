@@ -11,7 +11,6 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
   const [songs, setSongs] = useState(null);
   const [uriArray, setUriArray] = useState([]);
   useEffect(async () => {
-    console.log(countryID);
     let tempToken = localStorage.getItem("Token");
     //Boolean for helper function.
     let isRandomPlaylist = false;
@@ -98,7 +97,6 @@ export async function getServerSideProps(context) {
   let id;
   let countryName;
   let genre = context.query.genre;
-  console.log(context.query.id);
   if (countryMap[context.query.id]) {
     id = context.query.id;
     countryName = countryMap[id];
@@ -119,7 +117,7 @@ export async function getServerSideProps(context) {
     dataString = `/api/datalog/logSearch?SongPlays=1&countryID=`;
     //Logging Searched Countries
     let dataLocation = `Data.searchCountries.${genre}Hits`;
-    db.collection("testCollection").findOneAndUpdate(
+    db.collection("Countries").findOneAndUpdate(
       { countryID: id },
       {
         $inc: {
@@ -131,7 +129,7 @@ export async function getServerSideProps(context) {
   } else {
     dataString = `/api/datalog/logRandom?SongPlays=1&countryID=`;
     //Logging Randomly Discovered Countries
-    db.collection("testCollection").findOneAndUpdate(
+    db.collection("Countries").findOneAndUpdate(
       { countryID: id },
       {
         $inc: {

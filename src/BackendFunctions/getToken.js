@@ -37,7 +37,6 @@ export default function getToken() {
       .then((resp) => resp.json())
       .then((response) => {
         console.log("New Token Recieved");
-        console.log(response);
         return response;
       })
       .catch((error) => {

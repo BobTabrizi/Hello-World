@@ -4,8 +4,6 @@ import Link from "next/link";
 import SongButton from "../../components/PlaylistPages/SongButton";
 import Countrycomplete from "../../components/Countrycomplete";
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 export default function CustomPlaylist({ songs }) {

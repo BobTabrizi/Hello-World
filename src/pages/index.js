@@ -11,7 +11,6 @@ import DiscoverButton from "../components/HomePage/DiscoverButton";
 import RandomPlaylist from "../components/HomePage/RandomPlaylist";
 import CustomPlaylist from "../components/HomePage/CustomPlaylist";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
-import popLists from "../BackendFunctions/popLists";
 config.autoAddCss = false;
 export default function Home() {
   const [token, setToken] = useState("");
@@ -106,7 +105,6 @@ export default function Home() {
           <RandomPlaylist />
           <CustomPlaylist />
         </div>
-        <button onClick={popLists}>Get Data</button>
       </div>
     </>
   );

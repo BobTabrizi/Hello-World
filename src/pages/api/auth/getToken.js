@@ -11,7 +11,6 @@ export default async function handler(req, res) {
     );
 
     let queryData;
-    console.log(data.Type);
     if (data.Type === "Anon") {
       queryData = {
         grant_type: `client_credentials`,
@@ -36,7 +35,6 @@ export default async function handler(req, res) {
       .then((resp) => resp.json())
       .then((response) => {
         console.log("New Token Recieved");
-        console.log(response);
         return response;
       })
       .catch((error) => {

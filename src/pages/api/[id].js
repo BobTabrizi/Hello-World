@@ -12,20 +12,20 @@ export default async function handler(req, res) {
   let resultData;
   if (genre !== null) {
     data = await db
-      .collection("testCollection")
+      .collection("Countries")
       .find({ countryID: id })
       .limit(1)
       .toArray();
     resultData = JSON.parse(JSON.stringify(data));
-    console.log(resultData);
+    // console.log(resultData);
   } else {
     data = await db
-      .collection("testCollection")
+      .collection("Countries")
       .find({ countryID: id })
       .limit(1)
       .toArray();
     resultData = JSON.parse(JSON.stringify(data));
-    console.log(resultData);
+    //  console.log(resultData);
   }
 
   res.json(resultData);
