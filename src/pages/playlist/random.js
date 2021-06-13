@@ -6,9 +6,8 @@ import { connectToDatabase } from "../../../util/mongodb";
 import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
 import listHelper from "../../BackendFunctions/GetLists";
-import SongList from "../../components/SongList";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpotify } from "@fortawesome/free-brands-svg-icons";
+import SongList from "../../components/PlaylistPages/SongList";
+import SpotifyButton from "../../components/PlaylistPages/SpotifyViewButton";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 export default function randomPlaylist({
@@ -30,7 +29,8 @@ export default function randomPlaylist({
       let songData = await listHelper(
         countryArray,
         isRandomPlaylist,
-        isCustomPlaylist
+        isCustomPlaylist,
+        "NA"
       );
 
       let trackURI = [];
@@ -71,26 +71,7 @@ export default function randomPlaylist({
           </Link>
         </div>
         <div style={{ marginTop: "1.5rem" }}> Random Playlist</div>
-        <a href={playlistUrl} target="_blank">
-          <button
-            className={styles.spotifyLink}
-            style={{
-              fontSize: 18,
-              textAlign: "center",
-            }}
-          >
-            <FontAwesomeIcon
-              icon={faSpotify}
-              style={{
-                marginRight: 10,
-                color: "#1DB954",
-                verticalAlign: "middle",
-              }}
-              size="2x"
-            ></FontAwesomeIcon>
-            View it on Spotify
-          </button>
-        </a>
+        <SpotifyButton playlistUrl={playlistUrl} />
       </div>
       <SongList
         songs={songs}
@@ -123,7 +104,7 @@ export async function getServerSideProps(context) {
       { countryID: countryCodeArr[i] },
       {
         $inc: {
-          "Data.randomCountries.appearances": 1,
+          "Data.randomCountries.Hits": 1,
         },
       },
       { remove: false }

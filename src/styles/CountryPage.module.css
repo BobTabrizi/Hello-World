@@ -1,0 +1,174 @@
+.listContainer {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.songItems,
+.skeletonListItems {
+  width: 20%;
+  min-width: 300px;
+  min-height: 300px;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  display: flex;
+  padding: 2rem 1rem 1rem 1.5rem;
+  box-sizing: content-box;
+  align-content: flex-start;
+}
+
+.songItems:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.songItems:not(:hover) {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  transition: 0.5s;
+}
+
+.songImages {
+  display: flex;
+  position: relative;
+}
+
+.songButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.songDetails {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background-color: rgb(8, 28, 34);
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  border: 1px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 900px) {
+  .songDetails {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(8, 28, 34);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .songDetails {
+    flex: 100%;
+  }
+
+  .songItems,
+  .skeletonListItems {
+    width: 20%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    display: flex;
+    padding: 1rem 40px 1rem 1rem;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .songDetails {
+    display: flex;
+    padding: 5%;
+  }
+
+  .songItems,
+  .skeletonListItems {
+    width: 90%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    margin-bottom: 3%;
+    padding: 1rem 1rem 1rem 1rem;
+    position: relative;
+  }
+}
+
+.trackName {
+  width: 100%;
+}
+
+.artistName {
+  color: rgb(14, 137, 158);
+  font-weight: 800;
+}
+
+.nothovered {
+  display: none;
+}
+
+.hovered {
+  display: flex;
+  margin: auto;
+}
+
+.reactiveButton {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 15%;
+  align-self: center;
+  z-index: 10;
+}
+.reactiveButton:active,
+.reactiveButton:focus {
+  outline: none;
+}
+
+.reactiveButton:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+.playlistHeader {
+  text-align: center;
+  color: white;
+  font-family: "Codystar";
+}
+
+.returnButton {
+  border-width: 1px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  padding: 0.5em 1em;
+  left: 50px;
+  top: 40px;
+  background-color: rgb(255, 255, 255, 0.1);
+  margin-top: 2rem;
+}
+
+.returnButton:hover {
+  background: rgb(255, 255, 255, 0.2);
+}
+
+.returnButton:focus {
+  outline: none;
+}

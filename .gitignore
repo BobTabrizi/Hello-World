@@ -16,6 +16,7 @@
 /build
 
 # misc
+AWSData.json
 .DS_Store
 *.pem
 
@@ -36,3 +37,7 @@ yarn-error.log*
 # vercel
 .vercel
 vercel.json
+
+#babel config
+.babelrc
+jsconfig.json

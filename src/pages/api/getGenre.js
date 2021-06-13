@@ -1,5 +1,4 @@
 import Data from "../../../Data/Data.json";
-//import Data from "../../../Data/ExternalData.json";
 import { connectToDatabase } from "../../../util/mongodb";
 var AccessTokenSet = false;
 var AccessToken = null;
@@ -76,7 +75,7 @@ const cleanData = (pulledList) => {
   for (let i = 0; i < pulledList.length; i++) {
     pulledList[i].Playlists = [
       {
-        genre: "popular",
+        genre: "Popular",
         url: pulledList[i].url,
         href: pulledList[i].href,
         totalTracks: pulledList[i].items.length,
@@ -130,7 +129,9 @@ export default async function handler(req, res) {
       .update(
         { countryID: pulledList[item].countryID },
         {
-          $set: { "Playlists.0": pulledList[item].Playlists },
+          $set: {
+            Playlists: pulledList[item].Playlists,
+          },
         }
       )
       .catch((err) => (status = err));

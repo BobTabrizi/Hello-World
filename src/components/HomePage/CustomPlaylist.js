@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "../styles/GeneratorButton.module.css";
+import styles from "../../styles/GeneratorButton.module.css";
 export default function CustomPlaylist() {
   const [token, setToken] = useState("");
   useEffect(() => {

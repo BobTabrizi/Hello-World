@@ -9,6 +9,18 @@
                 "name":"Top 50 - Norway",
                 "url":"37i9dQZEVXbJvfa0Yxg7E7"
 
+            },
+            {
+                "type":"party",
+                "name":"AfterSki 2021!!!",
+                "url":"1573cs99p0jQItoU4Fq5qx"
+
+            },
+            {
+                "type":"black-metal",
+                "name":"True Norwegian Black Metal",
+                "url":"7EULgJOfMGTnJ6HPavdkeY"
+
             }
         ]
     },
@@ -22,7 +34,14 @@
                 "name":"Top 50 - Australia",
                 "url":"37i9dQZEVXbJPcfkRz0wJ0"
 
+            },
+            {
+                "type":"party",
+                "name":"For your lounge room DF",
+                "url":"37i9dQZF1DXd5DCuoVuFY3"
+
             }
+
         ]
     },
     {
@@ -34,6 +53,18 @@
                 "type":"popular",
                 "name":"Top 50 - Germany",
                 "url":"37i9dQZEVXbJiZcmkrIHGU"
+
+            },
+            {
+                "type":"party",
+                "name":"german party songs",
+                "url":"0okFaC2JGGc6Y57V2rjcpF"
+
+            },
+            {
+                "type":"oktoberfest",
+                "name":"Oktoberfest Music",
+                "url":"2jSHxP2f5vK0STWbVXWPQA"
 
             }
         ]
@@ -48,6 +79,12 @@
                 "name":"Top 50 - France",
                 "url":"37i9dQZEVXbIPWwFssbupI"
 
+            },
+            {
+                "type":"party",
+                "name":"french party songs",
+                "url":"73fq9jtY2rXEqK4ivYwsQB"
+
             }
         ]
     },
@@ -60,6 +97,12 @@
                 "type":"popular",
                 "name":"Top 50 - Mexico",
                 "url":"37i9dQZEVXbO3qyFxbkOE1"
+
+            },
+            {
+                "type":"party",
+                "name":"lit mexican party songs",
+                "url":"2XwLay3RPm3q7Jb3W0sd2T"
 
             }
         ]
@@ -74,6 +117,12 @@
                 "name":"Top 50 - India",
                 "url":"37i9dQZEVXbLZ52XmnySJg"
 
+            },
+            {
+                "type":"party",
+                "name":"Bollywood Party songs",
+                "url":"2dd3NEiwwJVGmpJIJzERih"
+
             }
         ]
     },
@@ -87,6 +136,11 @@
                 "name":"Top 50 - Austria",
                 "url":"37i9dQZEVXbKNHh6NIXu36"
 
+            },
+            {
+                "type":"party",
+                "name":"AUSTRIA PARTY",
+                "url":"2Ov873PgWnrG1vkY67n9hP"
             }
         ]
     },
@@ -100,7 +154,19 @@
                 "name":"Top 50 - USA",
                 "url":"37i9dQZEVXbLRQDuF5jeBp"
 
+            },
+            {
+                "type":"party",
+                "name":"Party Hits",
+                "url":"37i9dQZF1DXa2PvUpywmrr"
+
+            },
+            {
+                "type":"rock",
+                "name":"Rock Classics",
+                "url":"37i9dQZF1DWXRqgorJj26U"
             }
+  
         ]
     },
     {
@@ -113,6 +179,17 @@
                 "name":"Top 50 - Russia",
                 "url":"37i9dQZEVXbL8l7ra5vVdB"
 
+            },
+            
+            {
+                "type":"party",
+                "name":"Russian Party Hits",
+                "url":"1eSmMnPYycDLqUvZtFxiSr"
+            },
+            {
+                "type":"hardbass",
+                "name":"Hardbass",
+                "url":"7k4dTAmRQk6Sp0cOfR5EhV"
             }
         ]
     },
@@ -125,6 +202,12 @@
                 "type":"popular",
                 "name":"Top 50 - Spain",
                 "url":"37i9dQZEVXbNFJfN1Vw8d9"
+
+            },
+            {
+                "type":"party",
+                "name":"Typical Spanish",
+                "url":"00sPYQym0OnMuDBxsfAsNy"
 
             }
         ]
@@ -139,6 +222,12 @@
                 "name":"Top 50 - Canada",
                 "url":"37i9dQZEVXbKj23U1GF4IR"
 
+            },
+            {
+                "type":"party",
+                "name":"Canadian Party Mix",
+                "url":"1Tbi3GcjVxAlXlMuu6BMnv"
+
             }
         ]
     },
@@ -151,6 +240,12 @@
                 "type":"popular",
                 "name":"Top 50 - United Kingdom",
                 "url":"37i9dQZEVXbLnolsZ8PSNw"
+
+            },
+            {
+                "type":"party",
+                "name":"UK Party Bangers",
+                "url":"5RkSbKDOpWf7h8g34NNP3a"
 
             }
         ]
@@ -165,6 +260,12 @@
                 "name":"Top 50 - Argentina",
                 "url":"37i9dQZEVXbMMy2roB9myp"
 
+            },
+            {
+                "type":"party",
+                "name":"Party in Argentina",
+                "url":"0oFwJxlSzXuFYwK2ar91tF"
+
             }
         ]
     },
@@ -177,7 +278,11 @@
                 "type":"popular",
                 "name":"Top 50 - Portugal",
                 "url":"37i9dQZEVXbKyJS56d1pgi"
-
+            },
+            {
+                "type":"party",
+                "name":"Party Hit's Portugal",
+                "url":"1V9rAlwFGFTFswjvlsuciT"
             }
         ]
     },
@@ -191,7 +296,14 @@
                 "name":"Top 50 - South Korea",
                 "url":"37i9dQZEVXbNxXF4SkHj9F"
 
+            },
+            {
+                "type":"k-pop",
+                "name":"K-POP Party 2021",
+                "url":"0IQamUhlzsoM8Vkpvs5QaT"
+
             }
+
         ]
     },
     {
@@ -203,6 +315,12 @@
                 "type":"popular",
                 "name":"Top 50 - Japan",
                 "url":"37i9dQZEVXbKXQ4mDTEBXq"
+
+            },
+            {
+                "type":"j-pop",
+                "name":"Jpop 2020-2021",
+                "url":"2QmnoSI9FqCPTQ7V6HQQYj"
 
             }
         ]
@@ -217,6 +335,11 @@
                 "name":"Top 50 - Israel",
                 "url":"37i9dQZEVXbJ6IpvItkve3"
 
+            },
+            {
+                "type":"party",
+                "name":"ISRAELI PARTY",
+                "url":"20jHkvLZrSIOjuQBVurEms"
             }
         ]
     },
@@ -268,7 +391,16 @@
                 "type":"popular",
                 "name":"Top 50 - Sweden",
                 "url":"37i9dQZEVXbLoATJ81JYXz"
-
+            },
+            {
+                "type":"party",
+                "name":"This is swedish party music summer edition",
+                "url":"4taO3qs9O50Dge4TqHi1ke"
+            },
+            {
+                "type":"metal",
+                "name":"Swedish metal (ULTIMATE EDITION)",
+                "url":"1F57m6ahhoNOTHbMC8g9qK"
             }
         ]
     },
@@ -282,6 +414,18 @@
                 "name":"Top 50 - Finland",
                 "url":"37i9dQZEVXbMxcczTSoGwZ"
 
+            },
+            {
+                "type":"party",
+                "name":"finnish party",
+                "url":"6JZ2nKmiesX7HYK8CUu1nj"
+
+            },
+            {
+                "type":"metal",
+                "name":"Finnish metal",
+                "url":"3oHKokI6S1vVN7x8ZvttRH"
+
             }
         ]
     },
@@ -294,7 +438,11 @@
                 "type":"popular",
                 "name":"Top 50 - Morocco",
                 "url":"37i9dQZEVXbJU9eQpX8gPT"
-
+            },
+            {
+                "type":"party",
+                "name":"Morocco party",
+                "url":"6rUDJgzEjd0MHlUYS846UT"
             }
         ]
     },

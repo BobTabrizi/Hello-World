@@ -5,17 +5,26 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --watchAll --verbose"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.15.0",
+    "@babel/preset-react": "^7.13.13",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@types/jest": "^26.0.23",
     "aws-sdk": "^2.905.0",
     "axios": "^0.21.1",
     "express": "^4.17.1",
+    "jest": "^27.0.4",
     "mongodb": "^3.6.6",
     "next": "10.2.0",
     "node-fetch": "^2.6.1",
@@ -25,5 +34,9 @@
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "babel-jest": "^27.0.2"
+  }
 }

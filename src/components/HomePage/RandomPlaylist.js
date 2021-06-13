@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import CountryData from "../../Data/Countries.json";
-import styles from "../styles/GeneratorButton.module.css";
+import CountryData from "../../../Data/Countries";
+import styles from "../../styles/GeneratorButton.module.css";
 export default function randomPlaylist() {
   const [randomCountry, setRandomCountry] = useState("");
   const [token, setToken] = useState("");
