@@ -16,7 +16,6 @@ export default async function handler(req, res) {
       .then((resp) => resp.json())
       .then((response) => {
         console.log("New Token Recieved");
-        console.log(response);
         return response;
       })
       .catch((error) => {

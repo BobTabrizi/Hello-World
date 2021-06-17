@@ -17,7 +17,6 @@ export default async function handler(req, res) {
       .limit(1)
       .toArray();
     resultData = JSON.parse(JSON.stringify(data));
-    // console.log(resultData);
   } else {
     data = await db
       .collection("Countries")
@@ -25,8 +24,6 @@ export default async function handler(req, res) {
       .limit(1)
       .toArray();
     resultData = JSON.parse(JSON.stringify(data));
-    //  console.log(resultData);
   }
-
   res.json(resultData);
 }

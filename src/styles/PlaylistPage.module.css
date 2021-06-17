@@ -224,6 +224,19 @@
   background: rgb(255, 255, 255, 0.2);
 }
 
+.refreshButton {
+  border-width: 1px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  padding: 0.5em 1em;
+  background-color: rgb(255, 255, 255, 0.1);
+}
+
+.refreshButton:hover {
+  background: rgb(255, 255, 255, 0.2);
+}
+
 .returnButton:focus {
   outline: none;
 }

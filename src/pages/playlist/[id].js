@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import listHelper from "../../BackendFunctions/GetLists";
 import SongList from "../../components/PlaylistPages/SongList";
+import Refresh from "../../components/PlaylistPages/Refresh";
 export default function Playlist({ countryID, countryName, logUrl, genre }) {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState(null);
@@ -85,6 +86,13 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
         uriArray={uriArray}
         token={token}
         logUrl={logUrl}
+      />
+
+      <Refresh
+        countryID={countryID}
+        genre={genre}
+        updateSongs={setSongs}
+        updateURI={setUriArray}
       />
     </>
   );
