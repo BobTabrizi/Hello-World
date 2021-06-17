@@ -126,11 +126,11 @@ export default async function handler(req, res) {
 
   let status = "Lists Successfully Updated";
   for (var item in pulledList) {
-    db.collection("Countries")
+    db.collection("testCollection")
       .update(
         { countryID: pulledList[item].countryID },
         {
-          $set: { "Playlists.0": pulledList[item].Playlists },
+          $set: { "Playlists.0": pulledList[item].Playlists[0] },
         }
       )
       .catch((err) => (status = err));

@@ -21,7 +21,23 @@
                 "name":"True Norwegian Black Metal",
                 "url":"7EULgJOfMGTnJ6HPavdkeY"
 
-            }
+            },
+            {
+                "type":"space-disco",
+                "name":"Norwegian Space Disco",
+                "url":"4b3fBBaFHmhCCqAPArY5PH"
+
+            },
+            {
+                "type":"country",
+                "name":"Norwegian Country",
+                "url":"0ebrIhaGWTe6o9airznNlu"
+            },
+            {
+                "type":"rap",
+                "name":"Norwegian Rap Game",
+                "url":"3YDF0MDyNV6d7zPmkErOxX"
+            }   
         ]
     },
     {
@@ -62,6 +78,12 @@
 
             },
             {
+                "type":"rap",
+                "name":"German Rap",
+                "url":"0NqmFwPf3ExGRP3xrXhg9B"
+
+            },
+            {
                 "type":"oktoberfest",
                 "name":"Oktoberfest Music",
                 "url":"2jSHxP2f5vK0STWbVXWPQA"
@@ -85,6 +107,11 @@
                 "name":"french party songs",
                 "url":"73fq9jtY2rXEqK4ivYwsQB"
 
+            },
+            {
+                "type":"rap",
+                "name":"Best french rap hits",
+                "url":"1vJRCYfOpwM5LuVCrZpa1K"
             }
         ]
     },
@@ -104,6 +131,11 @@
                 "name":"lit mexican party songs",
                 "url":"2XwLay3RPm3q7Jb3W0sd2T"
 
+            },
+            {
+                "type":"rap",
+                "name":"Mexican Gangsta Rap",
+                "url":"28Ke4pXWqF2A5b2GfQ1pQt"
             }
         ]
     },
@@ -123,6 +155,11 @@
                 "name":"Bollywood Party songs",
                 "url":"2dd3NEiwwJVGmpJIJzERih"
 
+            },
+            {
+                "type":"rap",
+                "name":"Indian Rap",
+                "url":"3IHyDX6NyD5ytThYKHIE2s"
             }
         ]
     },
@@ -165,6 +202,11 @@
                 "type":"rock",
                 "name":"Rock Classics",
                 "url":"37i9dQZF1DWXRqgorJj26U"
+            },
+            {
+                "type":"rap",
+                "name":"Rap Caviar",
+                "url":"37i9dQZF1DX0XUsuxWHRQd"
             }
   
         ]
@@ -185,6 +227,11 @@
                 "type":"party",
                 "name":"Russian Party Hits",
                 "url":"1eSmMnPYycDLqUvZtFxiSr"
+            },
+            {
+                "type":"rap",
+                "name":"Russian Rap",
+                "url":"15Ip9JzUbQ8id6yThzreA5"
             },
             {
                 "type":"hardbass",
@@ -247,6 +294,11 @@
                 "name":"UK Party Bangers",
                 "url":"5RkSbKDOpWf7h8g34NNP3a"
 
+            },
+            {
+                "type":"rap",
+                "name":"Rap UK",
+                "url":"37i9dQZF1DX6PKX5dyBKeq"
             }
         ]
     },
@@ -456,6 +508,12 @@
                 "name":"Top 50 - Netherlands",
                 "url":"37i9dQZEVXbKCF6dqVpDkS"
 
+            },
+            {
+                "type":"party",
+                "name":"Dutch Carnival Party Music",
+                "url":"5AdgL0J8DoMTgEsXT1uX6p"
+
             }
         ]
     },
@@ -468,6 +526,12 @@
                 "type":"popular",
                 "name":"Top 50 - Philippines",
                 "url":"37i9dQZEVXbNBz9cRCSFkY"
+
+            },
+            {
+                "type":"party",
+                "name":"PARTY MIX PILIPINAS",
+                "url":"3m9Sdf0ZKWS0mltCVlWJy4"
 
             }
         ]
@@ -482,6 +546,12 @@
                 "name":"Top 50 - Dominican Republic",
                 "url":"37i9dQZEVXbKAbrMR8uuf7"
 
+            },
+            {
+                "type":"party",
+                "name":"MAMACITAA",
+                "url":"1bf9JmTenK6tDgq5ELX5n0"
+
             }
         ]
     },
@@ -494,6 +564,12 @@
                 "type":"popular",
                 "name":"Top 50 - Honduras",
                 "url":"37i9dQZEVXbJp9wcIM9Eo5"
+
+            },
+            {
+                "type":"party",
+                "name":"Party Time Honduras",
+                "url":"4Q33jTcpVyEke234sGjZIF"
 
             }
         ]
@@ -508,6 +584,12 @@
                 "name":"Top 50 - Brazil",
                 "url":"37i9dQZEVXbMXbN3EUUhlg"
 
+            },
+            {
+                "type":"party",
+                "name":"Brazilian Party Mix",
+                "url":"2thdNYxltkzoKCZycb8sHh"
+
             }
         ]
     },
@@ -520,6 +602,12 @@
                 "type":"popular",
                 "name":"Top 50 - Vietnam",
                 "url":"37i9dQZEVXbLdGSmz6xilI"
+
+            },
+            {
+                "type":"party",
+                "name":"Vietnamese Party House",
+                "url":"5MTs9FOxTwMk5fAdQlEL6v"
 
             }
         ]
@@ -534,6 +622,12 @@
                 "name":"Top 50 - Turkey",
                 "url":"37i9dQZEVXbIVYVBNw9D5K"
 
+            },
+            {
+                "type":"party",
+                "name":"Turksh Party",
+                "url":"0xxIkPs46dM8p6FSFh9B3n"
+
             }
         ]
     },
@@ -546,6 +640,12 @@
                 "type":"popular",
                 "name":"Top 50 - Ecuador",
                 "url":"37i9dQZEVXbJlM6nvL1nD1"
+
+            },
+            {
+                "type":"party",
+                "name":"ECUADOR PARTY LOKO",
+                "url":"1dQamKe7uH4FNkp8r03nfr"
 
             }
         ]
@@ -560,6 +660,11 @@
                 "name":"Top 50 - Estonia",
                 "url":"37i9dQZEVXbLesry2Qw2xS"
 
+            },
+            {
+                "type":"party",
+                "name":"Estonian Party Vibez",
+                "url":"5RcapxhlpxspVvn1nLbvG9"
             }
         ]
     },
