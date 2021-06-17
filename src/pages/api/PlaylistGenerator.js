@@ -100,6 +100,15 @@ const generateArtists = async (Artists, token) => {
   return NewArtists;
 };
 
+//Distribute new tracks using Fisher Yates Shuffle
+const shuffleData = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 const getTracks = async (Artists, token, id) => {
   let tempData = [];
 
@@ -114,6 +123,7 @@ const getTracks = async (Artists, token, id) => {
         trackArray.push(Data[j].tracks[k]);
       }
     }
+    trackArray = shuffleData(trackArray);
     return trackArray;
   });
   return tracks;

@@ -184,7 +184,7 @@ export default function Autocomplete(props) {
 
             <input
               type="text"
-              placeholder="Select a Country"
+              placeholder="Search for a Country"
               onChange={(e) => onTextChanged(e, userInput)}
               onKeyPress={(e) => handleKeyPress(e)}
               value={userInput}

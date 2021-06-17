@@ -22,7 +22,7 @@
   width: calc(410px);
   position: absolute;
   border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 5px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -88,8 +88,21 @@
     width: calc(300px);
     position: absolute;
     border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
+}
+.predictionList::-webkit-scrollbar {
+  width: 20px;
+}
+
+.predictionList::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+.predictionList::-webkit-scrollbar-thumb {
+  background-image: url("/Aurora.jpg");
+  border-radius: 10px;
 }

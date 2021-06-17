@@ -237,6 +237,9 @@
   background: rgb(255, 255, 255, 0.2);
 }
 
+.refreshButton:focus {
+  outline: none;
+}
 .returnButton:focus {
   outline: none;
 }
