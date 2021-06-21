@@ -10,13 +10,16 @@ import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/HomePage/DiscoverButton";
 import RandomPlaylist from "../components/HomePage/RandomPlaylist";
 import CustomPlaylist from "../components/HomePage/CustomPlaylist";
+import SearchTypeButton from "../components/HomePage/SearchTypeButton";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 export default function Home() {
   const [token, setToken] = useState("");
   const [country, setCountry] = useState(["", ""]);
+  const [genre, setGenre] = useState("");
   const [ButtonState, setButtonState] = useState("Visible");
   const [tokenState, setTokenState] = useState(false);
+  const [searchMode, setSearchMode] = useState("Country");
 
   const fetchToken = async (hashParams) => {
     let token = await fetch(
@@ -93,13 +96,16 @@ export default function Home() {
         <Header />
         <AuthHelper token={token} />
         <div className="searchBody">
+          <SearchTypeButton />
           <Countrycomplete
             searchButton={false}
-            updateCountry={setCountry}
+            updateGenre={searchMode === "Country" ? setCountry : setGenre}
+            searchType={searchMode}
             linkRef={"/country/"}
             updateButtonState={setButtonState}
           />
         </div>
+
         <div className="functionButtons" style={{ visibility: ButtonState }}>
           <DiscoverButton />
           <RandomPlaylist />

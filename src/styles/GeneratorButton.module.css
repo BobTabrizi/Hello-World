@@ -9,10 +9,22 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.typeButton:hover,
 .button:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.typeButton:focus,
 .button:focus {
   outline: none;
+}
+
+.typeButton {
+  border-width: 1px;
+  border-radius: 25px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  padding: 0.5em 0.5em;
+  color: white;
+  font-family: "Codystar";
+  background-color: rgba(255, 255, 255, 0.1);
 }

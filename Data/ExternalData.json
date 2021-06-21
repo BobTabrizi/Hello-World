@@ -404,7 +404,18 @@
                 "name":"Top 50 - China",
                 "url":"3qwyQJzNAt4BDfnijpKkbi"
 
+            },
+            {
+                "type":"pop",
+                "name":"CHINAPOP",
+                "url":"1y1Nh41P5BK1VaUqCaqMVo"
+            },
+            {
+                "type":"rock",
+                "name":"Chinese Rock",
+                "url":"6xavzmUEwbV6ooXaqoOAE3"
             }
+        
         ]
     },
     {
@@ -954,9 +965,14 @@
 
             {
                 "type":"popular",
-                "name":"Kuwait Vibes",
+                "name":"Kyrgystan",
                 "url":"7fQvz9q1BjVPCEEbnp8JUO"
 
+            },
+            {
+                "type":"rap",
+                "name":"Kyrgystan Rap",
+                "url":"4jgGPU1fLr6rrtOWMIWzYq"
             }
         ]
     },
