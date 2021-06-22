@@ -20,6 +20,7 @@ export default function Home() {
   const [ButtonState, setButtonState] = useState("Visible");
   const [tokenState, setTokenState] = useState(false);
   const [searchMode, setSearchMode] = useState("Country");
+  const [genreChanged, setGenreChanged] = useState(false);
 
   const fetchToken = async (hashParams) => {
     let token = await fetch(
@@ -96,18 +97,24 @@ export default function Home() {
         <Header />
         <AuthHelper token={token} />
         <div className="searchBody">
-          <SearchTypeButton />
+          <SearchTypeButton
+            searchStatus={searchMode}
+            updateSearchMode={setSearchMode}
+            updateGenreState={setGenreChanged}
+          />
           <Countrycomplete
             searchButton={false}
             updateGenre={searchMode === "Country" ? setCountry : setGenre}
             searchType={searchMode}
             linkRef={"/country/"}
+            genreChanged={genreChanged}
+            updateGenreState={setGenreChanged}
             updateButtonState={setButtonState}
           />
         </div>
 
         <div className="functionButtons" style={{ visibility: ButtonState }}>
-          <DiscoverButton />
+          <DiscoverButton discoverMode={searchMode} />
           <RandomPlaylist />
           <CustomPlaylist />
         </div>

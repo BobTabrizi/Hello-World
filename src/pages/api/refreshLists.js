@@ -39,6 +39,7 @@ const cleanData = (pulledList) => {
         totalTracks: pulledList[i].items.length,
         spotifyOwned: true,
         tracks: pulledList[i].items,
+        image: `${process.env.NEXT_PUBLIC_AWS_URL}`,
       },
     ];
     delete pulledList[i].limit,

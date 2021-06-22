@@ -1,15 +1,16 @@
 import Head from "next/head";
-import styles from "../../styles/CountryPage.module.css";
+import styles from "../../styles/GenrePage.module.css";
 import Link from "next/link";
+import countryMap from "../../../Data/countryMap";
 import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
-import GetGenreLists from "../../BackendFunctions/GetGenreLists";
+import GetCountryByGenre from "../../BackendFunctions/GetGenreLists";
 
-export default function Country({ genre }) {
+export default function Country(props) {
   const [token, setToken] = useState("");
-  const [countries, setCountries] = useState(null);
   const [tokenState, setTokenState] = useState(false);
   useEffect(async () => {
+    /*
     setTokenState(true);
     if (!tokenState) {
       let token = await fetch(
@@ -19,6 +20,7 @@ export default function Country({ genre }) {
       // const countryList = await GetGenreLists(genre);
       setCountries(countryList);
     }
+    */
   });
 
   return (
@@ -36,6 +38,42 @@ export default function Country({ genre }) {
             rel="stylesheet"
           ></link>
         </Head>
+
+        <div className={styles.playlistHeader} style={{ fontSize: 70 }}>
+          <div>
+            <Link href="/">
+              <a>
+                <button
+                  className={styles.returnButton}
+                  style={{ fontSize: 20 }}
+                >
+                  Return to main page
+                </button>
+              </a>
+            </Link>
+          </div>
+          <div></div>
+          <div style={{ marginTop: "1.5rem" }}>{props.genre}</div>
+        </div>
+
+        <div className={styles.genreContainer}>
+          {props.countryList &&
+            props.countryList.map((country, index) => (
+              <div key={index}>
+                <Link
+                  href={`/playlist/${country.countryID}/?genre=${props.genre}&query=genre`}
+                >
+                  <div className={styles.genreItems}>
+                    <img
+                      src={`/flags/${country.countryID}.png`}
+                      style={{ width: 100, height: 60 }}
+                    ></img>
+                    <div>{country.countryName}</div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+        </div>
       </div>
     </>
   );
@@ -43,10 +81,15 @@ export default function Country({ genre }) {
 
 export async function getServerSideProps(context) {
   const { db } = await connectToDatabase();
-  genreName = context.query.genre;
+  let genreName = context.query.genre;
+  let countryArray = await GetCountryByGenre(genreName);
+  for (let i = 0; i < countryArray.length; i++) {
+    countryArray[i].countryName = countryMap[countryArray[i].countryID];
+  }
 
   return {
     props: {
+      countryList: countryArray,
       genre: genreName,
     },
   };

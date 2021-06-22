@@ -7,7 +7,13 @@ import countryMap from "../../../Data/countryMap.json";
 import listHelper from "../../BackendFunctions/GetLists";
 import SongList from "../../components/PlaylistPages/SongList";
 import Refresh from "../../components/PlaylistPages/Refresh";
-export default function Playlist({ countryID, countryName, logUrl, genre }) {
+export default function Playlist({
+  countryID,
+  countryName,
+  logUrl,
+  genre,
+  queryMethod,
+}) {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState(null);
   const [uriArray, setUriArray] = useState([]);
@@ -40,6 +46,33 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
     }
   });
 
+  let returnComponent;
+  if (queryMethod === "genre") {
+    returnComponent = (
+      <div>
+        <Link href={`/genre/${genre}`}>
+          <a>
+            <button className={styles.returnButton} style={{ fontSize: 18 }}>
+              Return to {genre} Countries
+            </button>
+          </a>
+        </Link>
+      </div>
+    );
+  } else {
+    returnComponent = (
+      <div>
+        <Link href={`/country/${countryID}`}>
+          <a>
+            <button className={styles.returnButton} style={{ fontSize: 18 }}>
+              Return to {countryName}
+            </button>
+          </a>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -67,15 +100,7 @@ export default function Playlist({ countryID, countryName, logUrl, genre }) {
             </a>
           </Link>
         </div>
-        <div>
-          <Link href={`/country/${countryID}`}>
-            <a>
-              <button className={styles.returnButton} style={{ fontSize: 18 }}>
-                Return to {countryName}
-              </button>
-            </a>
-          </Link>
-        </div>
+        {returnComponent}
         <div style={{ marginTop: "1.5rem" }}>
           {genre} in {countryName}
         </div>
@@ -105,6 +130,15 @@ export async function getServerSideProps(context) {
   let id;
   let countryName;
   let genre = context.query.genre;
+  let queryMethod;
+
+  //Determine how this page was reached, for appropriate route back
+  if (!context.query.query) {
+    queryMethod = "genre";
+  } else {
+    queryMethod = context.query.query;
+  }
+
   if (countryMap[context.query.id]) {
     id = context.query.id;
     countryName = countryMap[id];
@@ -154,6 +188,7 @@ export async function getServerSideProps(context) {
       countryName: countryName,
       logUrl: dataString,
       genre: genre,
+      queryMethod: queryMethod,
     },
   };
 }

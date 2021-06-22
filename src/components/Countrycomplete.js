@@ -26,6 +26,16 @@ export default function Autocomplete(props) {
   };
 
   useEffect(() => {
+    //If change in search type, reset the component
+    if (props.genreChanged === true) {
+      setCurrentPrediction(0);
+      setFilteredPredictions([]);
+      setUserInput("");
+      setPredictionShown(false);
+      setSelectedCountry("");
+      props.updateGenreState(false);
+    }
+
     if (userInput.length > 0) {
       if (props.updateButtonState) {
         props.updateButtonState("hidden");
@@ -40,7 +50,7 @@ export default function Autocomplete(props) {
   const onTextChanged = (e, value) => {
     let userInput;
     var predictions;
-    if (props.searchType === "Genres") predictions = Genres;
+    if (props.searchType === "Genre") predictions = Genres;
     else {
       predictions = Countries;
     }
@@ -71,14 +81,16 @@ export default function Autocomplete(props) {
 
       if (filteredPredictions.length === 1) {
         countryName = filteredPredictions[0].name;
-        setUserInput(filteredPredictions[0].name);
+        setUserInput(filteredPredictions[0].name.capitalize());
         setFilteredPredictions(["Selected"]);
         if (props.searchType === "Country") {
           Router.push({
             pathname: `/country/${filteredPredictions[0].code}`,
           });
         } else {
-          //Fill in the route here
+          Router.push({
+            pathname: `/genre/${filteredPredictions[0].name}`,
+          });
         }
       }
       if (countryCode && props.searchType === "Country") {
@@ -119,7 +131,9 @@ export default function Autocomplete(props) {
         pathname: `/country/${val}`,
       });
     } else {
-      //Fill in Router here
+      Router.push({
+        pathname: `/genre/${val}`,
+      });
     }
   };
 
