@@ -61,15 +61,24 @@ export default function CustomPlaylist({ songs }) {
       </div>
       <div className={styles.inputContainer}>
         <div className={styles.inputs}>
-          <Countrycomplete searchButton={false} updateCountry={setCountryOne} />
+          <Countrycomplete
+            searchButton={false}
+            updateCountry={setCountryOne}
+            searchType={"Country"}
+          />
         </div>
         <div className={styles.inputs}>
-          <Countrycomplete searchButton={false} updateCountry={setCountryTwo} />
+          <Countrycomplete
+            searchButton={false}
+            updateCountry={setCountryTwo}
+            searchType={"Country"}
+          />
         </div>
         <div className={styles.inputs}>
           <Countrycomplete
             searchButton={false}
             updateCountry={setCountryThree}
+            searchType={"Country"}
           />
         </div>
       </div>

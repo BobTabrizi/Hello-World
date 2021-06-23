@@ -106,10 +106,10 @@ export default function Home(props) {
             searchButton={false}
             updateGenre={searchMode === "Country" ? setCountry : setGenre}
             searchType={searchMode}
-            linkRef={"/country/"}
             genreChanged={genreChanged}
             updateGenreState={setGenreChanged}
             updateButtonState={setButtonState}
+            pageType={"Home"}
           />
         </div>
 

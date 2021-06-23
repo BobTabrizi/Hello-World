@@ -83,17 +83,22 @@ export default function Autocomplete(props) {
         countryName = filteredPredictions[0].name;
         setUserInput(filteredPredictions[0].name.capitalize());
         setFilteredPredictions(["Selected"]);
-        if (props.searchType === "Country") {
+        if (props.searchType === "Country" && props.pageType === "Home") {
           Router.push({
             pathname: `/country/${filteredPredictions[0].code}`,
           });
-        } else {
+        }
+        if (props.searchType === "Genre") {
           Router.push({
             pathname: `/genre/${filteredPredictions[0].name}`,
           });
         }
       }
-      if (countryCode && props.searchType === "Country") {
+      if (
+        countryCode &&
+        props.searchType === "Country" &&
+        props.pageType === "Home"
+      ) {
         router.push({
           pathname: `/country/${countryCode}`,
         });
@@ -126,11 +131,12 @@ export default function Autocomplete(props) {
         e.currentTarget.getAttribute("value"),
       ]);
     }
-    if (props.searchType === "Country") {
+    if (props.searchType === "Country" && props.pageType === "Home") {
       router.push({
         pathname: `/country/${val}`,
       });
-    } else {
+    }
+    if (props.searchType === "Genre") {
       Router.push({
         pathname: `/genre/${val}`,
       });
