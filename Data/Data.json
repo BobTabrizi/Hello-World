@@ -84,11 +84,18 @@
 
             },
             {
+                "type":"pop",
+                "name":"Deutschpop",
+                "url":"37i9dQZF1DXbKGrOUA30KN"
+
+            },
+            {
                 "type":"oktoberfest",
                 "name":"Oktoberfest Music",
                 "url":"2jSHxP2f5vK0STWbVXWPQA"
 
             }
+
         ]
     },
     {
@@ -112,6 +119,11 @@
                 "type":"rap",
                 "name":"Best french rap hits",
                 "url":"1vJRCYfOpwM5LuVCrZpa1K"
+            },
+            {
+                "type":"pop",
+                "name":"Hits Pop Francaise",
+                "url":"73z4Kt34aJUmk1p1kENpLq"
             }
         ]
     },
@@ -207,8 +219,17 @@
                 "type":"rap",
                 "name":"Rap Caviar",
                 "url":"37i9dQZF1DX0XUsuxWHRQd"
+            },
+            {
+                "type":"jazz",
+                "name":"Jazz Classics",
+                "url":"37i9dQZF1DXbITWG1ZJKYt"
+            },
+            {
+                "type":"country",
+                "name":"Country Favourites",
+                "url":"37i9dQZF1DX13ZzXoot6Jc"
             }
-  
         ]
     },
     {
@@ -225,8 +246,8 @@
             
             {
                 "type":"party",
-                "name":"Russian Party Hits",
-                "url":"1eSmMnPYycDLqUvZtFxiSr"
+                "name":"Russiche Party Musik",
+                "url":"7KoKV7pCH4fDW5dJfgmyED"
             },
             {
                 "type":"rap",
@@ -237,6 +258,11 @@
                 "type":"hardbass",
                 "name":"Hardbass",
                 "url":"7k4dTAmRQk6Sp0cOfR5EhV"
+            },
+            {
+                "type":"pop",
+                "name":"Russian pop",
+                "url":"62UmRp5frbbbtwW0dQ3TrW"
             }
         ]
     },
@@ -255,6 +281,12 @@
                 "type":"party",
                 "name":"Typical Spanish",
                 "url":"00sPYQym0OnMuDBxsfAsNy"
+
+            },
+            {
+                "type":"rock",
+                "name":"Rock Espanol",
+                "url":"37i9dQZF1DWUNNEvaozpW5"
 
             }
         ]
@@ -299,6 +331,11 @@
                 "type":"rap",
                 "name":"Rap UK",
                 "url":"37i9dQZF1DX6PKX5dyBKeq"
+            },
+            {
+                "type":"rock",
+                "name":"The Rock List",
+                "url":"37i9dQZF1DX4DZAVUAwHMT"
             }
         ]
     },
@@ -318,6 +355,12 @@
                 "name":"Party in Argentina",
                 "url":"0oFwJxlSzXuFYwK2ar91tF"
 
+            },
+            {
+                "type":"rock",
+                "name":"Rock Argentino",
+                "url":"37i9dQZF1DWTMU14XJYy0g"
+
             }
         ]
     },
@@ -335,7 +378,13 @@
                 "type":"party",
                 "name":"Party Hit's Portugal",
                 "url":"1V9rAlwFGFTFswjvlsuciT"
+            },
+            {
+                "type":"rock",
+                "name":"Rock Portugues",
+                "url":"37i9dQZF1DWYjjOmuB9ehg"
             }
+
         ]
     },
     {
@@ -350,9 +399,15 @@
 
             },
             {
-                "type":"k-pop",
+                "type":"pop",
                 "name":"K-POP Party 2021",
                 "url":"0IQamUhlzsoM8Vkpvs5QaT"
+
+            },
+            {
+                "type":"rock",
+                "name":"K-록 스피릿",
+                "url":"37i9dQZF1DXc5JzohrgrJZ"
 
             }
 
@@ -370,11 +425,18 @@
 
             },
             {
-                "type":"j-pop",
+                "type":"pop",
                 "name":"Jpop 2020-2021",
                 "url":"2QmnoSI9FqCPTQ7V6HQQYj"
 
+            },
+            {
+                "type":"rock",
+                "name":"J-Rock Now",
+                "url":"37i9dQZF1DX6ntWKaOqGAp"
+
             }
+
         ]
     },
     {
@@ -392,6 +454,11 @@
                 "type":"party",
                 "name":"ISRAELI PARTY",
                 "url":"20jHkvLZrSIOjuQBVurEms"
+            },
+            {
+                "type":"rock",
+                "name":"מצב הרוק",
+                "url":"37i9dQZF1DX41IYVoQd4Sa"
             }
         ]
     },
@@ -430,6 +497,12 @@
                 "type":"popular",
                 "name":"Top 50 - Denmark",
                 "url":"37i9dQZEVXbL3J0k32lWnN"
+
+            },
+            {
+                "type":"party",
+                "name":"Danish Party Music",
+                "url":"3S5qxJzCkzdqTsTgfWDKdL"
 
             }
         ]
@@ -514,6 +587,24 @@
                 "name":"Dutch Carnival Party Music",
                 "url":"5AdgL0J8DoMTgEsXT1uX6p"
 
+            },
+            {
+                "type":"pop",
+                "name":"DUTCH POP HITS",
+                "url":"25FXJ64Ldg6YTz3aA8zB1Y"
+
+            },
+            {
+                "type":"rap",
+                "name":"Netherlands Rap",
+                "url":"2UUvKkEstM36QuYhR03Rnz"
+
+            },
+            {
+                "type":"hardstyle",
+                "name":"Dutch Hardcore",
+                "url":"2DrweodCn3gZlUTANLz46y"
+
             }
         ]
     },
@@ -590,6 +681,12 @@
                 "name":"Brazilian Party Mix",
                 "url":"2thdNYxltkzoKCZycb8sHh"
 
+            },
+            {
+                "type":"rock",
+                "name":"Rock Leve",
+                "url":"37i9dQZF1DX4vCk1GJH7zl"
+
             }
         ]
     },
@@ -609,7 +706,14 @@
                 "name":"Vietnamese Party House",
                 "url":"5MTs9FOxTwMk5fAdQlEL6v"
 
+            },
+            {
+                "type":"rock",
+                "name":"Rock Viet",
+                "url":"37i9dQZF1DX3XYbBdFxzGm"
+
             }
+
         ]
     },
     {
@@ -627,6 +731,12 @@
                 "type":"party",
                 "name":"Turksh Party",
                 "url":"0xxIkPs46dM8p6FSFh9B3n"
+
+            },
+            {
+                "type":"rock",
+                "name":"Turkce Rock",
+                "url":"37i9dQZF1DX3RfxtU3KC3j"
 
             }
         ]
@@ -678,6 +788,18 @@
                 "name":"Top 50 - Colombia",
                 "url":"37i9dQZEVXbOa2lmxNORXQ"
 
+            },
+            {
+                "type":"party",
+                "name":"Colombian Party 80's 90's 00s today",
+                "url":"3y2vXmzOr4lvQ9Z005EQH2"
+
+            },
+            {
+                "type":"rock",
+                "name":"Rock Colombia",
+                "url":"37i9dQZF1DX5inPtxPHiuS"
+
             }
         ]
     },
@@ -690,6 +812,12 @@
                 "type":"popular",
                 "name":"Top 50 - Costa Rica",
                 "url":"37i9dQZEVXbMZAjGMynsQX"
+
+            },
+            {
+                "type":"party",
+                "name":"Costa Rica Party Classics",
+                "url":"5AL0cRZ3BHXiJNdMJUJeoK"
 
             }
         ]
@@ -704,6 +832,11 @@
                 "name":"Top 50 - Bulgaria",
                 "url":"37i9dQZEVXbNfM2w2mq1B8"
 
+            },
+            {
+                "type":"party",
+                "name":"Bulgarian Partyyy",
+                "url":"5OovaDRlRlpLpl0RfFx82s"
             }
         ]
     },
@@ -717,6 +850,11 @@
                 "name":"Top 50 - Ireland",
                 "url":"37i9dQZEVXbKM896FDX8L1"
 
+            },
+            {
+                "type":"party",
+                "name":"Irish Party",
+                "url":"6rsyh6m2QpjeH1KlcRXd5j"
             }
         ]
     },
@@ -729,6 +867,13 @@
                 "type":"popular",
                 "name":"Top 50 - Egypt",
                 "url":"37i9dQZEVXbLn7RQmT5Xv2"
+
+            },
+            
+            {
+                "type":"party",
+                "name":"Egyptian Party",
+                "url":"37i9dQZF1DWVouaSVHTvw2"
 
             }
         ]
@@ -743,6 +888,12 @@
                 "name":"Top 50 - Poland",
                 "url":"37i9dQZEVXbN6itCcaL3Tt"
 
+            },
+            {
+                "type":"party",
+                "name":"Polish Party Hits",
+                "url":"17dqyrOsGVSunU0XP3xfjM"
+
             }
         ]
     },
@@ -756,6 +907,12 @@
                 "name":"Top 50 - Hungary",
                 "url":"37i9dQZEVXbNHwMxAkvmF8"
 
+            },
+            {
+                "type":"party",
+                "name":"Hungarian Party Music",
+                "url":"0QXmOlQyhmOUuPLW3QwP7M"
+
             }
         ]
     },
@@ -768,6 +925,12 @@
                 "type":"popular",
                 "name":"Top 50 - Indonesia",
                 "url":"37i9dQZEVXbObFQZ3JLcXt"
+
+            },
+            {
+                "type":"party",
+                "name":"party (indonesian)",
+                "url":"6Z8Ya9ynlEe7c6SzIfhPBq"
 
             }
         ]
@@ -795,6 +958,12 @@
                 "name":"Top 50 - Paraguay",
                 "url":"37i9dQZEVXbNOUPGj7tW6T"
 
+            },
+            {
+                "type":"party",
+                "name":"Paraguay Party Hits",
+                "url":"3y3Ugj3hnvZ6FecH5iahcX"
+
             }
         ]
     },
@@ -808,6 +977,11 @@
                 "name":"Top 50 - Peru",
                 "url":"37i9dQZEVXbJfdy5b0KP7W"
 
+            },
+            {
+                "type":"party",
+                "name":"Peruvian Party",
+                "url":"2hSGnnYIngpSKi9yPAdlIw"
             }
         ]
     },
@@ -820,6 +994,12 @@
                 "type":"popular",
                 "name":"Top 50 - Guatemala",
                 "url":"37i9dQZEVXbLy5tBFyQvd4"
+
+            },
+            {
+                "type":"party",
+                "name":"Merengue pa bailar",
+                "url":"2cva4fVFMDllXW1mFCSbK6"
 
             }
         ]
@@ -834,6 +1014,23 @@
                 "name":"Top 50 - Belgium",
                 "url":"37i9dQZEVXbJNSeeHswcKB"
 
+            },
+            {
+                "type":"party",
+                "name":"belgian dance classics",
+                "url":"4zNUADmicxAabplJ2GMs1E"
+
+            },
+            {
+                "type":"rap",
+                "name":"Belgium Rap",
+                "url":"4F32hM3ghihheO6saJvxSO"
+
+            },
+            {
+                "type":"jazz",
+                "name":"Belgo-Jazz",
+                "url":"37i9dQZF1DWXdynNwVeJMs"
             }
         ]
     },
@@ -846,6 +1043,12 @@
                 "type":"popular",
                 "name":"Top 50 - Uruguay",
                 "url":"37i9dQZEVXbMJJi3wgRbAy"
+
+            },
+            {
+                "type":"party",
+                "name":"Uruguay Party",
+                "url":"09GQGpJdZqZVlR8srZXn9V"
 
             }
         ]
@@ -860,6 +1063,12 @@
                 "name":"Top 50 - Panama",
                 "url":"37i9dQZEVXbKypXHVwk1f0"
 
+            },
+            {
+                "type":"party",
+                "name":"Panama Party",
+                "url":"4JhJg0xeedpozhVIGuk6Ty"
+
             }
         ]
     },
@@ -873,6 +1082,29 @@
                 "name":"Top 50 - Malaysia",
                 "url":"37i9dQZEVXbJlfUljuZExa"
 
+            },
+            {
+                "type":"party",
+                "name":"VPR Partayyy",
+                "url":"4elfVrA6sharQBYLQPzQ9y"
+
+            },
+            {
+                "type":"rap",
+                "name":"Malaysian rap",
+                "url":"0AqEjCXqZlzdFCUsEbWIdF"
+
+            },
+            {
+                "type":"rock",
+                "name":"Malaysia Rock Kapak",
+                "url":"3HMm0RxHMKa6Oh2BYYH7iR"
+
+            },
+            {
+                "type":"pop",
+                "name":"Pop Terkini!",
+                "url":"37i9dQZF1DWVcsVY2PZfmZ"
             }
         ]
     },
@@ -899,6 +1131,18 @@
                 "name":"Top 50 - Greece",
                 "url":"37i9dQZEVXbJqdarpmTJDL"
 
+            },
+            {
+                "type":"party",
+                "name":"Greek party mix 2021",
+                "url":"2cwIcJC5WhqZdKT3ttngwg"
+
+            },
+            {
+                "type":"rock",
+                "name":"All Greek Rock",
+                "url":"37i9dQZF1DX12XV3UF801V"
+
             }
         ]
     },
@@ -911,6 +1155,18 @@
                 "type":"popular",
                 "name":"Top 50 - Taiwan",
                 "url":"37i9dQZEVXbMnZEatlMSiu"
+
+            },
+            {
+                "type":"party",
+                "name":"男聲報到",
+                "url":"37i9dQZF1DX7fmODWXsMkJ"
+
+            },
+            {
+                "type":"rock",
+                "name":"華語很搖滾",
+                "url":"37i9dQZF1DX4VlHAN7dSCG"
 
             }
         ]
@@ -925,6 +1181,12 @@
                 "name":"Top 50 - Hong Kong",
                 "url":"37i9dQZEVXbLwpL8TjsxOG"
 
+            },
+            {
+                "type":"party",
+                "name":"Canton Disco [Hong Kong Disco/80s Cantopop Mix]",
+                "url":"2lU6uJe7DCAlrq2qx5MMMM"
+
             }
         ]
     },
@@ -937,6 +1199,12 @@
                 "type":"popular",
                 "name":"Top 50 - Thailand",
                 "url":"37i9dQZEVXbMnz8KIWsvf9"
+
+            },
+            {
+                "type":"party",
+                "name":"Thai Party Countdown 2021",
+                "url":"5N0tmPPYDJ5Twm4ur4ukOA"
 
             }
         ]
@@ -951,7 +1219,14 @@
                 "name":"Top 50 - Switzerland",
                 "url":"37i9dQZEVXbJiyhoAPEfMK"
 
+            },
+            {
+                "type":"party",
+                "name":"Swiss Party",
+                "url":"0cNTsN3sGzFFsCFEspfYdx"
+
             }
+            
         ]
     },
     {
@@ -963,6 +1238,12 @@
                 "type":"popular",
                 "name":"Top 50 - New Zealand",
                 "url":"37i9dQZEVXbM8SIrkERIYl"
+
+            },
+            {
+                "type":"rock",
+                "name":"Kiwi Rock Classics",
+                "url":"37i9dQZF1DX6LpewvJUySS"
 
             }
         ]
@@ -977,6 +1258,18 @@
                 "name":"Top 50 - El Salvador",
                 "url":"37i9dQZEVXbLxoIml4MYkT"
 
+            },
+            {
+                "type":"party",
+                "name":"Salvadorian Party",
+                "url":"0qfOgZnpxzoYrLQi96O7xl"
+
+            },
+            {
+                "type":"rap",
+                "name":"El Salvador Rap",
+                "url":"6zkBJw2VZIuga71FhKzBdA"
+
             }
         ]
     },
@@ -989,6 +1282,18 @@
                 "type":"popular",
                 "name":"Top 50 - Czech Republic",
                 "url":"37i9dQZEVXbIP3c3fqVrJY"
+
+            },
+            {
+                "type":"party",
+                "name":"Czech party mega mix",
+                "url":"2a8ZP1KI5QTzZwPk2xutdQ"
+
+            },
+            {
+                "type":"rock",
+                "name":"Rockovy flaky",
+                "url":"37i9dQZF1DWWrde2KT7OXJ"
 
             }
         ]
@@ -1003,6 +1308,13 @@
                 "name":"Top 50 - South Africa",
                 "url":"37i9dQZEVXbMH2jvi6jvjk"
 
+            },
+            
+            {
+                "type":"party",
+                "name":"SOUTH AFRICAN PARTY",
+                "url":"0RRWQoG9gutwqgNG4OjCZK"
+
             }
         ]
     },
@@ -1015,6 +1327,18 @@
                 "type":"popular",
                 "name":"Top 50 - Ukraine",
                 "url":"37i9dQZEVXbKkidEfWYRuD"
+
+            },
+            {
+                "type":"party",
+                "name":"Ukraine Party",
+                "url":"00JRX3XXpmXLVAUHyQN1DN"
+
+            },
+            {
+                "type":"rock",
+                "name":"Український рок",
+                "url":"37i9dQZF1DWUxthdWUs4N4"
 
             }
         ]
@@ -1029,6 +1353,12 @@
                 "name":"Top 50 - Lithuania",
                 "url":"37i9dQZEVXbMx56Rdq5lwc"
 
+            },
+            {
+                "type":"party",
+                "name":"Lietuviskas vakarelis",
+                "url":"2eAfqqqm1xkDvLkErQPnzE"
+
             }
         ]
     },
@@ -1042,6 +1372,18 @@
                 "name":"Top 50 - Romania",
                 "url":"37i9dQZEVXbNZbJ6TZelCq"
 
+            },
+            {
+                "type":"party",
+                "name":"Romanian Club Music",
+                "url":"4o308OMsGdfwSQNIS2tppJ"
+
+            },
+            {
+                "type":"pop",
+                "name":"Romanian Pop Music",
+                "url":"0i9KjJw13UPQnMInVloLQG"
+
             }
         ]
     },
@@ -1054,6 +1396,18 @@
                 "type":"popular",
                 "name":"Top 50 - Nicaragua",
                 "url":"37i9dQZEVXbISk8kxnzfCq"
+
+            },
+            {
+                "type":"party",
+                "name":"Musica Nicaraguense",
+                "url":"6is9wyRipDTlEAZ85CZ86t"
+
+            },
+            {
+                "type":"rock",
+                "name":"Seleccion de rock nicaraguense",
+                "url":"4Rps2fMeiXlY2SPDUVHFgI"
 
             }
         ]
@@ -1106,6 +1460,12 @@
                 "type":"popular",
                 "name":"Palestine Sounds",
                 "url":"37i9dQZF1DX6qjeIoR93rs"
+
+            },
+            {
+                "type":"party",
+                "name":"Palestine party",
+                "url":"5LdgBG9og3zxB1OYhVjFUD"
 
             }
         ]
@@ -1173,6 +1533,18 @@
                 "name":"Top 50 - Chile",
                 "url":"37i9dQZEVXbL0GavIqMTeb"
 
+            },
+            {
+                "type":"party",
+                "name":"Fiesta chilena / Chilean Party",
+                "url":"1bhJtSgxquwFkjS2EiAYI9"
+
+            },
+            {
+                "type":"rock",
+                "name":"Rock Chileno",
+                "url":"37i9dQZF1DX3TKWnpd3vOb"
+
             }
         ]
     },
@@ -1225,6 +1597,12 @@
                 "name":"Lebanon Sounds",
                 "url":"37i9dQZF1DXaywRlmHaP59"
 
+            },
+            {
+                "type":"party",
+                "name":"Lebanese Party Music",
+                "url":"4jDlDztQf4zjwsrJe9rL4N"
+
             }
         ]
     },
@@ -1237,6 +1615,30 @@
                 "type":"popular",
                 "name":"Top 50 - Italy",
                 "url":"37i9dQZEVXbIQnj7RRhdSX"
+
+            },
+            {
+                "type":"party",
+                "name":"Italian Party IT",
+                "url":"3gL4nuwn1CciiT49znXFsC"
+
+            },
+            {
+                "type":"rock",
+                "name":"Rock Italia",
+                "url":"37i9dQZF1DWViUlcvfltyZ"
+
+            },
+            {
+                "type":"pop",
+                "name":"Top Italia IT Pop Italiano",
+                "url":"065NSxcopkTPYnSSDaLYif"
+
+            },
+            {
+                "type":"jazz",
+                "name":"Jazz Italia",
+                "url":"37i9dQZF1DX30D074EWuy7"
 
             }
         ]

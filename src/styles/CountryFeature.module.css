@@ -1,0 +1,23 @@
+.container {
+  align-items: center;
+  text-align: center;
+}
+.featureHeader {
+  font-family: "codystar";
+  margin-top: 1rem;
+}
+.featuredName {
+  font-family: "codystar";
+}
+
+.featureButton {
+  margin-top: 1rem;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem;
+  height: 80px;
+  width: 125px;
+}
+
+.featureButton:hover {
+  cursor: pointer;
+}

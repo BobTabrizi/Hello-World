@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "../components/HomePage/PageHeader";
 import styles from "../styles/Home.module.css";
 //import { S3 } from "@aws-sdk/client-s3";
-//import { connectToDatabase } from "../../util/mongodb";
+import { connectToDatabase } from "../../util/mongodb";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Countrycomplete from "../components/Countrycomplete";
@@ -10,14 +10,18 @@ import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/HomePage/DiscoverButton";
 import RandomPlaylist from "../components/HomePage/RandomPlaylist";
 import CustomPlaylist from "../components/HomePage/CustomPlaylist";
+import SearchTypeButton from "../components/HomePage/SearchTypeButton";
+import FeaturedCountry from "../components/HomePage/FeaturedCountry";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
-export default function Home() {
+export default function Home(props) {
   const [token, setToken] = useState("");
   const [country, setCountry] = useState(["", ""]);
+  const [genre, setGenre] = useState("");
   const [ButtonState, setButtonState] = useState("Visible");
   const [tokenState, setTokenState] = useState(false);
-
+  const [searchMode, setSearchMode] = useState("Country");
+  const [genreChanged, setGenreChanged] = useState(false);
   const fetchToken = async (hashParams) => {
     let token = await fetch(
       `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/getToken?codeValue=${hashParams}&Type=UserToken`
@@ -93,19 +97,46 @@ export default function Home() {
         <Header />
         <AuthHelper token={token} />
         <div className="searchBody">
+          <SearchTypeButton
+            searchStatus={searchMode}
+            updateSearchMode={setSearchMode}
+            updateGenreState={setGenreChanged}
+          />
           <Countrycomplete
             searchButton={false}
-            updateCountry={setCountry}
-            linkRef={"/country/"}
+            updateGenre={searchMode === "Country" ? setCountry : setGenre}
+            searchType={searchMode}
+            genreChanged={genreChanged}
+            updateGenreState={setGenreChanged}
             updateButtonState={setButtonState}
+            pageType={"Home"}
           />
         </div>
+
         <div className="functionButtons" style={{ visibility: ButtonState }}>
-          <DiscoverButton />
+          <DiscoverButton discoverMode={searchMode} />
           <RandomPlaylist />
           <CustomPlaylist />
         </div>
+        <FeaturedCountry featuredCountryID={props.COTD} />
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const { db } = await connectToDatabase();
+  let data;
+  let resultData;
+  data = await db
+    .collection("CountryFeature")
+    .find({ EventType: "COTD" })
+    .limit(1)
+    .toArray();
+  resultData = JSON.parse(JSON.stringify(data));
+  return {
+    props: {
+      COTD: resultData[0].country,
+    },
+  };
 }

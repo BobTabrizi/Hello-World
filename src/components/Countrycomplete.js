@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Link from "next/link";
 import Countries from "../../Data/Countries.json";
+import Genres from "../../Data/Genres.json";
 import countryMap from "../../Data/countryMap.json";
 import styles from "../styles/CountryComplete.module.css";
 import Router, { useRouter } from "next/router";
@@ -13,12 +14,28 @@ export default function Autocomplete(props) {
   const [buttonState, setButtonState] = useState("Visible");
   const [predictionShown, setPredictionShown] = useState(true);
   const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState("");
   const router = useRouter();
+
   const getKeyByValue = (obj, value) => {
     return Object.keys(obj).find((key) => obj[key] === value);
   };
 
+  String.prototype.capitalize = function () {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  };
+
   useEffect(() => {
+    //If change in search type, reset the component
+    if (props.genreChanged === true) {
+      setCurrentPrediction(0);
+      setFilteredPredictions([]);
+      setUserInput("");
+      setPredictionShown(false);
+      setSelectedCountry("");
+      props.updateGenreState(false);
+    }
+
     if (userInput.length > 0) {
       if (props.updateButtonState) {
         props.updateButtonState("hidden");
@@ -32,7 +49,11 @@ export default function Autocomplete(props) {
 
   const onTextChanged = (e, value) => {
     let userInput;
-    var predictions = Countries;
+    var predictions;
+    if (props.searchType === "Genre") predictions = Genres;
+    else {
+      predictions = Countries;
+    }
     if (e.currentTarget.value[0] !== undefined) {
       userInput =
         e.currentTarget.value[0].toUpperCase() +
@@ -52,32 +73,47 @@ export default function Autocomplete(props) {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      let countryCode = getKeyByValue(countryMap, userInput);
+      let countryCode;
       let countryName;
+      if (props.searchType === "Country") {
+        countryCode = getKeyByValue(countryMap, userInput);
+      }
+
       if (filteredPredictions.length === 1) {
-        countryCode = filteredPredictions[0].code;
         countryName = filteredPredictions[0].name;
-        setUserInput(filteredPredictions[0].name);
+        setUserInput(filteredPredictions[0].name.capitalize());
         setFilteredPredictions(["Selected"]);
-        if (props.linkRef === "/country/") {
+        if (props.searchType === "Country" && props.pageType === "Home") {
           Router.push({
-            pathname: `${props.linkRef}${filteredPredictions[0].code}`,
+            pathname: `/country/${filteredPredictions[0].code}`,
+          });
+        }
+        if (props.searchType === "Genre") {
+          Router.push({
+            pathname: `/genre/${filteredPredictions[0].name}`,
           });
         }
       }
-      if (countryCode && props.linkRef === "/country/") {
+      if (
+        countryCode &&
+        props.searchType === "Country" &&
+        props.pageType === "Home"
+      ) {
         router.push({
-          pathname: `${props.linkRef}${countryCode}`,
+          pathname: `/country/${countryCode}`,
         });
       }
 
       if (props.updateCountry && countryCode) {
         props.updateCountry([userInput, countryCode]);
       }
+      if (props.updateGenre && props.searchType === "Genre") {
+        props.updateGenre(countryName);
+      }
     }
   };
 
-  const onClick = (e, countryCode) => {
+  const onClick = (e, val) => {
     setCurrentPrediction(0);
     setFilteredPredictions([]);
     setUserInput(e.currentTarget.innerText);
@@ -89,9 +125,20 @@ export default function Autocomplete(props) {
         e.currentTarget.getAttribute("value"),
       ]);
     }
-    if (props.linkRef === "/country/") {
+    if (props.updateGenre) {
+      props.updateGenre([
+        e.currentTarget.innerText,
+        e.currentTarget.getAttribute("value"),
+      ]);
+    }
+    if (props.searchType === "Country" && props.pageType === "Home") {
       router.push({
-        pathname: `${props.linkRef}${countryCode}`,
+        pathname: `/country/${val}`,
+      });
+    }
+    if (props.searchType === "Genre") {
+      Router.push({
+        pathname: `/genre/${val}`,
       });
     }
   };
@@ -101,7 +148,7 @@ export default function Autocomplete(props) {
   //Hide Main Page Buttons on search for transparent background
   nullComponent = (
     <div className={styles.nullComponent} style={{ visibility: "Hidden" }}>
-      No Countries Found
+      No {props.searchType} Found
     </div>
   );
   if (predictionShown && userInput) {
@@ -114,29 +161,52 @@ export default function Autocomplete(props) {
               if (idx === currentPrediction) {
                 className = "prediction-active";
               }
-              return (
-                <li
-                  className={className}
-                  key={prediction.name}
-                  value={prediction.code}
-                  onClick={(e) => onClick(e, prediction.code)}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "space-between",
-                    }}
+
+              if (props.searchType === "Country") {
+                return (
+                  <li
+                    className={className}
+                    key={prediction.name}
+                    value={prediction.code}
+                    onClick={(e) => onClick(e, prediction.code)}
                   >
-                    {prediction.name}
-                    <img
-                      src={`/flags/${prediction.code}.png`}
-                      height="50"
-                      width="70"
-                    ></img>
-                  </div>
-                </li>
-              );
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      {prediction.name}
+
+                      <img
+                        src={`/flags/${prediction.code}.png`}
+                        height="50"
+                        width="70"
+                      ></img>
+                    </div>
+                  </li>
+                );
+              } else {
+                return (
+                  <li
+                    className={className}
+                    key={prediction.name}
+                    value={prediction.name}
+                    onClick={(e) => onClick(e, prediction.name)}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      {prediction.name.capitalize()}
+                    </div>
+                  </li>
+                );
+              }
             })}
           </ul>
         </div>
@@ -149,14 +219,15 @@ export default function Autocomplete(props) {
             className={styles.nullComponent}
             style={{ visibility: "Visible" }}
           >
-            No Countries Found
+            No {props.searchType} Found
           </div>
         );
       }
     }
   }
   let pageRef;
-  if (props.linkRef) {
+
+  if (props.linkRef && props.searchType === "Country") {
     let customRef = props.linkRef;
     pageRef = `${customRef}${selectedCountry}`;
   }
@@ -184,7 +255,7 @@ export default function Autocomplete(props) {
 
             <input
               type="text"
-              placeholder="Search for a Country"
+              placeholder={`Search for a ${props.searchType}`}
               onChange={(e) => onTextChanged(e, userInput)}
               onKeyPress={(e) => handleKeyPress(e)}
               value={userInput}

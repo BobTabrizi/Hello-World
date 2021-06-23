@@ -3,7 +3,9 @@ import Link from "next/link";
 export default function PlaylistButton(props) {
   return (
     <div style={{ cursor: "pointer" }}>
-      <Link href={`/playlist/${props.countryID}?genre=${props.genre}`}>
+      <Link
+        href={`/playlist/${props.countryID}?genre=${props.genre}&query=country`}
+      >
         <img
           src={props.image}
           alt="Playlist Image"
