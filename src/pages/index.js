@@ -10,18 +10,13 @@ import AuthHelper from "../BackendFunctions/AuthHelper";
 import DiscoverButton from "../components/HomePage/DiscoverButton";
 import RandomPlaylist from "../components/HomePage/RandomPlaylist";
 import CustomPlaylist from "../components/HomePage/CustomPlaylist";
-import SearchTypeButton from "../components/HomePage/SearchTypeButton";
-import FeaturedCountry from "../components/HomePage/FeaturedCountry";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 export default function Home(props) {
   const [token, setToken] = useState("");
-  const [country, setCountry] = useState(["", ""]);
-  const [genre, setGenre] = useState("");
   const [ButtonState, setButtonState] = useState("Visible");
   const [tokenState, setTokenState] = useState(false);
   const [searchMode, setSearchMode] = useState("Country");
-  const [genreChanged, setGenreChanged] = useState(false);
   const fetchToken = async (hashParams) => {
     let token = await fetch(
       `${process.env.NEXT_PUBLIC_PROD_URL}/api/auth/getToken?codeValue=${hashParams}&Type=UserToken`
@@ -97,17 +92,10 @@ export default function Home(props) {
         <Header />
         <AuthHelper token={token} />
         <div className="searchBody">
-          <SearchTypeButton
-            searchStatus={searchMode}
-            updateSearchMode={setSearchMode}
-            updateGenreState={setGenreChanged}
-          />
           <Countrycomplete
             searchButton={false}
-            updateGenre={searchMode === "Country" ? setCountry : setGenre}
             searchType={searchMode}
-            genreChanged={genreChanged}
-            updateGenreState={setGenreChanged}
+            updateSearchMode={setSearchMode}
             updateButtonState={setButtonState}
             pageType={"Home"}
           />
@@ -118,7 +106,6 @@ export default function Home(props) {
           <RandomPlaylist />
           <CustomPlaylist />
         </div>
-        <FeaturedCountry featuredCountryID={props.COTD} />
       </div>
     </>
   );

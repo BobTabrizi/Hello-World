@@ -15,7 +15,22 @@ export default function Autocomplete(props) {
   const [predictionShown, setPredictionShown] = useState(true);
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
+
   const router = useRouter();
+
+  const handleSearchSwitch = () => {
+    if (props.searchType === "Country") {
+      props.updateSearchMode("Genre");
+    } else {
+      props.updateSearchMode("Country");
+    }
+    //If change in search type, reset the component
+    setCurrentPrediction(0);
+    setFilteredPredictions([]);
+    setUserInput("");
+    setPredictionShown(false);
+    setSelectedCountry("");
+  };
 
   const getKeyByValue = (obj, value) => {
     return Object.keys(obj).find((key) => obj[key] === value);
@@ -26,16 +41,6 @@ export default function Autocomplete(props) {
   };
 
   useEffect(() => {
-    //If change in search type, reset the component
-    if (props.genreChanged === true) {
-      setCurrentPrediction(0);
-      setFilteredPredictions([]);
-      setUserInput("");
-      setPredictionShown(false);
-      setSelectedCountry("");
-      props.updateGenreState(false);
-    }
-
     if (userInput.length > 0) {
       if (props.updateButtonState) {
         props.updateButtonState("hidden");
@@ -231,6 +236,21 @@ export default function Autocomplete(props) {
     let customRef = props.linkRef;
     pageRef = `${customRef}${selectedCountry}`;
   }
+
+  //For now, keep the toggle to home page,
+  //needs to be refactored for customized playlist feature expansion
+  let searchSwitch;
+  if (props.pageType === "Home") {
+    searchSwitch = (
+      <div
+        className={styles.searchIconTwo}
+        style={{ fontSize: 13 }}
+        onClick={() => handleSearchSwitch()}
+      >
+        {props.searchType}
+      </div>
+    );
+  }
   return (
     <div>
       <Fragment>
@@ -262,6 +282,7 @@ export default function Autocomplete(props) {
               className={styles.input}
               autoComplete="off"
             />
+            {searchSwitch}
           </div>
         </form>
         {props.linkRef && props.searchButton && (

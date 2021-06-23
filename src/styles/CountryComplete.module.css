@@ -65,6 +65,21 @@
   left: 15px;
 }
 
+.inputContainer > .searchIconTwo {
+  position: absolute;
+  color: black;
+  top: 9px;
+  right: 15px;
+  background-color: rgba(77, 77, 77, 0.4);
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+.searchIconTwo:hover {
+  background-color: rgba(77, 77, 77, 0.6);
+  cursor: pointer;
+}
+
 .inputContainer > input {
   padding-left: 40px;
 }
