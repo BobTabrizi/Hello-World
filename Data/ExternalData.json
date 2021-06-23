@@ -8,6 +8,19 @@
                 "name":"Top 50 - afghanistan",
                 "url":"2PqU9WTACNHzNSxWaN6ajk"
 
+            },
+            
+            {
+                "type":"party",
+                "name":"Afghan wedding songs",
+                "url":"5dbY03NZu51TI4EKklYSeg"
+
+            },
+            {
+                "type":"rap",
+                "name":"Rap Dari",
+                "url":"68hvlppjPr7FYZi05z7D7Y"
+
             }
         ]
     },
@@ -32,6 +45,24 @@
                 "name":"Top 50 Albania",
                 "url":"5qUIbMaq55rsJHdxQcJzrq"
 
+            },
+            {
+                "type":"party",
+                "name":"Albanian Wedding",
+                "url":"6LOA60QzpyXHzUbS16JhQZ"
+
+            },
+            {
+                "type":"rap",
+                "name":"Albanian Rap",
+                "url":"5vkxHLgeoSameblkpTuQaT"
+
+            },
+            {
+                "type":"pop",
+                "name":"Albanian pop",
+                "url":"0DO9lVkAngJxqrBos4UaR3"
+
             }
         ]
     },
@@ -43,6 +74,18 @@
                 "type":"popular",
                 "name":"Top Algeria",
                 "url":"3lixLIBNGy0XsDHQcB6a8R"
+
+            },
+            {
+                "type":"party",
+                "name":"Algerian wedding",
+                "url":"40kRiAd4WyvFlPZEG2Mti4"
+
+            },
+            {
+                "type":"rap",
+                "name":"Chwaker Rap",
+                "url":"37i9dQZF1DX3tB6HA5bPgd"
 
             }
         ]
@@ -116,6 +159,30 @@
                 "name":"Top 50 Armenia",
                 "url":"55QP3XjEy8hAE47hcJbIIi"
 
+            },
+            {
+                "type":"party",
+                "name":"Armenian Party Music",
+                "url":"7oWeNfURwQmzxp0RXDIYcV"
+
+            },
+            {
+                "type":"jazz",
+                "name":"Armenian Jazz",
+                "url":"3PI3U41ESabWQlPocUoug2"
+
+            }, 
+             {
+                "type":"rap",
+                "name":"Armenian Rap",
+                "url":"3JdrNV9XpgPqdFezr41biT"
+
+            },
+            {
+                "type":"pop",
+                "name":"Armenian Pop",
+                "url":"4iNUqdo4xs6a9mRba3rZ2H"
+
             }
         ]
     },
@@ -128,6 +195,33 @@
                 "name":"TOP 50 : Azerbaijan",
                 "url":"2BputVKFjQLQmFkKYU9phi"
 
+            },
+            {
+                "type":"party",
+                "name":"Azerbaijan dance club",
+                "url":"5QjfcQknVtsyCPISrVSgGr"
+
+            },
+            {
+                "type":"pop",
+                "name":"Azerbaycan Poplari",
+                "url":"6c2PHEg94AefMgNJZyVGvc"
+
+            },
+            {
+                "type":"rap",
+                "name":"Azerbaycanca Rep",
+                "url":"3gjrULyqgYEycpOmtnFExv"
+            },
+            {
+                "type":"rock",
+                "name":"Azerbaijani Rock",
+                "url":"6wX6qIfVBKos4Pl4mnjBCa"
+            },
+            {
+                "type":"jazz",
+                "name":"Azerbaijani Jazz",
+                "url":"4CLVPlmvBDmwNqZ89s7BIh"
             }
         ]
     },
@@ -164,6 +258,18 @@
                 "name":"Hot Hits Bangladesh",
                 "url":"37i9dQZF1DX794NyvTu6nv"
 
+            },
+            {
+                "type":"pop",
+                "name":"Bangla Pop",
+                "url":"37i9dQZF1DWUu7pG6LwPJc"
+
+            },
+            {
+                "type":"rock",
+                "name":"Bangla Rock",
+                "url":"37i9dQZF1DX3MUQrfTBXMY"
+
             }
         ]
     },
@@ -187,6 +293,12 @@
                 "type":"popular",
                 "name":"Belarus",
                 "url":"3RGD5PyXJ4tIhU6YEbEqzw"
+
+            },
+            {
+                "type":"rock",
+                "name":"The sound of Belarusian Rock",
+                "url":"3wZ3TCdTgkrlXxozMUivDq"
 
             }
         ]
