@@ -1,13 +1,12 @@
 import Head from "next/head";
 import styles from "../../styles/PlaylistPage.module.css";
-import Link from "next/link";
 import Countries from "../../../Data/Countries.json";
 import { connectToDatabase } from "../../../util/mongodb";
 import ListCreator from "../../BackendFunctions/CreateList";
 import React, { useState, useEffect } from "react";
+import Header from "../../components/PlaylistPages/Header";
 import listHelper from "../../BackendFunctions/GetLists";
 import SongList from "../../components/PlaylistPages/SongList";
-import SpotifyButton from "../../components/PlaylistPages/SpotifyViewButton";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 export default function randomPlaylist({
@@ -59,20 +58,7 @@ export default function randomPlaylist({
           <style>{dom.css()}</style>
         </Head>
       </div>
-
-      <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
-        <div>
-          <Link href="/">
-            <a>
-              <button className={styles.returnButton} style={{ fontSize: 20 }}>
-                Return to main page
-              </button>
-            </a>
-          </Link>
-        </div>
-        <div style={{ marginTop: "1.5rem" }}> Random Playlist</div>
-        <SpotifyButton playlistUrl={playlistUrl} />
-      </div>
+      <Header playlistUrl={playlistUrl} pageType={"Random"} />
       <SongList
         songs={songs}
         uriArray={uriArray}

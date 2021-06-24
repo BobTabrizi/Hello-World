@@ -11,11 +11,8 @@ export default function Autocomplete(props) {
   const [currentPrediction, setCurrentPrediction] = useState(0);
   const [filteredPredictions, setFilteredPredictions] = useState([]);
   const [userInput, setUserInput] = useState("");
-  const [buttonState, setButtonState] = useState("Visible");
   const [predictionShown, setPredictionShown] = useState(true);
   const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
-
   const router = useRouter();
 
   const handleSearchSwitch = () => {

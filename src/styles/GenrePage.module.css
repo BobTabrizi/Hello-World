@@ -15,7 +15,8 @@
   justify-content: center;
 }
 
-.genreItems {
+.genreItems,
+.skeletonGenreItems {
   overflow: hidden;
   flex-direction: column;
   border-radius: 0.25rem;
@@ -27,6 +28,10 @@
   max-width: 100px;
   font-family: "Codystar";
   font-size: 85%;
+}
+.skeletonGenreItems {
+  height: 60px;
+  width: 100px;
 }
 
 .genreItems:hover {

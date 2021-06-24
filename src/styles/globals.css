@@ -90,6 +90,13 @@ a {
   height: 12px;
 }
 
+.skeleton.countryImage {
+  width: 100px;
+  height: 60px;
+  background-color: gray;
+  border-radius: 5px;
+}
+
 .skeleton.title {
   width: 70%;
   height: 15px;

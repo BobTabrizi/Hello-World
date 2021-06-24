@@ -4,6 +4,7 @@ import Link from "next/link";
 import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
+import Header from "../../components/PlaylistPages/Header";
 import listHelper from "../../BackendFunctions/GetLists";
 import SongList from "../../components/PlaylistPages/SongList";
 import Refresh from "../../components/PlaylistPages/Refresh";
@@ -75,50 +76,43 @@ export default function Playlist({
 
   return (
     <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+          rel="stylesheet"
+        ></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
+          rel="stylesheet"
+        ></link>
+      </Head>
+
       <div className={styles.container}>
-        <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <link
-            href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-            rel="stylesheet"
-          ></link>
-          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Codystar&display=swap"
-            rel="stylesheet"
-          ></link>
-        </Head>
+        <Header
+          pageType={"Playlist"}
+          properties={{
+            genre: genre,
+            countryName: countryName,
+            countryID: countryID,
+            queryMethod: queryMethod,
+          }}
+        />
+        <SongList
+          songs={songs}
+          uriArray={uriArray}
+          token={token}
+          logUrl={logUrl}
+        />
+
+        <Refresh
+          countryID={countryID}
+          genre={genre}
+          updateSongs={setSongs}
+          updateURI={setUriArray}
+        />
       </div>
-
-      <div className={styles.playlistHeader} style={{ fontSize: 70 }}>
-        <div>
-          <Link href="/">
-            <a>
-              <button className={styles.returnButton} style={{ fontSize: 20 }}>
-                Return to main page
-              </button>
-            </a>
-          </Link>
-        </div>
-        {returnComponent}
-        <div style={{ marginTop: "1.5rem" }}>
-          {genre} in {countryName}
-        </div>
-      </div>
-
-      <SongList
-        songs={songs}
-        uriArray={uriArray}
-        token={token}
-        logUrl={logUrl}
-      />
-
-      <Refresh
-        countryID={countryID}
-        genre={genre}
-        updateSongs={setSongs}
-        updateURI={setUriArray}
-      />
     </>
   );
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { connectToDatabase } from "../../../util/mongodb";
 import React, { useState, useEffect } from "react";
 import ListHelper from "../../BackendFunctions/GetLists";
+import Header from "../../components/PlaylistPages/Header";
 import ListCreator from "../../BackendFunctions/CreateList";
 import SongList from "../../components/PlaylistPages/SongList";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
@@ -14,8 +15,6 @@ export default function GeneratedList({ countryCodes, logUrl }) {
   const [songs, setSongs] = useState(null);
   const [uriArray, setUriArray] = useState([]);
   const [playlistUrl, setPlaylistURL] = useState("https://open.spotify.com/");
-  const [pageHeading, setPageHeading] = useState("Custom Playlist");
-
   useEffect(async () => {
     //On first load, get details and create the playlist.
     let tempToken = localStorage.getItem("Token");
@@ -59,19 +58,7 @@ export default function GeneratedList({ countryCodes, logUrl }) {
           <style>{dom.css()}</style>
         </Head>
       </div>
-      <div className={styles.playlistHeader} style={{ fontSize: 50 }}>
-        <div>
-          <Link href="/">
-            <a>
-              <button className={styles.returnButton} style={{ fontSize: 20 }}>
-                Return to main page
-              </button>
-            </a>
-          </Link>
-        </div>
-        <div style={{ marginTop: "1.5rem" }}> {pageHeading}</div>
-        <SpotifyButton playlistUrl={playlistUrl} />
-      </div>
+      <Header playlistUrl={playlistUrl} pageType={"Custom"} />
 
       <SongList
         songs={songs}
@@ -83,7 +70,6 @@ export default function GeneratedList({ countryCodes, logUrl }) {
   );
 }
 export async function getServerSideProps(context) {
-  // console.log(context.query);
   const { db } = await connectToDatabase();
 
   let logString = "/api/datalog/logCustom?SongPlays=1&countryID=";
