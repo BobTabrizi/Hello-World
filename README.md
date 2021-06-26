@@ -6,7 +6,9 @@ You can check out the live build at: https://hello-world-bobtabrizi.vercel.app/
 
 ### Details and Instructions
 
-This project utilizes Next.js, express, Node.js, MongoDB, and AWS Lambda/S3. Using the Spotify Web API to gather and display hundreds of songs with different languages and ethnic backgrounds, updating daily.
+This project utilizes Next.js, express, Node.js, MongoDB, and AWS Lambda/S3. Using the Spotify Web API to gather and display hundreds of songs with different languages and ethnic backgrounds, updating daily. 
+
+A Spotify account is **not required** for search functionality, through usage of the Youtube Data API all songs can be viewed and listened to without logging into spotify.
 
 ##### Search for songs listened to across the world by country, or explore and find new music randomly through the adventurous button. 
 
