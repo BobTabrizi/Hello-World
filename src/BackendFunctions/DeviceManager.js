@@ -1,4 +1,11 @@
-export default function DeviceManager(token, uriArr, trackNumber, href) {
+export default function DeviceManager(
+  token,
+  uriArr,
+  trackNumber,
+  href,
+  trackName,
+  artistName
+) {
   fetch("https://api.spotify.com/v1/me/player/devices", {
     method: "GET",
     headers: {
@@ -35,7 +42,16 @@ export default function DeviceManager(token, uriArr, trackNumber, href) {
       });
     })
     .catch((error) => {
-      console.log(error);
-      window.open(href, "_blank");
+      //console.log(error);
+      // window.open(href, "_blank");
+
+      //If non-spotify user or not signed in, direct to a youtube video of the song
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${trackName} ${artistName}}&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`;
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          let videoURL = data.items[0].id.videoId;
+          window.open(`https://www.youtube.com/embed/${videoURL}`, "_blank");
+        });
     });
 }

@@ -46,34 +46,6 @@ export default function Playlist({
       setUriArray(trackURI);
     }
   });
-
-  let returnComponent;
-  if (queryMethod === "genre") {
-    returnComponent = (
-      <div>
-        <Link href={`/genre/${genre}`}>
-          <a>
-            <button className={styles.returnButton} style={{ fontSize: 18 }}>
-              Return to {genre} Countries
-            </button>
-          </a>
-        </Link>
-      </div>
-    );
-  } else {
-    returnComponent = (
-      <div>
-        <Link href={`/country/${countryID}`}>
-          <a>
-            <button className={styles.returnButton} style={{ fontSize: 18 }}>
-              Return to {countryName}
-            </button>
-          </a>
-        </Link>
-      </div>
-    );
-  }
-
   return (
     <>
       <Head>

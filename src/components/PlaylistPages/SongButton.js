@@ -3,7 +3,6 @@ import styles from "../../styles/PlaylistPage.module.css";
 import DeviceManager from "../../BackendFunctions/DeviceManager";
 export default function SongButton(props) {
   const [hover, setHover] = useState("none");
-
   const handleButtonClick = async () => {
     fetch(
       `${process.env.NEXT_PUBLIC_PROD_URL}${props.logUrl}${props.song.countryID}`
@@ -12,7 +11,9 @@ export default function SongButton(props) {
       props.token,
       props.uriArray,
       props.index,
-      props.song.track.external_urls.spotify
+      props.song.track.external_urls.spotify,
+      props.song.track.name,
+      props.song.track.artists[0].name
     );
   };
 

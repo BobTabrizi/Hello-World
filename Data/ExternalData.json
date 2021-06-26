@@ -111,6 +111,18 @@
                 "name":"TOP Angola",
                 "url":"4jid2Kyxr9QVUPM0IR82FS"
 
+            },
+            {
+                "type":"party",
+                "name":"Dancing Kizomba",
+                "url":"37i9dQZF1DX1l6qs3gcM4U"
+
+            },
+            {
+                "type":"jazz",
+                "name":"Jazz Angolano",
+                "url":"5YdJJigKxkmdAf9RZ5zBnF"
+
             }
         ]
     },
@@ -312,6 +324,12 @@
                 "name":"Belize BZ",
                 "url":"1FRt1DNVOV3hIPTjuHXDpg"
 
+            },
+            {
+                "type":"party",
+                "name":"Belizean Dancehall",
+                "url":"5wkUCu7jacbsptd7P4cKCk"
+
             }
         ]
     },
@@ -359,6 +377,18 @@
                 "type":"popular",
                 "name":"BOSNIAN HITS | 2021",
                 "url":"0uO44hxjV98phtbNl2zCmx"
+
+            },
+            {
+                "type":"party",
+                "name":"Bop but in Bosnian",
+                "url":"1pfaGNFsueMSTmNp3wEsSu"
+
+            },
+            {
+                "type":"rap",
+                "name":"Bosnian Rap 2021",
+                "url":"2dsiHOJvkCqrnKXcd6hx2a"
 
             }
         ]
@@ -408,6 +438,12 @@
                 "name":"Brunei's Hits",
                 "url":"4buZWh6IvedusMWSLGaHfP"
 
+            },
+            {
+                "type":"rock",
+                "name":"Bruneian Rock",
+                "url":"24jRSHfvewFRQW13kvLwwj"
+
             }
         ]
     },
@@ -419,6 +455,12 @@
                 "type":"popular",
                 "name":"Music from Burkina Faso",
                 "url":"4ZLDiyphkO5RZkCkVeb9V5"
+
+            },
+            {
+                "type":"party",
+                "name":"Hit Burkinabe",
+                "url":"0W04U2Sku0QVhUE2pXx98R"
 
             }
         ]
@@ -443,6 +485,19 @@
                 "type":"popular",
                 "name":"Cambodian Songs",
                 "url":"15zN3B8v0R4Lr8uDlyewdP"
+
+            },
+            {
+                "type":"party",
+                "name":"Khmer partyyy",
+                "url":"7FkUR2OXFMN5R1v7zoJh1C"
+
+            },
+            
+            {
+                "type":"pop",
+                "name":"Campop",
+                "url":"4nc8FrqqgLvznRsU9V60tl"
 
             }
         ]
@@ -1313,6 +1368,18 @@
                 "name":"Top Moldova",
                 "url":"5YMnhThojLVCBi8BS46eqv"
 
+            },
+            {
+                "type":"pop",
+                "name":"The Sound of Moldovan Pop",
+                "url":"6T5nV1CfYLMP7nbkQf4vNn"
+
+            },
+            {
+                "type":"rap",
+                "name":"Moldova Rap",
+                "url":"7x7BTArSJPI6UEI65cFB67"
+
             }
         ]
     },
@@ -1336,6 +1403,24 @@
                 "type":"popular",
                 "name":"Top Hits of Mongolia",
                 "url":"3cAoceC5cx6gZlamdlRmgJ"
+
+            },
+            {
+                "type":"throat-singing",
+                "name":"Mongolian Throat Singing",
+                "url":"5blZ7j9Zytp9omMo9QDnGY"
+
+            },
+            {
+                "type":"metal",
+                "name":"Mongolian Heavy Metal",
+                "url":"0nRvo5VYGGmKYV0RRmzIGW"
+
+            },
+            {
+                "type":"rap",
+                "name":"Rap Mongolia",
+                "url":"5S0Flf19hRMaNhrbeK7U3r"
 
             }
         ]
@@ -1516,6 +1601,30 @@
                 "type":"popular",
                 "name":"Top 50 - Pakistan",
                 "url":"6BymTJF70MjeaIjEbZREfc"
+
+            },
+            {
+                "type":"party",
+                "name":"Pakistani Wedding",
+                "url":"7dipEwh5n4nk6Zths4H313"
+
+            },
+            {
+                "type":"pop",
+                "name":"Pakistani Pop",
+                "url":"37i9dQZF1DWZj47aylvVUN"
+
+            },
+            {
+                "type":"rock",
+                "name":"Pakistani Rock",
+                "url":"37i9dQZF1DX6zcPTRLJpcc"
+
+            },
+            {
+                "type":"rap",
+                "name":"Pakistani Rap",
+                "url":"0cF7w5XTVU9zMUvgzo1Njs"
 
             }
         ]
@@ -1744,6 +1853,29 @@
                 "type":"popular",
                 "name":"Slovenski Hiti",
                 "url":"2b8ai5tZ1cMdtZcZyZ16U6"
+
+            },
+            {
+                "type":"party",
+                "name":"Slovenski hiti za zabavo na plazi",
+                "url":"6nUzsSjg1C5dDdz8Az2Ibv"
+
+            },
+            {
+                "type":"rap",
+                "name":"Slovenski Rap Bangerji",
+                "url":"0lx1PRXcAE0srLNIlbUXWo"
+            },
+            {
+                "type":"rock",
+                "name":"Slovenian rock",
+                "url":"4XAd7jl9NtLgcOIeHDG4KM"
+
+            },
+            {
+                "type":"metal",
+                "name":"Slovenian Metal",
+                "url":"349z4cqiJqwSB4ltivukeE"
 
             }
         ]
@@ -2044,6 +2176,24 @@
                 "type":"popular",
                 "name":"Made in Venezuela",
                 "url":"37i9dQZF1DWWekySnB4xpt"
+
+            },
+            {
+                "type":"party",
+                "name":"Venezuelan Wedding",
+                "url":"0liKFhXkLmzTzlqRE8jCJZ"
+
+            },
+            {
+                "type":"rap",
+                "name":"Rap Venezuela",
+                "url":"2Vk18oRYCidg01kLiKYMrf"
+
+            },
+            {
+                "type":"rock",
+                "name":"Rock venezolano",
+                "url":"6AhwjKGTjam8jWN0VW1utV"
 
             }
         ]
