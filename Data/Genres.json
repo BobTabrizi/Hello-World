@@ -82,6 +82,9 @@
         "name": "disco"
     },
     {
+        "name": "space disco"
+    },
+    {
         "name": "trap"
     },
     {
@@ -92,5 +95,8 @@
     },
     {
         "name": "lo-fi"
+    },
+    {
+        "name": "black metal"
     }
 ]

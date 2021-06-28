@@ -5,10 +5,6 @@
         "code": "AF"
     },
     {
-        "name": "Åland Islands",
-        "code": "AX"
-    },
-    {
         "name": "Albania",
         "code": "AL"
     },
@@ -31,10 +27,6 @@
     {
         "name": "Anguilla",
         "code": "AI"
-    },
-    {
-        "name": "Antarctica",
-        "code": "AQ"
     },
     {
         "name": "Antigua and Barbuda",
@@ -117,16 +109,8 @@
         "code": "BW"
     },
     {
-        "name": "Bouvet Island",
-        "code": "BV"
-    },
-    {
         "name": "Brazil",
         "code": "BR"
-    },
-    {
-        "name": "British Indian Ocean Territory",
-        "code": "IO"
     },
     {
         "name": "Brunei Darussalam",
@@ -167,10 +151,6 @@
     {
         "name": "Central African Republic",
         "code": "CF"
-    },
-    {
-        "name": "Chad",
-        "code": "TD"
     },
     {
         "name": "Chile",
@@ -277,10 +257,6 @@
         "code": "ET"
     },
     {
-        "name": "Falkland Islands",
-        "code": "FK"
-    },
-    {
         "name": "Faroe Islands",
         "code": "FO"
     },
@@ -303,10 +279,6 @@
     {
         "name": "French Polynesia",
         "code": "PF"
-    },
-    {
-        "name": "French Southern Territories",
-        "code": "TF"
     },
     {
         "name": "Gabon",
@@ -377,10 +349,6 @@
         "code": "HT"
     },
     {
-        "name": "Heard Island and Mcdonald Islands",
-        "code": "HM"
-    },
-    {
         "name": "Vatican City",
         "code": "VA"
     },
@@ -439,10 +407,6 @@
     {
         "name": "Japan",
         "code": "JP"
-    },
-    {
-        "name": "Jersey",
-        "code": "JE"
     },
     {
         "name": "Jordan",
@@ -545,10 +509,6 @@
         "code": "MT"
     },
     {
-        "name": "Marshall Islands",
-        "code": "MH"
-    },
-    {
         "name": "Martinique",
         "code": "MQ"
     },
@@ -619,10 +579,6 @@
     {
         "name": "Netherlands",
         "code": "NL"
-    },
-    {
-        "name": "Netherlands Antilles",
-        "code": "AN"
     },
     {
         "name": "New Caledonia",

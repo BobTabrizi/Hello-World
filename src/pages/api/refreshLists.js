@@ -12,7 +12,6 @@ const retrieveData = (url, token, id) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         for (let i = 0; i < data.tracks.items.length; i++) {
           data.tracks.items[i].countryID = id;
         }
@@ -66,6 +65,7 @@ const getSongs = async (token) => {
 
 export default async function handler(req, res) {
   const { db } = await connectToDatabase();
+
   let pulledList = await GetToken()
     .then((token) => {
       return getSongs(token);
