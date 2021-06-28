@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   const { db } = await connectToDatabase();
 
   let genre = req.query.genre;
-
   const data = await db
     .collection("Countries")
     .aggregate([
@@ -23,6 +22,5 @@ export default async function handler(req, res) {
       },
     ])
     .toArray();
-
   res.json(data);
 }

@@ -16,7 +16,6 @@
 /build
 
 # misc
-AWSData.json
 .DS_Store
 *.pem
 

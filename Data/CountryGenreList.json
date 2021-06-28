@@ -1,0 +1,1774 @@
+[
+    {
+        "countryID": "NO",
+        "countryName": "Norway",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"norwegian pop"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"norwegian rap"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"norwegian hip hop"
+            },
+            {
+                "genre":"black metal",
+                "subgenre":"norwegian black metal"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"norwegian indie"
+            },
+            {
+                "genre":"classical",
+                "subgenre":"norwegian classical"
+            },
+            {
+                "genre":"space disco",
+                "subgenre":"norwegian space disco"
+            },
+            {
+                "genre":"country",
+                "subgenre":"norwegian country"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"norwegian jazz"
+            }
+        ]
+    },
+    {
+        "countryID": "AU",
+        "countryName": "Australia",
+        "playlists":[
+            {
+                "genre":"jazz",
+                "subgenre":"australian jazz"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"australian hip hop"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"australian pop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"australian rock"
+            },
+            {
+                "genre":"country",
+                "subgenre":"australian country"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"australian indie"
+            },
+            {
+                "genre":"electropop",
+                "subgenre":"australian electropop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"australian metal"
+            }
+        ]
+    },
+    {
+        "countryID": "DE",
+        "countryName": "Germany",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"german pop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"german metal"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"german rock"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"german techno"
+            },
+            {
+                "genre":"trance",
+                "subgenre":"german trance"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"german hip hop"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"german rap"
+            },
+            {
+                "genre":"country",
+                "subgenre":"german country"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"german indie"
+            }
+        ]
+    },
+    {
+        "countryID": "FR",
+        "countryName": "France",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"french pop"
+            },
+            {
+                "genre":"shoegaze",
+                "subgenre":"french shoegaze"
+            },
+            {
+                "genre":"synthpop",
+                "subgenre":"french synthpop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"french metal"
+            },
+            {
+                "genre":"electropop",
+                "subgenre":"electro-pop francais"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"french hip hop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"french rock"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"french indie"
+            }
+        ]
+    },
+    {
+        "countryID": "MX",
+        "countryName": "Mexico",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"mexican pop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"mexican rock"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"mexican indie"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"mexican hip hop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"mexican metal"
+            },
+            {
+                "genre":"traditional",
+                "subgenre":"mexican traditional"
+            }
+  
+        ]
+    },
+    {
+        "countryID": "IN",
+        "countryName": "India",
+        "playlists":[
+            {
+                "genre":"indie",
+                "subgenre":"indian indie"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"indian folk"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"indian rock"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"desi hip hop"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"desi pop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"indian metal"
+            },
+            {
+                "genre":"bollywood",
+                "subgenre":"modern bollywood"
+            }
+        ]
+    },
+    {
+        "countryID": "AT",
+        "countryName": "Austria",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"austrian pop"
+            },
+            {
+                "genre":"black metal",
+                "subgenre":"austrian black metal"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"austrian metal"
+            },
+            {
+                "genre":"orchestra",
+                "subgenre":"austrian orchestra"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"austrian hip hop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"austrian stoner rock"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"austrian techno"
+            }
+        ]
+    },
+    {
+        "countryID": "US",
+        "countryName": "United States",
+        "playlists":[
+            {
+                "genre":"jazz",
+                "subgenre":"jazz"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"classic rock"
+            }
+        ]
+    },
+    {
+        "countryID": "RU",
+        "countryName": "Russia",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"russian pop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"russian metal"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"russian edm"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"russian hip hop"
+            },
+            {
+                "genre":"trap",
+                "subgenre":" russian trap"
+            },
+            {
+                "genre":"hardbass",
+                "subgenre":"hard bass"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"russian techno"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"russian indie"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"russian rock"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"russian jazz"
+            }
+        ]
+    },
+    {
+        "countryID": "ES",
+        "countryName": "Spain",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"spanish rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"spanish pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"spanish hip hop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"spanish metal"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"spanish indie"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"spanish techno"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"spanish jazz"
+            }
+
+        ]
+    },
+    {
+        "countryID": "CA",
+        "countryName": "Canada",
+        "playlists":[
+            {
+                "genre":"hip hop",
+                "subgenre":"canadian hip hop"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"canadian pop"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"canadian trap"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"canadian metal"
+            },
+            {
+                "genre":"country",
+                "subgenre":"canadian country"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"canadian rock"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"canadian modern jazz"
+            }
+        ]
+    },
+    {
+        "countryID": "GB",
+        "countryName": "United Kingdom",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"british rock"
+            },
+            {
+                "genre":"soul",
+                "subgenre":"british soul"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"uk pop"
+            },
+            {
+                "genre":"orchestra",
+                "subgenre":"british orchestra"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"british folk"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"british metal"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"british indie"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"uk hip hop"
+            },
+            {
+                "genre":"drill",
+                "subgenre":"uk drill"
+            }
+        ]
+    },
+    {
+        "countryID": "AR",
+        "countryName": "Argentina",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"argentine rock"
+            },
+            {
+                "genre":"ska",
+                "subgenre":"ska argentino"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"argentine indie"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"trap argentino"
+            },
+            {
+                "genre":"reggae",
+                "subgenre":"argentine reggae"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"pop argentino"
+            }
+        ]
+    },
+    {
+        "countryID": "PT",
+        "countryName": "Portugal",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"portuguese rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"portuguese pop"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"portuguese indie"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"portuguese techno"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"portuguese metal"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"portuguese jazz"
+            }
+        ]
+    },
+    {
+        "countryID": "KR",
+        "countryName": "South Korea",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"k-rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"k-pop"
+            },
+            {
+                "genre":"electropop",
+                "subgenre":"korean electropop"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"korean trap"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"k-rap"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"k-indie"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"korean hip hop"
+            },
+            {
+                "genre":"dreampop",
+                "subgenre":"korean dream pop"
+            }
+        ]
+    },
+    {
+        "countryID": "JP",
+        "countryName": "Japan",
+        "playlists":[
+
+            {
+                "genre":"pop",
+                "subgenre":"japanese pop"
+            },
+            {
+                "genre":"anime",
+                "subgenre":"anime"
+            },
+            {
+                "genre":"classical",
+                "subgenre":"japanese classical"
+            },
+            {
+                "genre":"electropop",
+                "subgenre":"japanese electropop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"j-rock"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"j-metal"
+            },
+            {
+                "genre":"math rock",
+                "subgenre":"japanese math rock"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"japanese jazz"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"japanese folk"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"japanese rap"
+            }
+        ]
+    },
+    {
+        "countryID": "IL",
+        "countryName": "Israel",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"israeli rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"israeli pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"israeli hip hop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"israeli rock"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"israeli jazz"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"israeli trap"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"israeli techno"
+            }
+        ]
+    },    
+    {
+        "countryID": "LV",
+        "countryName": "Latvia",
+        "playlists":[
+            {
+                "genre":"folk",
+                "subgenre":"latvian folk"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"latvian hip hop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"latvian metal"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"latvian pop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"latvian rock"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"latvian indie"
+            }
+        ]
+    },
+    {
+        "countryID": "IS",
+        "countryName": "Iceland",
+        "playlists":[
+            {
+                "genre":"indie",
+                "subgenre":"icelandic indie"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"icelandic rock"
+            },
+            {
+                "genre":"classical",
+                "subgenre":"icelandic classical"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"icelandic pop"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"icelandic folk"
+            },
+            {
+                "genre":"traditional",
+                "subgenre":"icelandic traditional"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"icelandic electronic"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"icelandic jazz"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"icelandic metal"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"icelandic hip hop"
+            }
+        ]
+    },
+    {
+        "countryID": "DK",
+        "countryName": "Denmark",
+        "playlists":[
+            {
+                "genre":"metal",
+                "subgenre":"danish metal"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"danish rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"danish pop"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"danish electronic"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"danish hip hop"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"danish jazz"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"danish indie"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"danish techno"
+            },
+            {
+                "genre":"electropop",
+                "subgenre":"danish electropop"
+            }
+        ]
+    },
+    
+    {
+        "countryID": "SE",
+        "countryName": "Sweden",
+        "playlists":[
+            {
+                "genre":"electropop",
+                "subgenre":"swedish electropop"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"swedish pop"
+            },
+            {
+                "genre":"synthpop",
+                "subgenre":"swedish synthpop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"swedish metal"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"swedish rock"
+            },
+            {
+                "genre":"country",
+                "subgenre":"swedish country"
+            },
+            {
+                "genre":"eurodance",
+                "subgenre":"swedish eurodance"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"swedish electronic"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"swedish indie"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"swedish techno"
+            }
+        ]
+    },
+    
+    {
+        "countryID": "FI",
+        "countryName": "Finland",
+        "playlists":[
+            {
+                "genre":"metal",
+                "subgenre":"finnish metal"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"finnish rock"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"finnish edm"
+            },
+            {
+                "genre":"classical",
+                "subgenre":"finnish classical"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"finnish jazz"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"finnish indie"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"finnish dance pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"finnish hip hop"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"finnish electronic"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"suomirap"
+            }
+        ]
+    },
+    {
+        "countryID": "MA",
+        "countryName": "Morocco",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"moroccan pop"
+            },
+            {
+                "genre":"traditional",
+                "subgenre":"moroccan traditional"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"rap maroc"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"chaabi marocain"
+            }
+        ]
+    },
+    {
+        "countryID": "NL",
+        "countryName": "Netherlands",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"dutch pop"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"dutch edm"
+            },
+            {
+                "genre":"house",
+                "subgenre":"dutch house"
+            },
+            {
+                "genre":"trance",
+                "subgenre":"dutch trance"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"dutch hip hop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"dutch rock"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"dutch metal"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"dutch jazz"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"dutch indie"
+            }
+        ]
+    },
+    {
+        "countryID": "PH",
+        "countryName": "Philippines",
+        "playlists":[
+            {
+                "genre":"reggae",
+                "subgenre":"pinoy reggae"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"pinoy rock"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"pinoy rock"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"pinoy indie"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"pinoy trap"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"pinoy rap"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"pinoy edm"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"pinoy metal"
+            },
+            {
+                "genre":"traditional",
+                "subgenre":"pinoy traditional"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"pinoy idol pop"
+            }
+        ]
+    },
+    {
+        "countryID": "DO",
+        "countryName": "Dominican Republic",
+        "playlists":[
+            {
+                "genre":"rap",
+                "subgenre":"rap dominicano"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"dominican pop"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"trap dominicano"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"dominican indie"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"jazz dominicano"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"rock dominicano"
+            }
+        ]
+    },
+    {
+        "countryID": "BR",
+        "countryName": "Brazil",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"brazilian rock"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"brazilian edm"
+            },
+            {
+                "genre":"classical",
+                "subgenre":"brazilian classical"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"brazilian jazz"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"brazilian metal"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"brazilian rock"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"brazilian hip hop"
+            },
+            {
+                "genre":"soul",
+                "subgenre":"brazilian soul"
+            }
+        ]
+    },
+    {
+        "countryID": "VN",
+        "countryName": "Vietnam",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"rock viet"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"indie viet"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"vietnamese pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"vietnamese hip hop"
+            },
+            {
+                "genre":"lo-fi",
+                "subgenre":"viet lo-fi"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"viet edm"
+            }
+        ]
+    },
+    {
+        "countryID": "TR",
+        "countryName": "Turkey",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"turkish rock"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"turkish edm"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"turkish pop"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"turkish trap"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"turkish hip hop"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"turkish jazz"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"turkish electronic"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"turkish folk"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"turkce kadin rap"
+            },
+            {
+                "genre":"drill",
+                "subgenre":"turkce drill"
+            },
+            {
+                "genre":"reggae",
+                "subgenre":"turkish reggae"
+            },
+            {
+                "genre":"classical",
+                "subgenre":"turkish classical"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"turkish metal"
+            }
+        ]
+    },
+    {
+        "countryID": "EC",
+        "countryName": "Ecuador",
+        "playlists":[
+            {
+                "genre":"indie",
+                "subgenre":"ecuadorian indie"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"ecuadorian pop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"ecuadorian rock"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"rap ecuatoriano"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"metal ecuatoriano"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"folklore ecuatoriano"
+            }
+        ]
+    },
+    {
+        "countryID": "EE",
+        "countryName": "Estonia",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"estonian pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"estonian hip hop"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"estonian electronic"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"estonian rock"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"estonian indie"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"estonian folk"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"estonian jazz"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"estonian metal"
+            }
+        ]
+    },
+
+  {
+        "countryID": "CO",
+        "countryName": "Colombia",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"colombian rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"colombian pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"colombian hip hop"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"trap colombiano"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"colombian electronic"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"colombian metal"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"jazz colombiano"
+            }
+        ]
+    },
+{
+        "countryID": "CR",
+        "countryName": "Costa Rica",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"pop costarricense"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"indie tico"
+            },
+            {
+                "genre":"reggae",
+                "subgenre":"reggae tico"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"rock tico"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"jazz tico"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"rap tico"
+            }
+        ]
+    },
+    {
+        "countryID": "BG",
+        "countryName": "Bulgaria",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"bulgarian pop"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"bulgarian indie"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"bulgarian rock"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"bulgarian hip hop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"bulgarian metal"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"bulgarian electronic"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"bulgarian folk"
+            }
+        ]
+    },
+    {
+        "countryID": "IE",
+        "countryName": "Ireland",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"irish rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"irish pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"irish hip hop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"irish metal"
+            },
+            {
+                "genre":"celtic",
+                "subgenre":"celtic"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"irish folk"
+            },
+            {
+                "genre":"pub songs",
+                "subgenre":"irish pub song"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"irish indie"
+            },
+            {
+                "genre":"drill",
+                "subgenre":"irish drill"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"irish underground rap"
+            },
+            {
+                "genre":"classical",
+                "subgenre":"irish classical"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"irish electronic"
+            },
+            {
+                "genre":"country",
+                "subgenre":"irish country"
+            }
+        ]
+    },
+    {
+        "countryID": "EG",
+        "countryName": "Egypt",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"egyptian pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"egyptian hip hop"
+            },
+            {
+                "genre":"traditional",
+                "subgenre":"egyptian traditional"
+            }
+        ]
+    },
+    {
+        "countryID": "PL",
+        "countryName": "Poland",
+        "playlists":[
+            {
+                "genre":"classical",
+                "subgenre":"polish classical"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"polish metal"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"polish jazz"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"polish pop"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"polish trap"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"polish hip hop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"polish rock"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"polish indie"
+            },
+            {
+                "genre":"reggae",
+                "subgenre":"polish reggae"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"polish techno"
+            }
+        
+        ]
+    },
+
+ {
+        "countryID": "HU",
+        "countryName": "Hungary",
+        "playlists":[
+            {
+                "genre":"rap",
+                "subgenre":"hungarian underground rap"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"hungarian edm"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"classic hungarian pop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"classic hungarian rock"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"hungarian techno"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"hungarian metal"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"hungarian indie"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"hungarian hip hop"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"hungarian folk"
+            }
+        ]
+    },
+
+    {
+        "countryID": "ID",
+        "countryName": "Indonesia",
+        "playlists":[
+            {
+                "genre":"hip hop",
+                "subgenre":"indonesian hip hop"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"indonesian pop"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"indonesian edm"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"indonesian jazz"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"indonesian indie"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"indonesian folk"
+            },
+            {
+                "genre":"reggae",
+                "subgenre":"indonesian reggae"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"indonesian rock"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"indonesian metal"
+            }
+        ]
+    },
+    {
+        "countryID": "SG",
+        "countryName": "Singapore",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"singaporean pop"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"singaporean electronic"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"singaporean indie"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"singaporean hip hop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"singaporean metal"
+            }
+        ]
+    },
+    {
+        "countryID": "BE",
+        "countryName": "Belgium",
+        "playlists":[
+            {
+                "genre":"jazz",
+                "subgenre":"belgian jazz"
+            },
+            {
+                "genre":"edm",
+                "subgenre":"belgian edm"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"belgian pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"belgian hip hop"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"belgian electronic"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"belgian indie"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"belgian rock"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"belgian techno"
+            },
+            {
+                "genre":"hardstyle",
+                "subgenre":"hardstyle"
+            }
+        ]
+    },
+    {
+        "countryID": "GR",
+        "countryName": "Greece",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"greek rock"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"greek metal"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"greek trap"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"greek pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"greek hip hop"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"greek rock"
+            },
+            {
+                "genre":"drill",
+                "subgenre":"greek drill"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"greek folk"
+            },
+            {
+                "genre":"house",
+                "subgenre":"greek house"
+            },
+            {
+                "genre":"techno",
+                "subgenre":"greek techno"
+            }
+        ]
+    },
+    {
+        "countryID": "TW",
+        "countryName": "Taiwan",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"taiwan rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"taiwan pop"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"taiwan indie"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"taiwan hip hop"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"taiwan electronic"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"taiwan metal"
+            }
+        ]
+    },
+    {
+        "countryID": "IT",
+        "countryName": "Italy",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"italian rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"italian pop"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"italian jazz"
+            },
+            {
+                "genre":"disco",
+                "subgenre":"italian disco"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"italian metal"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"italian hip hop"
+            },
+            {
+                "genre":"trap",
+                "subgenre":"trap italiana"
+            },
+            {
+                "genre":"orchestra",
+                "subgenre":"italian orchestra"
+            },
+            {
+                "genre":"drill",
+                "subgenre":"drill italiana"
+            },
+            {
+                "genre":"trance",
+                "subgenre":"italian trance"
+            }
+        ]
+    },
+    {
+        "countryID": "PS",
+        "countryName": "Palestine",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"palestinian pop"
+            }
+        ]
+    },
+    {
+        "countryID": "LB",
+        "countryName": "Lebanon",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"lebanese pop"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"lebanese indie"
+            }
+        ]
+    },
+    {
+        "countryID": "AZ",
+        "countryName":"Azerbaijan",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"azeri pop"
+            },
+            {
+                "genre":"traditional",
+                "subgenre":"azeri traditional"
+            },
+            {
+                "genre":"rap",
+                "subgenre":"azeri rap"
+            }
+        ]
+    },
+
+  {
+        "countryID": "CN",
+        "countryName":"China",
+        "playlists":[
+            {
+                "genre":"rock",
+                "subgenre":"chinese rock"
+            },
+            {
+                "genre":"pop",
+                "subgenre":"mainland chinese pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"chinese hip hop"
+            },
+            {
+                "genre":"indie",
+                "subgenre":"chinese indie"
+            },
+            {
+                "genre":"cantopop",
+                "subgenre":"cantopop"
+            },
+            {
+                "genre":"electropop",
+                "subgenre":"chinese electropop"
+            },
+            {
+                "genre":"jazz",
+                "subgenre":"chinese jazz"
+            },
+            {
+                "genre":"classical",
+                "subgenre":"chinese classical"
+            },
+            {
+                "genre":"traditional",
+                "subgenre":"chinese traditional"
+            },
+            {
+                "genre":"folk",
+                "subgenre":"chinese folk"
+            }
+        ]
+    },
+    {
+        "countryID": "IR",
+        "countryName":"Iran",
+        "playlists":[
+            {
+                "genre":"pop",
+                "subgenre":"persian pop"
+            },
+            {
+                "genre":"hip hop",
+                "subgenre":"persian hip hop"
+            },
+            {
+                "genre":"metal",
+                "subgenre":"iranian metal"
+            },
+            {
+                "genre":"rock",
+                "subgenre":"persian rock"
+            },
+            {
+                "genre":"electronic",
+                "subgenre":"persian electronic"
+            },
+            {
+                "genre":"traditional",
+                "subgenre":"persian traditional"
+            }
+        ]
+    }
+]

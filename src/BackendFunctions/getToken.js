@@ -21,10 +21,11 @@ export default function getToken() {
   };
 
   var clientString =
-    process.env.SPOTIFY_CLIENT_ID + ":" + process.env.SPOTIFY_CLIENT_SECRET;
+    process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID +
+    ":" +
+    process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
 
   var encodedAuth = new Buffer(clientString).toString("base64");
-
   const getAccessToken = () => {
     return fetch("https://accounts.spotify.com/api/token", {
       method: "POST",

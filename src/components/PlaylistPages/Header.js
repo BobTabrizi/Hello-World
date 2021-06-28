@@ -17,10 +17,19 @@ export default function Header(props) {
       );
       break;
 
-    case "Random" || "Custom":
+    case "Random":
       subHeaderComponent = (
         <>
-          <div style={{ marginTop: "1.5rem" }}>{props.pageType} Playlist</div>
+          <div style={{ marginTop: "1.5rem" }}>Random Playlist</div>
+          <SpotifyButton playlistUrl={props.playlistUrl} />
+        </>
+      );
+      break;
+
+    case "Custom":
+      subHeaderComponent = (
+        <>
+          <div style={{ marginTop: "1.5rem" }}>Custom Playlist</div>
           <SpotifyButton playlistUrl={props.playlistUrl} />
         </>
       );

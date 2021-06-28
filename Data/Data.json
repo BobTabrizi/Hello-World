@@ -3,127 +3,39 @@
         "countryID": "NO",
         "countryName": "Norway",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Norway",
                 "url":"37i9dQZEVXbJvfa0Yxg7E7"
-
-            },
-            {
-                "type":"party",
-                "name":"AfterSki 2021!!!",
-                "url":"1573cs99p0jQItoU4Fq5qx"
-
-            },
-            {
-                "type":"black-metal",
-                "name":"True Norwegian Black Metal",
-                "url":"7EULgJOfMGTnJ6HPavdkeY"
-
-            },
-            {
-                "type":"space-disco",
-                "name":"Norwegian Space Disco",
-                "url":"4b3fBBaFHmhCCqAPArY5PH"
-
-            },
-            {
-                "type":"country",
-                "name":"Norwegian Country",
-                "url":"0ebrIhaGWTe6o9airznNlu"
-            },
-            {
-                "type":"rap",
-                "name":"Norwegian Rap Game",
-                "url":"3YDF0MDyNV6d7zPmkErOxX"
-            }   
+            }
         ]
     },
     {
         "countryID": "AU",
         "countryName": "Australia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Australia",
                 "url":"37i9dQZEVXbJPcfkRz0wJ0"
-
-            },
-            {
-                "type":"party",
-                "name":"For your lounge room DF",
-                "url":"37i9dQZF1DXd5DCuoVuFY3"
-
             }
-
         ]
     },
     {
         "countryID": "DE",
         "countryName": "Germany",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Germany",
                 "url":"37i9dQZEVXbJiZcmkrIHGU"
-
-            },
-            {
-                "type":"party",
-                "name":"german party songs",
-                "url":"0okFaC2JGGc6Y57V2rjcpF"
-
-            },
-            {
-                "type":"rap",
-                "name":"German Rap",
-                "url":"0NqmFwPf3ExGRP3xrXhg9B"
-
-            },
-            {
-                "type":"pop",
-                "name":"Deutschpop",
-                "url":"37i9dQZF1DXbKGrOUA30KN"
-
-            },
-            {
-                "type":"oktoberfest",
-                "name":"Oktoberfest Music",
-                "url":"2jSHxP2f5vK0STWbVXWPQA"
-
             }
-
         ]
     },
     {
         "countryID": "FR",
         "countryName": "France",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - France",
                 "url":"37i9dQZEVXbIPWwFssbupI"
-
-            },
-            {
-                "type":"party",
-                "name":"french party songs",
-                "url":"73fq9jtY2rXEqK4ivYwsQB"
-
-            },
-            {
-                "type":"rap",
-                "name":"Best french rap hits",
-                "url":"1vJRCYfOpwM5LuVCrZpa1K"
-            },
-            {
-                "type":"pop",
-                "name":"Hits Pop Francaise",
-                "url":"73z4Kt34aJUmk1p1kENpLq"
             }
         ]
     },
@@ -131,23 +43,9 @@
         "countryID": "MX",
         "countryName": "Mexico",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Mexico",
                 "url":"37i9dQZEVXbO3qyFxbkOE1"
-
-            },
-            {
-                "type":"party",
-                "name":"lit mexican party songs",
-                "url":"2XwLay3RPm3q7Jb3W0sd2T"
-
-            },
-            {
-                "type":"rap",
-                "name":"Mexican Gangsta Rap",
-                "url":"28Ke4pXWqF2A5b2GfQ1pQt"
             }
         ]
     },
@@ -155,23 +53,9 @@
         "countryID": "IN",
         "countryName": "India",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - India",
                 "url":"37i9dQZEVXbLZ52XmnySJg"
-
-            },
-            {
-                "type":"party",
-                "name":"Bollywood Party songs",
-                "url":"2dd3NEiwwJVGmpJIJzERih"
-
-            },
-            {
-                "type":"rap",
-                "name":"Indian Rap",
-                "url":"3IHyDX6NyD5ytThYKHIE2s"
             }
         ]
     },
@@ -179,17 +63,9 @@
         "countryID": "AT",
         "countryName": "Austria",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Austria",
                 "url":"37i9dQZEVXbKNHh6NIXu36"
-
-            },
-            {
-                "type":"party",
-                "name":"AUSTRIA PARTY",
-                "url":"2Ov873PgWnrG1vkY67n9hP"
             }
         ]
     },
@@ -197,38 +73,9 @@
         "countryID": "US",
         "countryName": "United States",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - USA",
                 "url":"37i9dQZEVXbLRQDuF5jeBp"
-
-            },
-            {
-                "type":"party",
-                "name":"Party Hits",
-                "url":"37i9dQZF1DXa2PvUpywmrr"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rock Classics",
-                "url":"37i9dQZF1DWXRqgorJj26U"
-            },
-            {
-                "type":"rap",
-                "name":"Rap Caviar",
-                "url":"37i9dQZF1DX0XUsuxWHRQd"
-            },
-            {
-                "type":"jazz",
-                "name":"Jazz Classics",
-                "url":"37i9dQZF1DXbITWG1ZJKYt"
-            },
-            {
-                "type":"country",
-                "name":"Country Favourites",
-                "url":"37i9dQZF1DX13ZzXoot6Jc"
             }
         ]
     },
@@ -236,33 +83,9 @@
         "countryID": "RU",
         "countryName": "Russia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Russia",
                 "url":"37i9dQZEVXbL8l7ra5vVdB"
-
-            },
-            
-            {
-                "type":"party",
-                "name":"Russiche Party Musik",
-                "url":"7KoKV7pCH4fDW5dJfgmyED"
-            },
-            {
-                "type":"rap",
-                "name":"Russian Rap",
-                "url":"15Ip9JzUbQ8id6yThzreA5"
-            },
-            {
-                "type":"hardbass",
-                "name":"Hardbass",
-                "url":"7k4dTAmRQk6Sp0cOfR5EhV"
-            },
-            {
-                "type":"pop",
-                "name":"Russian pop",
-                "url":"62UmRp5frbbbtwW0dQ3TrW"
             }
         ]
     },
@@ -270,24 +93,9 @@
         "countryID": "ES",
         "countryName": "Spain",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Spain",
                 "url":"37i9dQZEVXbNFJfN1Vw8d9"
-
-            },
-            {
-                "type":"party",
-                "name":"Typical Spanish",
-                "url":"00sPYQym0OnMuDBxsfAsNy"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rock Espanol",
-                "url":"37i9dQZF1DWUNNEvaozpW5"
-
             }
         ]
     },
@@ -295,18 +103,9 @@
         "countryID": "CA",
         "countryName": "Canada",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Canada",
                 "url":"37i9dQZEVXbKj23U1GF4IR"
-
-            },
-            {
-                "type":"party",
-                "name":"Canadian Party Mix",
-                "url":"1Tbi3GcjVxAlXlMuu6BMnv"
-
             }
         ]
     },
@@ -314,28 +113,9 @@
         "countryID": "GB",
         "countryName": "United Kingdom",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - United Kingdom",
                 "url":"37i9dQZEVXbLnolsZ8PSNw"
-
-            },
-            {
-                "type":"party",
-                "name":"UK Party Bangers",
-                "url":"5RkSbKDOpWf7h8g34NNP3a"
-
-            },
-            {
-                "type":"rap",
-                "name":"Rap UK",
-                "url":"37i9dQZF1DX6PKX5dyBKeq"
-            },
-            {
-                "type":"rock",
-                "name":"The Rock List",
-                "url":"37i9dQZF1DX4DZAVUAwHMT"
             }
         ]
     },
@@ -343,24 +123,9 @@
         "countryID": "AR",
         "countryName": "Argentina",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Argentina",
                 "url":"37i9dQZEVXbMMy2roB9myp"
-
-            },
-            {
-                "type":"party",
-                "name":"Party in Argentina",
-                "url":"0oFwJxlSzXuFYwK2ar91tF"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rock Argentino",
-                "url":"37i9dQZF1DWTMU14XJYy0g"
-
             }
         ]
     },
@@ -368,97 +133,39 @@
         "countryID": "PT",
         "countryName": "Portugal",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Portugal",
                 "url":"37i9dQZEVXbKyJS56d1pgi"
-            },
-            {
-                "type":"party",
-                "name":"Party Hit's Portugal",
-                "url":"1V9rAlwFGFTFswjvlsuciT"
-            },
-            {
-                "type":"rock",
-                "name":"Rock Portugues",
-                "url":"37i9dQZF1DWYjjOmuB9ehg"
             }
-
         ]
     },
     {
         "countryID": "KR",
         "countryName": "South Korea",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - South Korea",
                 "url":"37i9dQZEVXbNxXF4SkHj9F"
-
-            },
-            {
-                "type":"pop",
-                "name":"K-POP Party 2021",
-                "url":"0IQamUhlzsoM8Vkpvs5QaT"
-
-            },
-            {
-                "type":"rock",
-                "name":"K-록 스피릿",
-                "url":"37i9dQZF1DXc5JzohrgrJZ"
-
             }
-
         ]
     },
     {
         "countryID": "JP",
         "countryName": "Japan",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Japan",
                 "url":"37i9dQZEVXbKXQ4mDTEBXq"
-
-            },
-            {
-                "type":"pop",
-                "name":"Jpop 2020-2021",
-                "url":"2QmnoSI9FqCPTQ7V6HQQYj"
-
-            },
-            {
-                "type":"rock",
-                "name":"J-Rock Now",
-                "url":"37i9dQZF1DX6ntWKaOqGAp"
-
             }
-
         ]
     },
     {
         "countryID": "IL",
         "countryName": "Israel",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Israel",
                 "url":"37i9dQZEVXbJ6IpvItkve3"
-
-            },
-            {
-                "type":"party",
-                "name":"ISRAELI PARTY",
-                "url":"20jHkvLZrSIOjuQBVurEms"
-            },
-            {
-                "type":"rock",
-                "name":"מצב הרוק",
-                "url":"37i9dQZF1DX41IYVoQd4Sa"
             }
         ]
     },
@@ -466,12 +173,9 @@
         "countryID": "LV",
         "countryName": "Latvia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Latvia",
                 "url":"37i9dQZEVXbJWuzDrTxbKS"
-
             }
         ]
     },
@@ -479,12 +183,9 @@
         "countryID": "IS",
         "countryName": "Iceland",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Iceland",
                 "url":"37i9dQZEVXbKMzVsSGQ49S"
-
             }
         ]
     },
@@ -492,18 +193,9 @@
         "countryID": "DK",
         "countryName": "Denmark",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Denmark",
                 "url":"37i9dQZEVXbL3J0k32lWnN"
-
-            },
-            {
-                "type":"party",
-                "name":"Danish Party Music",
-                "url":"3S5qxJzCkzdqTsTgfWDKdL"
-
             }
         ]
     },
@@ -511,21 +203,9 @@
         "countryID": "SE",
         "countryName": "Sweden",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Sweden",
                 "url":"37i9dQZEVXbLoATJ81JYXz"
-            },
-            {
-                "type":"party",
-                "name":"This is swedish party music summer edition",
-                "url":"4taO3qs9O50Dge4TqHi1ke"
-            },
-            {
-                "type":"metal",
-                "name":"Swedish metal (ULTIMATE EDITION)",
-                "url":"1F57m6ahhoNOTHbMC8g9qK"
             }
         ]
     },
@@ -533,24 +213,9 @@
         "countryID": "FI",
         "countryName": "Finland",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Finland",
                 "url":"37i9dQZEVXbMxcczTSoGwZ"
-
-            },
-            {
-                "type":"party",
-                "name":"finnish party",
-                "url":"6JZ2nKmiesX7HYK8CUu1nj"
-
-            },
-            {
-                "type":"metal",
-                "name":"Finnish metal",
-                "url":"3oHKokI6S1vVN7x8ZvttRH"
-
             }
         ]
     },
@@ -558,16 +223,9 @@
         "countryID": "MA",
         "countryName": "Morocco",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Morocco",
                 "url":"37i9dQZEVXbJU9eQpX8gPT"
-            },
-            {
-                "type":"party",
-                "name":"Morocco party",
-                "url":"6rUDJgzEjd0MHlUYS846UT"
             }
         ]
     },
@@ -575,36 +233,9 @@
         "countryID": "NL",
         "countryName": "Netherlands",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Netherlands",
                 "url":"37i9dQZEVXbKCF6dqVpDkS"
-
-            },
-            {
-                "type":"party",
-                "name":"Dutch Carnival Party Music",
-                "url":"5AdgL0J8DoMTgEsXT1uX6p"
-
-            },
-            {
-                "type":"pop",
-                "name":"DUTCH POP HITS",
-                "url":"25FXJ64Ldg6YTz3aA8zB1Y"
-
-            },
-            {
-                "type":"rap",
-                "name":"Netherlands Rap",
-                "url":"2UUvKkEstM36QuYhR03Rnz"
-
-            },
-            {
-                "type":"hardstyle",
-                "name":"Dutch Hardcore",
-                "url":"2DrweodCn3gZlUTANLz46y"
-
             }
         ]
     },
@@ -612,18 +243,9 @@
         "countryID": "PH",
         "countryName": "Philippines",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Philippines",
                 "url":"37i9dQZEVXbNBz9cRCSFkY"
-
-            },
-            {
-                "type":"party",
-                "name":"PARTY MIX PILIPINAS",
-                "url":"3m9Sdf0ZKWS0mltCVlWJy4"
-
             }
         ]
     },
@@ -631,18 +253,9 @@
         "countryID": "DO",
         "countryName": "Dominican Republic",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Dominican Republic",
                 "url":"37i9dQZEVXbKAbrMR8uuf7"
-
-            },
-            {
-                "type":"party",
-                "name":"MAMACITAA",
-                "url":"1bf9JmTenK6tDgq5ELX5n0"
-
             }
         ]
     },
@@ -650,18 +263,9 @@
         "countryID": "HN",
         "countryName": "Honduras",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Honduras",
                 "url":"37i9dQZEVXbJp9wcIM9Eo5"
-
-            },
-            {
-                "type":"party",
-                "name":"Party Time Honduras",
-                "url":"4Q33jTcpVyEke234sGjZIF"
-
             }
         ]
     },
@@ -669,24 +273,9 @@
         "countryID": "BR",
         "countryName": "Brazil",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Brazil",
                 "url":"37i9dQZEVXbMXbN3EUUhlg"
-
-            },
-            {
-                "type":"party",
-                "name":"Brazilian Party Mix",
-                "url":"2thdNYxltkzoKCZycb8sHh"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rock Leve",
-                "url":"37i9dQZF1DX4vCk1GJH7zl"
-
             }
         ]
     },
@@ -694,50 +283,19 @@
         "countryID": "VN",
         "countryName": "Vietnam",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Vietnam",
                 "url":"37i9dQZEVXbLdGSmz6xilI"
-
-            },
-            {
-                "type":"party",
-                "name":"Vietnamese Party House",
-                "url":"5MTs9FOxTwMk5fAdQlEL6v"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rock Viet",
-                "url":"37i9dQZF1DX3XYbBdFxzGm"
-
             }
-
         ]
     },
     {
         "countryID": "TR",
         "countryName": "Turkey",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Turkey",
                 "url":"37i9dQZEVXbIVYVBNw9D5K"
-
-            },
-            {
-                "type":"party",
-                "name":"Turksh Party",
-                "url":"0xxIkPs46dM8p6FSFh9B3n"
-
-            },
-            {
-                "type":"rock",
-                "name":"Turkce Rock",
-                "url":"37i9dQZF1DX3RfxtU3KC3j"
-
             }
         ]
     },
@@ -745,18 +303,9 @@
         "countryID": "EC",
         "countryName": "Ecuador",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Ecuador",
                 "url":"37i9dQZEVXbJlM6nvL1nD1"
-
-            },
-            {
-                "type":"party",
-                "name":"ECUADOR PARTY LOKO",
-                "url":"1dQamKe7uH4FNkp8r03nfr"
-
             }
         ]
     },
@@ -764,17 +313,9 @@
         "countryID": "EE",
         "countryName": "Estonia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Estonia",
                 "url":"37i9dQZEVXbLesry2Qw2xS"
-
-            },
-            {
-                "type":"party",
-                "name":"Estonian Party Vibez",
-                "url":"5RcapxhlpxspVvn1nLbvG9"
             }
         ]
     },
@@ -782,24 +323,9 @@
         "countryID": "CO",
         "countryName": "Colombia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Colombia",
                 "url":"37i9dQZEVXbOa2lmxNORXQ"
-
-            },
-            {
-                "type":"party",
-                "name":"Colombian Party 80's 90's 00s today",
-                "url":"3y2vXmzOr4lvQ9Z005EQH2"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rock Colombia",
-                "url":"37i9dQZF1DX5inPtxPHiuS"
-
             }
         ]
     },
@@ -807,18 +333,9 @@
         "countryID": "CR",
         "countryName": "Costa Rica",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Costa Rica",
                 "url":"37i9dQZEVXbMZAjGMynsQX"
-
-            },
-            {
-                "type":"party",
-                "name":"Costa Rica Party Classics",
-                "url":"5AL0cRZ3BHXiJNdMJUJeoK"
-
             }
         ]
     },
@@ -826,17 +343,9 @@
         "countryID": "BG",
         "countryName": "Bulgaria",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Bulgaria",
                 "url":"37i9dQZEVXbNfM2w2mq1B8"
-
-            },
-            {
-                "type":"party",
-                "name":"Bulgarian Partyyy",
-                "url":"5OovaDRlRlpLpl0RfFx82s"
             }
         ]
     },
@@ -844,17 +353,9 @@
         "countryID": "IE",
         "countryName": "Ireland",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Ireland",
                 "url":"37i9dQZEVXbKM896FDX8L1"
-
-            },
-            {
-                "type":"party",
-                "name":"Irish Party",
-                "url":"6rsyh6m2QpjeH1KlcRXd5j"
             }
         ]
     },
@@ -862,19 +363,9 @@
         "countryID": "EG",
         "countryName": "Egypt",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Egypt",
                 "url":"37i9dQZEVXbLn7RQmT5Xv2"
-
-            },
-            
-            {
-                "type":"party",
-                "name":"Egyptian Party",
-                "url":"37i9dQZF1DWVouaSVHTvw2"
-
             }
         ]
     },
@@ -882,18 +373,9 @@
         "countryID": "PL",
         "countryName": "Poland",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Poland",
                 "url":"37i9dQZEVXbN6itCcaL3Tt"
-
-            },
-            {
-                "type":"party",
-                "name":"Polish Party Hits",
-                "url":"17dqyrOsGVSunU0XP3xfjM"
-
             }
         ]
     },
@@ -901,18 +383,9 @@
         "countryID": "HU",
         "countryName": "Hungary",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Hungary",
                 "url":"37i9dQZEVXbNHwMxAkvmF8"
-
-            },
-            {
-                "type":"party",
-                "name":"Hungarian Party Music",
-                "url":"0QXmOlQyhmOUuPLW3QwP7M"
-
             }
         ]
     },
@@ -920,18 +393,9 @@
         "countryID": "ID",
         "countryName": "Indonesia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Indonesia",
                 "url":"37i9dQZEVXbObFQZ3JLcXt"
-
-            },
-            {
-                "type":"party",
-                "name":"party (indonesian)",
-                "url":"6Z8Ya9ynlEe7c6SzIfhPBq"
-
             }
         ]
     },
@@ -939,12 +403,9 @@
         "countryID": "SG",
         "countryName": "Singapore",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Singapore",
                 "url":"37i9dQZEVXbK4gjvS1FjPY"
-
             }
         ]
     },
@@ -952,18 +413,9 @@
         "countryID": "PY",
         "countryName": "Paraguay",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Paraguay",
                 "url":"37i9dQZEVXbNOUPGj7tW6T"
-
-            },
-            {
-                "type":"party",
-                "name":"Paraguay Party Hits",
-                "url":"3y3Ugj3hnvZ6FecH5iahcX"
-
             }
         ]
     },
@@ -971,17 +423,9 @@
         "countryID": "PE",
         "countryName": "Peru",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Peru",
                 "url":"37i9dQZEVXbJfdy5b0KP7W"
-
-            },
-            {
-                "type":"party",
-                "name":"Peruvian Party",
-                "url":"2hSGnnYIngpSKi9yPAdlIw"
             }
         ]
     },
@@ -989,18 +433,9 @@
         "countryID": "GT",
         "countryName": "Guatemala",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Guatemala",
                 "url":"37i9dQZEVXbLy5tBFyQvd4"
-
-            },
-            {
-                "type":"party",
-                "name":"Merengue pa bailar",
-                "url":"2cva4fVFMDllXW1mFCSbK6"
-
             }
         ]
     },
@@ -1008,29 +443,9 @@
         "countryID": "BE",
         "countryName": "Belgium",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Belgium",
                 "url":"37i9dQZEVXbJNSeeHswcKB"
-
-            },
-            {
-                "type":"party",
-                "name":"belgian dance classics",
-                "url":"4zNUADmicxAabplJ2GMs1E"
-
-            },
-            {
-                "type":"rap",
-                "name":"Belgium Rap",
-                "url":"4F32hM3ghihheO6saJvxSO"
-
-            },
-            {
-                "type":"jazz",
-                "name":"Belgo-Jazz",
-                "url":"37i9dQZF1DWXdynNwVeJMs"
             }
         ]
     },
@@ -1038,18 +453,9 @@
         "countryID": "UY",
         "countryName": "Uruguay",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Uruguay",
                 "url":"37i9dQZEVXbMJJi3wgRbAy"
-
-            },
-            {
-                "type":"party",
-                "name":"Uruguay Party",
-                "url":"09GQGpJdZqZVlR8srZXn9V"
-
             }
         ]
     },
@@ -1057,17 +463,9 @@
         "countryID": "PA",
         "countryName": "Panama",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Panama",
                 "url":"37i9dQZEVXbKypXHVwk1f0"
-
-            },
-            {
-                "type":"party",
-                "name":"Panama Party",
-                "url":"4JhJg0xeedpozhVIGuk6Ty"
 
             }
         ]
@@ -1076,35 +474,9 @@
         "countryID": "MY",
         "countryName": "Malaysia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Malaysia",
                 "url":"37i9dQZEVXbJlfUljuZExa"
-
-            },
-            {
-                "type":"party",
-                "name":"VPR Partayyy",
-                "url":"4elfVrA6sharQBYLQPzQ9y"
-
-            },
-            {
-                "type":"rap",
-                "name":"Malaysian rap",
-                "url":"0AqEjCXqZlzdFCUsEbWIdF"
-
-            },
-            {
-                "type":"rock",
-                "name":"Malaysia Rock Kapak",
-                "url":"3HMm0RxHMKa6Oh2BYYH7iR"
-
-            },
-            {
-                "type":"pop",
-                "name":"Pop Terkini!",
-                "url":"37i9dQZF1DWVcsVY2PZfmZ"
             }
         ]
     },
@@ -1112,12 +484,9 @@
         "countryID": "BO",
         "countryName": "Bolivia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Bolivia",
                 "url":"37i9dQZEVXbJqfMFK4d691"
-
             }
         ]
     },
@@ -1125,24 +494,9 @@
         "countryID": "GR",
         "countryName": "Greece",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Greece",
                 "url":"37i9dQZEVXbJqdarpmTJDL"
-
-            },
-            {
-                "type":"party",
-                "name":"Greek party mix 2021",
-                "url":"2cwIcJC5WhqZdKT3ttngwg"
-
-            },
-            {
-                "type":"rock",
-                "name":"All Greek Rock",
-                "url":"37i9dQZF1DX12XV3UF801V"
-
             }
         ]
     },
@@ -1150,24 +504,9 @@
         "countryID": "TW",
         "countryName": "Taiwan",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Taiwan",
                 "url":"37i9dQZEVXbMnZEatlMSiu"
-
-            },
-            {
-                "type":"party",
-                "name":"男聲報到",
-                "url":"37i9dQZF1DX7fmODWXsMkJ"
-
-            },
-            {
-                "type":"rock",
-                "name":"華語很搖滾",
-                "url":"37i9dQZF1DX4VlHAN7dSCG"
-
             }
         ]
     },
@@ -1175,18 +514,9 @@
         "countryID": "HK",
         "countryName": "Hong Kong",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Hong Kong",
                 "url":"37i9dQZEVXbLwpL8TjsxOG"
-
-            },
-            {
-                "type":"party",
-                "name":"Canton Disco [Hong Kong Disco/80s Cantopop Mix]",
-                "url":"2lU6uJe7DCAlrq2qx5MMMM"
-
             }
         ]
     },
@@ -1194,18 +524,9 @@
         "countryID": "TH",
         "countryName": "Thailand",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Thailand",
                 "url":"37i9dQZEVXbMnz8KIWsvf9"
-
-            },
-            {
-                "type":"party",
-                "name":"Thai Party Countdown 2021",
-                "url":"5N0tmPPYDJ5Twm4ur4ukOA"
-
             }
         ]
     },
@@ -1213,38 +534,19 @@
         "countryID": "CH",
         "countryName": "Switzerland",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Switzerland",
                 "url":"37i9dQZEVXbJiyhoAPEfMK"
-
-            },
-            {
-                "type":"party",
-                "name":"Swiss Party",
-                "url":"0cNTsN3sGzFFsCFEspfYdx"
-
             }
-            
         ]
     },
     {
         "countryID": "NZ",
         "countryName": "New Zealand",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - New Zealand",
                 "url":"37i9dQZEVXbM8SIrkERIYl"
-
-            },
-            {
-                "type":"rock",
-                "name":"Kiwi Rock Classics",
-                "url":"37i9dQZF1DX6LpewvJUySS"
-
             }
         ]
     },
@@ -1252,24 +554,9 @@
         "countryID": "SV",
         "countryName": "El Salvador",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - El Salvador",
                 "url":"37i9dQZEVXbLxoIml4MYkT"
-
-            },
-            {
-                "type":"party",
-                "name":"Salvadorian Party",
-                "url":"0qfOgZnpxzoYrLQi96O7xl"
-
-            },
-            {
-                "type":"rap",
-                "name":"El Salvador Rap",
-                "url":"6zkBJw2VZIuga71FhKzBdA"
-
             }
         ]
     },
@@ -1277,24 +564,9 @@
         "countryID": "CZ",
         "countryName": "Czech Republic",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Czech Republic",
                 "url":"37i9dQZEVXbIP3c3fqVrJY"
-
-            },
-            {
-                "type":"party",
-                "name":"Czech party mega mix",
-                "url":"2a8ZP1KI5QTzZwPk2xutdQ"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rockovy flaky",
-                "url":"37i9dQZF1DWWrde2KT7OXJ"
-
             }
         ]
     },
@@ -1302,19 +574,9 @@
         "countryID": "ZA",
         "countryName": "South Africa",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - South Africa",
                 "url":"37i9dQZEVXbMH2jvi6jvjk"
-
-            },
-            
-            {
-                "type":"party",
-                "name":"SOUTH AFRICAN PARTY",
-                "url":"0RRWQoG9gutwqgNG4OjCZK"
-
             }
         ]
     },
@@ -1322,24 +584,9 @@
         "countryID": "UA",
         "countryName": "Ukraine",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Ukraine",
                 "url":"37i9dQZEVXbKkidEfWYRuD"
-
-            },
-            {
-                "type":"party",
-                "name":"Ukraine Party",
-                "url":"00JRX3XXpmXLVAUHyQN1DN"
-
-            },
-            {
-                "type":"rock",
-                "name":"Український рок",
-                "url":"37i9dQZF1DWUxthdWUs4N4"
-
             }
         ]
     },
@@ -1347,18 +594,9 @@
         "countryID": "LT",
         "countryName": "Lithuania",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Lithuania",
                 "url":"37i9dQZEVXbMx56Rdq5lwc"
-
-            },
-            {
-                "type":"party",
-                "name":"Lietuviskas vakarelis",
-                "url":"2eAfqqqm1xkDvLkErQPnzE"
-
             }
         ]
     },
@@ -1366,24 +604,9 @@
         "countryID": "RO",
         "countryName": "Romania",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Romania",
                 "url":"37i9dQZEVXbNZbJ6TZelCq"
-
-            },
-            {
-                "type":"party",
-                "name":"Romanian Club Music",
-                "url":"4o308OMsGdfwSQNIS2tppJ"
-
-            },
-            {
-                "type":"pop",
-                "name":"Romanian Pop Music",
-                "url":"0i9KjJw13UPQnMInVloLQG"
-
             }
         ]
     },
@@ -1391,24 +614,9 @@
         "countryID": "NI",
         "countryName": "Nicaragua",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Nicaragua",
                 "url":"37i9dQZEVXbISk8kxnzfCq"
-
-            },
-            {
-                "type":"party",
-                "name":"Musica Nicaraguense",
-                "url":"6is9wyRipDTlEAZ85CZ86t"
-
-            },
-            {
-                "type":"rock",
-                "name":"Seleccion de rock nicaraguense",
-                "url":"4Rps2fMeiXlY2SPDUVHFgI"
-
             }
         ]
     },
@@ -1416,12 +624,9 @@
         "countryID": "SK",
         "countryName": "Slovakia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Slovakia",
                 "url":"37i9dQZEVXbKIVTPX9a2Sb"
-
             }
         ]
     },
@@ -1429,12 +634,9 @@
         "countryID": "AE",
         "countryName": "United Arab Emirates",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - UAE",
                 "url":"37i9dQZEVXbM4UZuIrvHvA"
-
             }
         ]
     },
@@ -1442,12 +644,9 @@
         "countryID": "LU",
         "countryName": "Luxembourg",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Luxembourg",
                 "url":"37i9dQZEVXbKGcyg6TFGx6"
-
             }
         ]
     },
@@ -1455,18 +654,9 @@
         "countryID": "PS",
         "countryName": "Palestine",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Palestine Sounds",
                 "url":"37i9dQZF1DX6qjeIoR93rs"
-
-            },
-            {
-                "type":"party",
-                "name":"Palestine party",
-                "url":"5LdgBG9og3zxB1OYhVjFUD"
-
             }
         ]
     },
@@ -1474,12 +664,9 @@
         "countryID": "QA",
         "countryName": "Qatar",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Today's Top Khaleeji Hits",
                 "url":"37i9dQZF1DWU486KSiznWZ"
-
             }
         ]
     },
@@ -1487,12 +674,9 @@
         "countryID": "SA",
         "countryName": "Saudi Arabia",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Saudi Arabia",
                 "url":"37i9dQZEVXbLrQBcXqUtaC"
-
             }
         ]
     },
@@ -1500,12 +684,9 @@
         "countryID": "AD",
         "countryName": "Andorra",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Viral 50 - Andorra",
                 "url":"37i9dQZEVXbMxjQJh4Um8T"
-
             }
         ]
     },
@@ -1513,10 +694,8 @@
         "countryID": "BD",
         "countryName": "Bangladesh",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Hot Hits Bangladesh",
                 "url":"37i9dQZF1DX794NyvTu6nv"
 
             }
@@ -1527,24 +706,9 @@
         "countryID": "CL",
         "countryName": "Chile",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Chile",
                 "url":"37i9dQZEVXbL0GavIqMTeb"
-
-            },
-            {
-                "type":"party",
-                "name":"Fiesta chilena / Chilean Party",
-                "url":"1bhJtSgxquwFkjS2EiAYI9"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rock Chileno",
-                "url":"37i9dQZF1DX3TKWnpd3vOb"
-
             }
         ]
     },
@@ -1552,10 +716,8 @@
         "countryID": "CY",
         "countryName": "Cyprus",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Viral 50 - Cyprus",
                 "url":"37i9dQZEVXbNBxnXSWuAcX"
 
             }
@@ -1565,12 +727,9 @@
         "countryID": "IQ",
         "countryName": "Iraq",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Iraqi Hits",
                 "url":"37i9dQZF1DX657Vh1lw2BF"
-
             }
         ]
     },
@@ -1578,12 +737,9 @@
         "countryID": "JO",
         "countryName": "Jordan",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Jordan Sounds",
                 "url":"37i9dQZF1DWUlTJaFU1ddx"
-
             }
         ]
     },
@@ -1591,17 +747,9 @@
         "countryID": "LB",
         "countryName": "Lebanon",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Lebanon Sounds",
                 "url":"37i9dQZF1DXaywRlmHaP59"
-
-            },
-            {
-                "type":"party",
-                "name":"Lebanese Party Music",
-                "url":"4jDlDztQf4zjwsrJe9rL4N"
 
             }
         ]
@@ -1610,36 +758,9 @@
         "countryID": "IT",
         "countryName": "Italy",
         "playlists":[
-
             {
                 "type":"popular",
-                "name":"Top 50 - Italy",
                 "url":"37i9dQZEVXbIQnj7RRhdSX"
-
-            },
-            {
-                "type":"party",
-                "name":"Italian Party IT",
-                "url":"3gL4nuwn1CciiT49znXFsC"
-
-            },
-            {
-                "type":"rock",
-                "name":"Rock Italia",
-                "url":"37i9dQZF1DWViUlcvfltyZ"
-
-            },
-            {
-                "type":"pop",
-                "name":"Top Italia IT Pop Italiano",
-                "url":"065NSxcopkTPYnSSDaLYif"
-
-            },
-            {
-                "type":"jazz",
-                "name":"Jazz Italia",
-                "url":"37i9dQZF1DX30D074EWuy7"
-
             }
         ]
     }

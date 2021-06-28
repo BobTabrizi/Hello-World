@@ -3,7 +3,6 @@ import styles from "../../styles/CustomPlaylist.module.css";
 import Link from "next/link";
 import Countrycomplete from "../../components/Countrycomplete";
 import Header from "../../components/PlaylistPages/Header";
-
 import React, { useState, useEffect } from "react";
 import { config, dom } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
@@ -11,7 +10,6 @@ export default function CustomPlaylist({ songs }) {
   const [countryOne, setCountryOne] = useState(["", ""]);
   const [countryTwo, setCountryTwo] = useState(["", ""]);
   const [countryThree, setCountryThree] = useState(["", ""]);
-
   const [countryString, setCountryString] = useState("");
   useEffect(() => {
     let dividerOne = "";

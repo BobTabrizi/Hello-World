@@ -1,5 +1,4 @@
 import Data from "../../../Data/Data.json";
-//import Data from "../../../Data/ExternalData.json";
 import { connectToDatabase } from "../../../util/mongodb";
 import GetToken from "../../BackendFunctions/getToken";
 const retrieveData = (url, token, id) => {
@@ -13,6 +12,7 @@ const retrieveData = (url, token, id) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         for (let i = 0; i < data.tracks.items.length; i++) {
           data.tracks.items[i].countryID = id;
         }
@@ -34,12 +34,10 @@ const cleanData = (pulledList) => {
     pulledList[i].Playlists = [
       {
         genre: "popular",
-        url: pulledList[i].url,
-        href: pulledList[i].href,
+        subgenre: "global",
         totalTracks: pulledList[i].items.length,
-        spotifyOwned: true,
         tracks: pulledList[i].items,
-        image: `${process.env.NEXT_PUBLIC_AWS_URL}`,
+        image: `${process.env.NEXT_PUBLIC_AWS_URL}/TopTracks.jpg`,
       },
     ];
     delete pulledList[i].limit,
@@ -68,7 +66,6 @@ const getSongs = async (token) => {
 
 export default async function handler(req, res) {
   const { db } = await connectToDatabase();
-
   let pulledList = await GetToken()
     .then((token) => {
       return getSongs(token);
@@ -93,6 +90,5 @@ export default async function handler(req, res) {
       )
       .catch((err) => (status = err));
   }
-
   res.json(status);
 }

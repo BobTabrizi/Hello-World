@@ -1,0 +1,213 @@
+
+[
+    {
+        "category": "rock",
+        "genres":[
+            {
+                "name":"kiwi rock",
+                "countryID":"NZ"
+            },
+            {
+                "name":"belarusian rock",
+                "countryID":"BY"
+            },
+            {
+                "name":"greek rock",
+                "countryID":"GR"
+            },
+            {
+                "name":"colombian rock",
+                "countryID":"CO"
+            },
+            {
+                "name":"rock viet",
+                "countryID":"VN"
+            },
+            {
+                "name":"brazilian rock",
+                "countryID":"BR"
+            },
+            {
+                "name":"rock nica",
+                "countryID":"NI"
+            },
+            {
+                "name":"ukrainian rock",
+                "countryID":"UA"
+            },
+            {
+                "name":"taiwan rock",
+                "countryID":"TW"
+            },
+            {
+                "name":"chilean rock",
+                "countryID":"CL"
+            },
+            {
+                "name":"spanish rock",
+                "countryID":"ES"
+            },
+            {
+                "name":"turkish rock",
+                "countryID":"TR"
+            },
+            {
+                "name":"k-rock",
+                "countryID":"KR"
+            },
+            {
+                "name":"j-rock",
+                "countryID":"JP"
+            },
+            {
+                "name":"czech rock",
+                "countryID":"CZ"
+            },
+            {
+                "name":"portuguese rock",
+                "countryID":"PT"
+            },
+            {
+                "name":"argentine rock",
+                "countryID":"AR"
+            },
+            {
+                "name":"bangladeshi rock",
+                "countryID":"BD"
+            },
+            {
+                "name":"chinese rock",
+                "countryID":"CN"
+            },
+            {
+                "name":"israeli rock",
+                "countryID":"IL"
+            },
+            {
+                "name":"british rock",
+                "countryID":"GB"
+            },
+            {
+                "name":"venezuelan rock",
+                "countryID":"VE"
+            },
+            {
+                "name":"rock kapak",
+                "countryID":"MY"
+            },
+            {
+                "name":"slovenian rock",
+                "countryID":"SI"
+            },
+            {
+                "name":"italian rock",
+                "countryID":"IT"
+            },
+            {
+                "name":"pakistani rock",
+                "countryID":"PK"
+            },
+            {
+                "name":"american rock",
+                "countryID":"US"
+            }
+        ]
+
+    },
+    {
+        "category":"pop",
+        "genres":[
+            {
+                "name":"romanian pop",
+                "countryID":"RO"
+            },
+            {
+                "name":"k-pop",
+                "countryID":"KR"
+            },
+            {
+                "name":"japanese pop",
+                "countryID":"JP"
+            },
+            {
+                "name":"cambodian pop",
+                "countryID":"KH"
+            },
+            {
+                "name":"moldovan pop",
+                "countryID":"MD"
+            },
+            {
+                "name":"mainland chinese pop",
+                "countryID":"CN"
+            },
+            {
+                "name":"bangla pop",
+                "countryID":"BD"
+            },
+            {
+                "name":"french pop",
+                "countryID":"FR"
+            },
+            {
+                "name":"albanian pop",
+                "countryID":"AL"
+            },
+            {
+                "name":"russian pop",
+                "countryID":"RU"
+            },
+            {
+                "name":"armenian pop",
+                "countryID":"AM"
+            },
+            {
+                "name":"dutch pop",
+                "countryID":"NL"
+            },
+            {
+                "name":"german pop",
+                "countryID":"DE"
+            },
+            {
+                "name":"italian pop",
+                "countryID":"IT"
+            },
+            {
+                "name":"pakistani pop",
+                "countryID":"PK"
+            },
+            {
+                "name":"malaysian pop",
+                "countryID":"MY"
+            },
+            {
+                "name":"azeri pop",
+                "countryID":"AZ"
+            }
+        ]
+    },
+    {
+        "category":"jazz",
+        "genres":[
+            {
+                "name":"belgian jazz",
+                "countryID":"BE"
+            },
+            {
+                "name":"italian jazz",
+                "countryID":"IT"
+            },
+            {
+                "name":"norwegian jazz",
+                "countryID":"NO"
+            },
+            {
+                "name":"jazz",
+                "countryID":"US"
+            }
+
+        ]
+    }
+
+]

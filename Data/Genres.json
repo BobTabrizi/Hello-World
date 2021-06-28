@@ -2,31 +2,95 @@
 [
     {
         "name": "rock"
-
-    },
-    {
-        "name": "party"
-        
     },
     {
         "name": "pop"
-        
     },
     {
         "name": "jazz"
-        
     },
     {
         "name": "rap"
-        
     },
     {
         "name": "country"
-        
     },
     {
         "name": "metal"
-        
+    },
+    {
+        "name": "hardbass"  
+    },
+    {
+        "name": "hardstyle"  
+    },
+    {
+        "name": "classical"  
+    },
+    {
+        "name": "throat singing" 
+    },
+    {
+        "name": "indie"
+    },
+    {
+        "name": "hip hop"
+    },
+    {
+        "name": "dreampop"
+    },
+    {
+        "name": "orchestra" 
+    },
+    {
+        "name": "synthpop"
+    },
+    {
+        "name": "math rock" 
+    },
+    {
+        "name": "reggae"
+    },
+    {
+        "name": "shoegaze" 
+    },
+    {
+        "name": "techno"  
+    },
+    {
+        "name": "drill"  
+    },
+    {
+        "name": "ska"
+    },
+    {
+        "name": "soul" 
+    },
+    {
+        "name": "house"
+    },
+    {
+        "name": "pub songs"
+    },
+    {
+        "name": "electronic"
+    },
+    {
+        "name": "edm"
+    },
+    {
+        "name": "disco"
+    },
+    {
+        "name": "trap"
+    },
+    {
+        "name": "trance"
+    },
+    {
+        "name": "traditional"
+    },
+    {
+        "name": "lo-fi"
     }
-
 ]
