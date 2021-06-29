@@ -9,7 +9,7 @@ export default function DiscoverButton(props) {
   const [linkReference, setLinkReference] = useState("/");
   useEffect(() => {
     if (randomCountry === "" && props.discoverMode === "Country") {
-      let rNum = Math.floor(Math.random() * 243);
+      let rNum = Math.floor(Math.random() * 233);
       setRandomCountry(CountryData[rNum].code);
       setRandomGenre("");
       setLinkReference(`country/${CountryData[rNum].code}?random=true`);

@@ -3,12 +3,12 @@ import Link from "next/link";
 import CountryData from "../../../Data/Countries";
 import styles from "../../styles/GeneratorButton.module.css";
 export default function randomPlaylist() {
-  const [randomCountry, setRandomCountry] = useState("");
+  const [randomCountry, setRandomCountry] = useState("NO");
   const [token, setToken] = useState("");
 
   useEffect(() => {
-    if (randomCountry === "") {
-      let rNum = Math.floor(Math.random() * 243);
+    if (token === "") {
+      let rNum = Math.floor(Math.random() * 233);
       setRandomCountry(CountryData[rNum].code);
     }
     let tempToken = localStorage.getItem("Token");
