@@ -18,6 +18,7 @@ export default function Playlist(props) {
               image={list.image}
               countryID={props.countryID}
               genre={list.genre}
+              randomSearchMode={props.randomSearchMode}
             />
           </div>
         ))}

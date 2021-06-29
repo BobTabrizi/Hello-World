@@ -4,9 +4,11 @@ import React, { useState, useEffect } from "react";
 import countryMap from "../../../Data/countryMap.json";
 import GetCountryLists from "../../BackendFunctions/GetCountryLists";
 import Playlist from "../../components/CountryPages/Playlist";
+import RerollButton from "../../components/ReRollButton";
 import Header from "../../components/PlaylistPages/Header";
-export default function Country({ countryID, countryName }) {
+export default function Country({ countryID, countryName, RandomQuery }) {
   const [playlists, setPlaylists] = useState(null);
+
   useEffect(async () => {
     if (!playlists) {
       const countryLists = await GetCountryLists(countryID);
@@ -14,6 +16,16 @@ export default function Country({ countryID, countryName }) {
     }
   });
 
+  let ReRollComponent;
+  if (RandomQuery === true) {
+    ReRollComponent = (
+      <div style={{ textAlign: "center" }}>
+        <RerollButton discoverMode={"Country"} />
+      </div>
+    );
+  } else {
+    ReRollComponent = null;
+  }
   return (
     <>
       <Head>
@@ -30,7 +42,12 @@ export default function Country({ countryID, countryName }) {
       </Head>
       <div className={styles.container}>
         <Header countryName={countryName} pageType={"Country"} />
-        <Playlist countryID={countryID} lists={playlists}></Playlist>
+        {ReRollComponent}
+        <Playlist
+          countryID={countryID}
+          lists={playlists}
+          randomSearchMode={RandomQuery}
+        ></Playlist>
       </div>
     </>
   );
@@ -40,6 +57,10 @@ export async function getServerSideProps(context) {
   //Enable page access to both country code and names.
   let id;
   let countryName;
+  let isRandom = false;
+  if (context.query.random) {
+    isRandom = true;
+  }
   if (countryMap[context.query.id]) {
     id = context.query.id;
     countryName = countryMap[id];
@@ -57,6 +78,7 @@ export async function getServerSideProps(context) {
     props: {
       countryID: id,
       countryName: countryName,
+      RandomQuery: isRandom,
     },
   };
 }

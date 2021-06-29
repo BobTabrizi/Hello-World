@@ -78,10 +78,14 @@ export default function Header(props) {
 //Helper function to determine the return button route on playlist page
 const HandlePlaylistReturn = (properties) => {
   let ButtonComponent;
+  let modeParam = "";
   if (properties.queryMethod === "genre") {
+    if (properties.queryMode === "random") {
+      modeParam = "?random=true";
+    }
     ButtonComponent = (
       <div>
-        <Link href={`/genre/${properties.genre}`}>
+        <Link href={`/genre/${properties.genre}${modeParam}`}>
           <a>
             <button className={styles.returnButton} style={{ fontSize: 18 }}>
               Return to {properties.genre} Countries
@@ -91,9 +95,12 @@ const HandlePlaylistReturn = (properties) => {
       </div>
     );
   } else {
+    if (properties.queryMode === "random") {
+      modeParam = "?random=true";
+    }
     ButtonComponent = (
       <div>
-        <Link href={`/country/${properties.countryID}`}>
+        <Link href={`/country/${properties.countryID}${modeParam}`}>
           <a>
             <button className={styles.returnButton} style={{ fontSize: 18 }}>
               Return to {properties.countryName}

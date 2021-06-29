@@ -3,6 +3,12 @@ import styles from "../../styles/GenrePage.module.css";
 import Link from "next/link";
 import SkeletonGenreItem from "../../Skeletons/SkeletonListItem";
 export default function GenreList(props) {
+  let queryParam;
+  if (props.randomSearchMode) {
+    queryParam = "random";
+  } else {
+    queryParam = "search";
+  }
   return (
     <div className={styles.genreContainer}>
       {!props.countryList &&
@@ -16,7 +22,7 @@ export default function GenreList(props) {
           props.countryList.map((country, index) => (
             <div key={index}>
               <Link
-                href={`/playlist/${country.countryID}/?genre=${props.genre}&query=genre`}
+                href={`/playlist/${country.countryID}/?genre=${props.genre}&query=genre&mode=${queryParam}`}
               >
                 <div className={styles.genreItems}>
                   <img

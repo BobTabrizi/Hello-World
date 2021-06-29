@@ -14,6 +14,7 @@ export default function Playlist({
   logUrl,
   genre,
   queryMethod,
+  queryMode,
 }) {
   const [token, setToken] = useState("");
   const [songs, setSongs] = useState(null);
@@ -33,12 +34,8 @@ export default function Playlist({
       );
       let trackURI = [];
       let selectedList;
-      for (let i = 0; i < result[0].Playlists.length; i++) {
-        if (genre === result[0].Playlists[i].genre) {
-          selectedList = i;
-        }
-      }
-      let countryTracks = result[0].Playlists[selectedList].tracks;
+      let countryTracks = result[0].Playlists.tracks;
+      // let countryTracks = result.tracks;
       for (let i = 0; i < countryTracks.length; i++) {
         trackURI.push(`${countryTracks[i].track.uri}`);
       }
@@ -69,6 +66,7 @@ export default function Playlist({
             countryName: countryName,
             countryID: countryID,
             queryMethod: queryMethod,
+            queryMode: queryMode,
           }}
         />
         <SongList
@@ -97,6 +95,7 @@ export async function getServerSideProps(context) {
   let countryName;
   let genre = context.query.genre;
   let queryMethod;
+  let queryMode = "";
 
   //Determine how this page was reached, for appropriate route back
   if (!context.query.query) {
@@ -104,6 +103,8 @@ export async function getServerSideProps(context) {
   } else {
     queryMethod = context.query.query;
   }
+
+  queryMode = context.query.mode;
 
   if (countryMap[context.query.id]) {
     id = context.query.id;
@@ -155,6 +156,7 @@ export async function getServerSideProps(context) {
       logUrl: dataString,
       genre: genre,
       queryMethod: queryMethod,
+      queryMode: queryMode,
     },
   };
 }

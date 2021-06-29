@@ -4,6 +4,7 @@ import countryMap from "../../../Data/countryMap";
 import Genres from "../../../Data/Genres.json";
 import React, { useState, useEffect } from "react";
 import GetCountryByGenre from "../../BackendFunctions/GetGenreLists";
+import ReRollButton from "../../components/ReRollButton";
 import GenreList from "../../components/PlaylistPages/GenreList";
 import Header from "../../components/PlaylistPages/Header";
 export default function Country(props) {
@@ -19,6 +20,16 @@ export default function Country(props) {
     }
   });
 
+  let ReRollComponent;
+  if (props.RandomQuery === true) {
+    ReRollComponent = (
+      <div style={{ textAlign: "center" }}>
+        <ReRollButton discoverMode={"Genre"} />
+      </div>
+    );
+  } else {
+    ReRollComponent = null;
+  }
   return (
     <>
       <Head>
@@ -35,23 +46,28 @@ export default function Country(props) {
       </Head>
       <div className={styles.container}>
         <Header genre={props.genre} pageType={"Genre"} />
-        <GenreList countryList={countryList} genre={props.genre} />
+        {ReRollComponent}
+        <GenreList
+          countryList={countryList}
+          genre={props.genre}
+          randomSearchMode={props.RandomQuery}
+        />
       </div>
     </>
   );
 }
 
-export async function getStaticPaths() {
-  const paths = Genres.map((genre) => ({
-    params: { genre: genre.name },
-  }));
-  return { paths, fallback: false };
-}
-export async function getStaticProps(context) {
-  let genreName = context.params.genre;
+export async function getServerSideProps(context) {
+  //Enable page access to both country code and names.
+
+  let isRandom = false;
+  if (context.query.random) {
+    isRandom = true;
+  }
   return {
     props: {
-      genre: genreName,
+      RandomQuery: isRandom,
+      genre: context.query.genre,
     },
   };
 }
