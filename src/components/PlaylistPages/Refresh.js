@@ -6,6 +6,7 @@ export default function Refresh(props) {
     props.updateURI([]);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     let trackURI = [];
+
     const data = await fetch(
       `${process.env.NEXT_PUBLIC_PROD_URL}/api/PlaylistGenerator?countryID=${props.countryID}&genre=${props.genre}`
     );
@@ -13,6 +14,7 @@ export default function Refresh(props) {
     for (let i = 0; i < resp.length; i++) {
       trackURI.push(resp[i].uri);
     }
+
     const tracks = resp.map((track) => {
       return {
         countryID: track.countryID,

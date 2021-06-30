@@ -6,9 +6,7 @@ export default async function handler(req, res) {
   const genre = req.query.genre;
 
   let artistArray = [];
-
   artistArray = await getArtists(id, genre);
-
   let Token = await GetToken();
 
   let GeneratedArtists = await generateArtists(artistArray, Token);
@@ -63,14 +61,7 @@ const getArtists = async (id, genre) => {
     `${process.env.NEXT_PUBLIC_PROD_URL}/api/${id}?genre=${genre}`
   );
   const resp = await data.json();
-
-  let index;
-  for (let i = 0; i < resp[0].Playlists.length; i++) {
-    if (resp[0].Playlists[i].genre === genre) {
-      index = i;
-    }
-  }
-  const source = resp[0].Playlists[index];
+  const source = resp[0].Playlists;
   let artistArray = [];
   for (let i = 0; i < source.tracks.length; i++) {
     if (!artistArray.includes(source.tracks[i].track.artists[0].id)) {
