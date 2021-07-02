@@ -16,6 +16,9 @@ export default function Country(props) {
       for (let i = 0; i < countryArray.length; i++) {
         countryArray[i].countryName = countryMap[countryArray[i].countryID];
       }
+
+      //Sort countries alphabetically to make it easier to find countries of interest
+      countryArray.sort((a, b) => (a.countryName > b.countryName && 1) || -1);
       setCountryList(countryArray);
     }
   });
@@ -24,7 +27,7 @@ export default function Country(props) {
   if (props.RandomQuery === true) {
     ReRollComponent = (
       <div style={{ textAlign: "center" }}>
-        <ReRollButton discoverMode={"Genre"} />
+        <ReRollButton discoverMode={"Genre"} current={props.genre} />
       </div>
     );
   } else {

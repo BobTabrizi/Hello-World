@@ -19,12 +19,6 @@
         "name": "metal"
     },
     {
-        "name": "hardbass"  
-    },
-    {
-        "name": "hardstyle"  
-    },
-    {
         "name": "classical"  
     },
     {
@@ -34,16 +28,10 @@
         "name": "hip hop"
     },
     {
-        "name": "dreampop"
-    },
-    {
         "name": "orchestra" 
     },
     {
         "name": "synthpop"
-    },
-    {
-        "name": "math rock" 
     },
     {
         "name": "reggae"
@@ -67,19 +55,13 @@
         "name": "house"
     },
     {
-        "name": "pub songs"
-    },
-    {
         "name": "electronic"
     },
     {
         "name": "edm"
     },
     {
-        "name": "disco"
-    },
-    {
-        "name": "space disco"
+        "name": "metal"
     },
     {
         "name": "trap"
@@ -91,9 +73,18 @@
         "name": "traditional"
     },
     {
-        "name": "lo-fi"
+        "name": "black metal"
     },
     {
-        "name": "black metal"
+        "name": "rap"
+    },
+    {
+        "name": "dancehall"
+    },
+    {
+        "name": "folk"
+    },
+    {
+        "name": "electropop"
     }
 ]

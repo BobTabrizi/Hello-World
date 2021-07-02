@@ -20,7 +20,7 @@ export default function Country({ countryID, countryName, RandomQuery }) {
   if (RandomQuery === true) {
     ReRollComponent = (
       <div style={{ textAlign: "center" }}>
-        <RerollButton discoverMode={"Country"} />
+        <RerollButton discoverMode={"Country"} current={countryID} />
       </div>
     );
   } else {

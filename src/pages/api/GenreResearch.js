@@ -38,7 +38,9 @@ export default async function handler(req, res) {
         },
       }
     );
+
     data = await loopedResponse.json();
+
     for (let j = 0; j < data.artists.items.length; j++) {
       for (let k = 0; k < data.artists.items[j].genres.length; k++) {
         if (!arrayHolder.includes(data.artists.items[j].genres[k])) {
@@ -47,5 +49,6 @@ export default async function handler(req, res) {
       }
     }
   }
-  res.json(data);
+  //console.log(arrayHolder);
+  res.json(arrayHolder);
 }

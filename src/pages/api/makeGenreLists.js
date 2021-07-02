@@ -37,7 +37,8 @@ export default async function handler(req, res) {
   ArrObject.totalTracks = Playlist.length;
   ArrObject.tracks = Playlist;
   ArrObject.image = AWS_Image;
-  
+
+  console.log(id + " " + req.query.subgenre);
   await db.collection("Countries").update(
     { countryID: id },
     {
@@ -48,8 +49,9 @@ export default async function handler(req, res) {
     { upsert: true }
   );
 
-  res.json(Playlist);
   */
+  //res.json(Playlist);
+
   res.json("N/A");
 }
 
