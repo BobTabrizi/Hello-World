@@ -181,11 +181,12 @@ export default function Autocomplete(props) {
                     >
                       {prediction.name}
 
-                      <img
-                        src={`/flags/${prediction.code}.png`}
-                        height="50"
-                        width="70"
-                      ></img>
+                      <div style={{ height: "40px", width: "60px" }}>
+                        <img
+                          src={`/flags/${prediction.code}.png`}
+                          className="object-fill h-full w-full"
+                        ></img>
+                      </div>
                     </div>
                   </li>
                 );

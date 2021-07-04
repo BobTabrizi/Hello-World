@@ -1,3 +1,36 @@
 [
-    
+    {
+        "countryID": "ESC",
+        "countryName": "Eurovision",
+        "playlists":[
+            {
+                "genre":"",
+                "subgenre":""
+            },
+            {
+                "genre":"",
+                "subgenre":""
+            },
+            {
+                "genre":"",
+                "subgenre":""
+            },
+            {
+                "genre":"",
+                "subgenre":""
+            },
+            {
+                "genre":"",
+                "subgenre":""
+            },
+            {
+                "genre":"",
+                "subgenre":""
+            },
+            {
+                "genre":"",
+                "subgenre":""
+            }
+        ]
+    }
 ]
