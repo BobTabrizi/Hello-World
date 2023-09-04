@@ -10,7 +10,6 @@ const getSongs = (token, url) => {
   })
     .then((resp) => resp.json())
     .then((response) => {
-      // console.log(response);
       return response.tracks;
     })
     .catch((error) => {

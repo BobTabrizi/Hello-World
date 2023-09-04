@@ -61,7 +61,6 @@ const getAccessToken = () => {
     });
 };
 const getSongs = (token) => {
-  console.log(token);
   return axios({
     url: "https://api.spotify.com/v1/playlists/37i9dQZEVXbJvfa0Yxg7E7",
     method: "GET",

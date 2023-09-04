@@ -2,7 +2,6 @@ import { connectToDatabase } from "../../../util/mongodb";
 
 export default async function handler(req, res) {
   const { db } = await connectToDatabase();
-
   let genre = null;
   const id = req.query.id;
   if (req.query.genre) {
@@ -17,9 +16,9 @@ export default async function handler(req, res) {
       .aggregate([
         {
           $search: {
-            search: {
+            text: {
               query: id,
-              path: ["countryID"],
+              path: "countryID",
             },
           },
         },
@@ -81,7 +80,6 @@ export default async function handler(req, res) {
       ])
       .toArray();
   }
-
   resultData = JSON.parse(JSON.stringify(data));
   res.json(resultData);
 }
