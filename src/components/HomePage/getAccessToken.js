@@ -7,7 +7,5 @@ export default async function FetchToken(hashParams) {
   localStorage.setItem("RefreshToken", tokenData.refresh_token);
   let currTime = Date.now();
   localStorage.setItem("TokenTime", currTime);
-  //setToken(tokenData.access_token);
-  console.log(tokenData);
   return tokenData.access_token;
 }

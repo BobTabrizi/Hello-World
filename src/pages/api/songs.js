@@ -53,7 +53,6 @@ const getAccessToken = () => {
     },
   })
     .then((respond) => {
-      console.log("New Token Recieved");
       return respond.data;
     })
     .catch((error) => {

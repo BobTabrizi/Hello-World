@@ -27,7 +27,6 @@ export default function Carousel() {
         <img
           src="/flags/US.png"
           style={{ borderRadius: 30, height: 100, width: 150 }}
-          onClick={() => console.log("MURICA")}
         ></img>
       </div>
 

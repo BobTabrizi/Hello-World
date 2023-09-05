@@ -7,7 +7,6 @@ export default async function TempSearch() {
     );
 
     let data = await respData.json();
-    // console.log(data);
   }
   return "TMP";
 }

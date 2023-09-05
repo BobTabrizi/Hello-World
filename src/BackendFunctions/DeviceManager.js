@@ -42,9 +42,6 @@ export default function DeviceManager(
       });
     })
     .catch((error) => {
-      //console.log(error);
-      // window.open(href, "_blank");
-
       //If non-spotify user or not signed in, direct to a youtube video of the song
       const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${trackName} ${artistName}}&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`;
       fetch(url)
